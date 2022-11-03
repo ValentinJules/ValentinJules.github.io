@@ -1,0 +1,295 @@
+#+title: C3S2
+#+date: <2022-10-12 mer.>
+
+
+#+SETUPFILE: http://fniessen.github.io/org-html-themes/org/theme-bigblow.setup
+
+
+* LBLRTM
+
+** Présentation des TAPES
+
+
+*** TAPE3
+
+La *TAPE3* est un fichier binaire qui est généré par *lnfl*.
+
+*** TAPE 5
+
+
+
+La *TAPE5* controle les paramètres de LBLRTM et le profil de l'atmosphère.
+Elle est composée de différents Record, on s'intéresse ici seulement à certains.
+
+
+**** Sortie en ascii
+#+NAME:outputascii
+Pour génerer des fichiers de sorties en ascii, selon le tableau suivant:
+#+NAME: TAPE de sortie
+| TAPE  | Grandeur |
+|-------+----------|
+| 27   |  Transmittance |
+| 28   |  Température de Brillance |
+|  29  | Radiance |
+
+Il faut ajouter le record 12 suivant au *TAPE5*
+
+#+BEGIN_SRC
+     0.01  575.0000 775.00000    1    0                  12    1    1   11  2
+     0.01  575.0000 775.00000    0    0                  12    1    1   13  2
+-1.0
+$ Transfer to ASCII plotting data
+ HI=0 F4=0 CN=0 AE=0 EM=0 SC=0 FI=0 PL=1 TS=0 AM=0 MG=0 LA=0 MS=0 XS=0    0    0
+# Plot title not used
+  575.0000 775.00000   1.02000  1.000000    5    0   11    0     1.000 0  0    0
+    0.0000    1.2000    7.0200    0.2000    4    0    1    1    0    0 0    3 29
+  575.0000 775.00000   10.2000  1.000000    5    0   11    0     1.000 0  0    0
+    0.0000    1.2000    7.0200    0.2000    4    0    1    1    1    0 0    3 28
+  575.0000 775.00000   1.02000  1.000000    5    0   13    0     1.000 0  0    0
+    0.0000    1.2000    7.0200    0.2000    4    0    1    0    0    0 0    3 27
+-1.
+%%%%%
+#+END_SRC
+
+
+
+
+
+*** TAPE6
+Fichier de sortie de LBLRTM contenant plein d'informations
+
+*** TAPE7
+Fichier de composition moléculaire le long de la colonne atmosphérique.
+
+*** TAPE10
+La *TAPE10* est un fichier binaire qui contient les informations de profondeur optique.
+Il peut être lu par un code *idl*
+#+BEGIN_EXAMPLE
+read_lbl_data.pro
+#+END_EXAMPLE
+
+
+*** TAPE11, TAPE12, et TAPE13
+
+Les *TAPE* *11*, *12*, et *13* sont les fichiers de sorties binaires de *LBLRTM.*
+On peut les convertir en ASCII en ajoutant quelques lignes au *TAPE5* ( Section [[* Sortie en ascii  ]])
+
+** V12.13
+
+
+#+CAPTION: Transmittance of the profil 83 for all gaz
+#+NAME:   fig1
+[[./figures/transmitance_400_1800_all_2_v12.13.png]]
+
+
+
+
+#+CAPTION: Transmittance of the profil 83 for Co_2 only
+#+NAME:   fig2
+[[./figures/transmitance_400_1800_co2_2_v12.13.png]]
+
+
+#+CAPTION: Transmittance of the profil 83 for all gaz, zoom on the PMR window
+#+NAME:   fig3
+[[./figures/transmitance_575_775_all_4_v12.13.png]]
+
+
+#+CAPTION: Transmittance of the profil 83 for Co_2 only, zoom on the PMR window
+#+NAME:   fig3
+[[./figures/transmitance_575_775_co2_4_v12.13.png]]
+
+
+** V12.2
+
+#+CAPTION: Transmittance of the profil 83 for all gaz, zoom on the PMR window
+#+NAME:   fig3
+[[./figures/transmitance_400_1800_all_2_v12.2.png]]
+
+
+** Profondeur optique
+*** code idl
+
+****  compiler le code:
+#+BEGIN_EXAMPLE
+IDL> .r read_lbl_data.pro
+#+END_EXAMPLE
+
+
+
+**** executer le code sur le TAPE10
+#+BEGIN_EXAMPLE
+IDL> read_lbl_file,'/CEMS_data/sondage/julesv/runs_lblrtm/run10/ODdeflt_100',data1,data2,data3,/double
+
+#+END_EXAMPLE
+
+
+*Attention, voir dans le code pour ce que représente data1,data2,data3*
+
+**** Écrire les valeurs des nombres d'ondes dans un fichier texte test.dat:
+#+BEGIN_EXAMPLE
+IDL> write_matrix,'test.dat',data2
+#+END_EXAMPLE
+
+
+
+*** TAPE10
+
+Le code idl , permet de lire la *TAPE10* :
+#+CAPTION: Optical depth of profil 83 for all gaz, zoom on PMR window
+#+NAME:   fig6
+[[./figures/od_575_775_all.png]]
+
+
+** Couche par couche
+- ODdeflt
+- ODint
+- ODexact
+Comment lire ces fichiers binaires ?
+
+
+* Effet Doppler
+
+** Principe
+
+*** Doppler simple
+#+CAPTION:
+#+NAME:   fig4
+#+attr_html: :width 500px
+[[./figures/doppler_align.png]]
+
+\begin{equation}
+ \nu = \nu_e \left( 1 \pm \dfrac{v}{c} \right)
+\end{equation}
+
+*** Doppler avec un angle
+#+CAPTION:
+#+NAME:   fig5
+#+attr_html: :width 500px
+[[./figures/doppler_angle.png]]
+
+\begin{equation}
+ \nu = \nu_e \left( 1 \pm \dfrac{v \cos(\theta)}{c} \right)
+\end{equation}
+
+
+*** Le satellite se rapproche
+#+CAPTION: $\alpha$: angle de visée, $\theta$: angle entre $\vec{v}$ et rayonnement
+#+NAME:   fig6
+#+attr_html: :width 500px
+[[./figures/doppler_rapproche.png]]
+
+\begin{equation}
+ \nu = \nu_e \left( 1 + \dfrac{v \cos(\theta)}{c} \right)
+\end{equation}
+
+\begin{equation}
+ \nu = \nu_e \left( 1 + \dfrac{v \cos(\pi/2 - \alpha}{c} \right)
+\end{equation}
+
+\begin{equation}
+ \nu = \nu_e \left( 1 + \dfrac{v \sin(\alpha}{c} \right)
+\end{equation}
+
+
+
+*** Le satellite s'éloigne
+
+#+CAPTION: $\alpha$: angle de visée, $\theta$: angle entre $\vec{v}$ et rayonnement
+#+NAME:   fig7
+#+attr_html: :width 500px
+[[./figures/doppler.png]]
+
+
+\begin{equation}
+ \nu = \nu_e \left( 1 - \dfrac{v \cos(\theta)}{c} \right)
+\end{equation}
+
+\begin{equation}
+ \nu = \nu_e \left( 1 - \dfrac{v \cos(\pi/2 + \alpha}{c} \right)
+\end{equation}
+
+\begin{equation}
+ \nu = \nu_e \left( 1 + \dfrac{v \sin(\alpha}{c} \right)
+\end{equation}
+
+
+
+*** Dans les deux cas
+
+
+\begin{equation}
+ \nu = \nu_e \left( 1 + \dfrac{v \sin(\alpha)}{c} \right)
+\end{equation}
+
+
+** Dans LBLRTM
+
+*** Modification de *oprop.90*
+
+**** Changement ligne 700
+#+BEGIN_EXAMPLE
+!   DOPPLER SHIFTS WILL BE CALCULATED FOR SATELLITE HEIGHT OF 1100 KM
+! VELOCITY 26282.9 KM/H FOR A CIRCULAR ORBIT
+      DATA velPMR/26282.9/
+! SCAN ANGLE FOR THIS RUN -ITS SINE, DEFINING A PARTICULAR PMR CHANNEL
+      DATA scansine/0.05/
+! PI IMPLICTLY R*8
+      DATA VPI/3.14159265359/
+! C IMPLICITY R*8 (M/S)
+      DATA vc/299792458.0/
+! VC IN KM/H
+      vvc=vc*3600./1000.
+!
+!
+#+END_EXAMPLE
+
+**** Changement ligne 750
+
+#+BEGIN_EXAMPLE
+      VNU(I) = vlin(I)
+! DOPPLER BLUE SHIFT - VIEW AGNLE BETWEEN NADIR AND FORWARD ORBITAL MOTION
+      VNU(I) = VNU(I) * (1. + velPMR*scansine/vvc)
+!
+#+END_EXAMPLE
+
+*** Décalage des raies de transmitance
+
+#+CAPTION: Décalage des raies d'absorption par effet Doppler
+#+NAME:   fig8
+#+attr_html: :width 500px
+[[./figures/comparaison_transmittance_doppler.png]]
+
+
+*  PMR
+
+** Description de l'instrument
+
+***  Caractéristiques technique
+
+Le PMR comprends 2 cellules :
+- Une cellule de 1 cm de long de pression variant entre 0.5 et 3 mb (60 à 90 km).
+- Une cellule de 6 cm de long de pression 1 à 4 mb (40 à 60 km).
+
+La pression dans les cellules oscille sinusoïdalement.
+
+*** Approximation de P. Rayer
+
+- P_mean dans les cellules
+- Secante dans les celllules
+-
+
+
+** Dans LBLRTM
+
+*** Profil à 1 couche
+- Pression fixée soit minimale soit maximale
+- Résolution à 0.0001 cm^-1
+
+Ou est la *TAPE5* de P. Rayer ?
+
+
+*** Profils atmosphériques
+- Résolution à 0.0001cm^-1
+- Concentration en CO2 diminuée pour correspondre aux valeurs des années 1970
+
+*** Convolution

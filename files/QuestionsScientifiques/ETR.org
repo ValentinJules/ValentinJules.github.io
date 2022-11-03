@@ -1,0 +1,119 @@
+#+title: Équation du Transfert Radiatif
+#+author: CEMS
+
+
+#+SETUPFILE: http://fniessen.github.io/org-html-themes/org/theme-bigblow.setup
+
+* Questions/Interrogations
+
+<2022-10-13 jeu.>
+
+Aujourd'hui on se demande d'où vient l'équation utilisée dans RTTOV qui est :
+
+\begin{equation}
+	I^{clr} = t_s( \nu, \theta ) \epsilon_s( \nu, \theta ) B(\nu, T_s) + \int_ts^1 B(\nu, t)dt + \left( 1 - \epsilon_s \right) t^2 (\nu, \theta) \int_ts^1 \dfrac{B(\nu, T)}{t^2}dt
+    \label{etr}
+\end{equation}
+
+avec : 
+- \epsilon_s : émissivité de la surface
+- T : température de la surface
+- t_s : transmittance de la surface vers le sommet de l'atmosphère
+
+Les différents termes correspondent à :
+
+1. L'émission de surface transmise à travers l'atmosphère.
+2. L'émission montante de l'atmosphère.
+3. L'émission descendante de l'atmosphère qui se réfléchie sur la surface.
+
+
+
+** Émissivité/Absorptivité
+
+*** Sans rayonnement transmis
+Pour un rayon arrivant sur un matériau isotherme la conservation de l'énergie impose un flux total nul.
+
+
+#+CAPTION: Réfléctivité et absorbance
+#+NAME:   fig3
+#+attr_html: :width 350px
+[[./figures/reflectivite.png]]
+
+
+
+I^{in} = I^{abs} + I^{out}
+
+I^{out} = r I^{in}
+
+donc 
+
+(1-\alpha-r)I^{in} = 0
+
+soit \alpha = 1-r
+
+Kirchoff : \epsilon = \alpha
+
+Finalement : r = ( 1 - \epsilon )
+
+
+
+
+
+* Démonstration
+
+Pour arriver à l'équation \ref{etr}, écrivons le bilan radiatif à travers une couche d'atmosphère plane.
+
+#+CAPTION: Schéma du rayonnement qui traverse une couche mince et plane
+#+NAME:   fig3
+#+attr_html: :width 350px
+[[./figures/schema_couche_atmospherique.png]]
+
+
+Par géométrie : ds = \dfrac{dz}{\mu}, avec \mu = \cos(\theta)
+
+En négligeant la diffusion.
+Le bilan sur une couche mince nous donne :
+
+\begin{equation}
+	\dfrac{dI}{ds} = \beta \left(B_a - I \right)
+\label{bilan}
+\end{equation}
+
+
+On introduit la profondeur optique:
+\begin{equation}
+\delta(s) = \int_s^c \beta_a(s)ds
+\end{equation}
+avec $c$ la position du détecteur.
+
+Ainsi,  d\delta = -\beta_a ds 
+
+L'équation \ref{bilan} devient alors :
+\begin{equation}
+    \dfrac{dI}{d\delta} = I - B
+\end{equation}
+
+En multipliant des deux cotés par e^{ -\delta } on obtient :
+\begin{equation}
+   e^{ -\delta }  \dfrac{dI}{d\delta} = ( I - B )e^{ -\delta } 
+\end{equation}
+
+Soit 
+\begin{equation}
+    \dfrac{d}{d\delta}\left( I  e^{ -\delta }\right) =  B  e^{ -\delta }
+\end{equation}
+
+En intégrant sur \delta entre le capteur (\delta = 0) et un point S :
+\begin{equation}
+    I(\delta)  e^{ -\delta } - I(0) = - \int_0^{\delta} B  e^{ -\delta } d\delta
+\end{equation}
+
+Maintenant en introduisant la transmittance t =  e^{ -\delta } soit dt
+= - e^{ -\delta } d\delta, on obtient :
+
+
+\begin{equation}
+  I(0) = I(\delta)t(\delta) + \int_{t(\delta)}^{1} B  dt
+\end{equation}
+
+

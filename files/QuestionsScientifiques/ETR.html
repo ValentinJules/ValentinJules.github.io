@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2022-10-14 ven. 10:16 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Équation du Transfert Radiatif</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="CEMS" />
+<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/src/bigblow_theme/css/htmlize.css"/>
+<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/src/bigblow_theme/css/bigblow.css"/>
+<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/src/bigblow_theme/css/hideshow.css"/>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/bigblow_theme/js/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/bigblow_theme/js/jquery-ui-1.10.2.min.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/bigblow_theme/js/jquery.localscroll-min.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/bigblow_theme/js/jquery.scrollTo-1.4.3.1-min.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/bigblow_theme/js/jquery.zclip.min.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/bigblow_theme/js/bigblow.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/bigblow_theme/js/hideshow.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/lib/js/jquery.stickytableheaders.min.js"></script>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2019 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        displayAlign: "center",
+        displayIndent: "0em",
+
+        "HTML-CSS": { scale: 100,
+                        linebreaks: { automatic: "false" },
+                        webFont: "TeX"
+                       },
+        SVG: {scale: 100,
+              linebreaks: { automatic: "false" },
+              font: "TeX"},
+        NativeMML: {scale: 100},
+        TeX: { equationNumbers: {autoNumber: "AMS"},
+               MultLineWidth: "85%",
+               TagSide: "right",
+               TagIndent: ".8em"
+             }
+});
+</script>
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">Équation du Transfert Radiatif</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org83e0bc1">1. Questions/Interrogations</a>
+<ul>
+<li><a href="#org7242c4d">1.1. Émissivité/Absorptivité</a>
+<ul>
+<li><a href="#org2cb9967">1.1.1. Sans rayonnement transmis</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org62efc10">2. Démonstration</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org83e0bc1" class="outline-2">
+<h2 id="org83e0bc1"><span class="section-number-2">1</span> Questions/Interrogations</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+<span class="timestamp-wrapper"><span class="timestamp">&lt;2022-10-13 jeu.&gt;</span></span>
+</p>
+
+<p>
+Aujourd'hui on se demande d'où vient l'équation utilisée dans RTTOV qui est :
+</p>
+
+\begin{equation}
+	I^{clr} = t_s( \nu, \theta ) \epsilon_s( \nu, \theta ) B(\nu, T_s) + \int_ts^1 B(\nu, t)dt + \left( 1 - \epsilon_s \right) t^2 (\nu, \theta) \int_ts^1 \dfrac{B(\nu, T)}{t^2}dt
+    \label{etr}
+\end{equation}
+
+<p>
+avec : 
+</p>
+<ul class="org-ul">
+<li>&epsilon;<sub>s</sub> : émissivité de la surface</li>
+<li>T : température de la surface</li>
+<li>t<sub>s</sub> : transmittance de la surface vers le sommet de l'atmosphère</li>
+</ul>
+
+<p>
+Les différents termes correspondent à :
+</p>
+
+<ol class="org-ol">
+<li>L'émission de surface transmise à travers l'atmosphère.</li>
+<li>L'émission montante de l'atmosphère.</li>
+<li>L'émission descendante de l'atmosphère qui se réfléchie sur la surface.</li>
+</ol>
+</div>
+
+
+
+<div id="outline-container-org7242c4d" class="outline-3">
+<h3 id="org7242c4d"><span class="section-number-3">1.1</span> Émissivité/Absorptivité</h3>
+<div class="outline-text-3" id="text-1-1">
+</div>
+<div id="outline-container-org2cb9967" class="outline-4">
+<h4 id="org2cb9967"><span class="section-number-4">1.1.1</span> Sans rayonnement transmis</h4>
+<div class="outline-text-4" id="text-1-1-1">
+<p>
+Pour un rayon arrivant sur un matériau isotherme la conservation de l'énergie impose un flux total nul.
+</p>
+
+
+
+<div id="org10754f8" class="figure">
+<p><img src="./figures/reflectivite.png" alt="reflectivite.png" width="350px" />
+</p>
+<p><span class="figure-number">Figure 1: </span>Réfléctivité et absorbance</p>
+</div>
+
+
+
+<p>
+I<sup>in</sup> = I<sup>abs</sup> + I<sup>out</sup>
+</p>
+
+<p>
+I<sup>out</sup> = r I<sup>in</sup>
+</p>
+
+<p>
+donc 
+</p>
+
+<p>
+(1-&alpha;-r)I<sup>in</sup> = 0
+</p>
+
+<p>
+soit &alpha; = 1-r
+</p>
+
+<p>
+Kirchoff : &epsilon; = &alpha;
+</p>
+
+<p>
+Finalement : r = ( 1 - &epsilon; )
+</p>
+</div>
+</div>
+</div>
+</div>
+
+
+
+
+
+<div id="outline-container-org62efc10" class="outline-2">
+<h2 id="org62efc10"><span class="section-number-2">2</span> Démonstration</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+Pour arriver à l'équation \ref{etr}, écrivons le bilan radiatif à travers une couche d'atmosphère plane.
+</p>
+
+
+<div id="orga1ab4ee" class="figure">
+<p><img src="./figures/schema_couche_atmospherique.png" alt="schema_couche_atmospherique.png" width="350px" />
+</p>
+<p><span class="figure-number">Figure 2: </span>Schéma du rayonnement qui traverse une couche mince et plane</p>
+</div>
+
+
+<p>
+Par géométrie : ds = \dfrac{dz}{\mu}, avec &mu; = cos(&theta;)
+</p>
+
+<p>
+En négligeant la diffusion.
+Le bilan sur une couche mince nous donne :
+</p>
+
+\begin{equation}
+	\dfrac{dI}{ds} = \beta \left(B_a - I \right)
+\label{bilan}
+\end{equation}
+
+
+<p>
+On introduit la profondeur optique:
+</p>
+\begin{equation}
+\delta(s) = \int_s^c \beta_a(s)ds
+\end{equation}
+<p>
+avec \(c\) la position du détecteur.
+</p>
+
+<p>
+Ainsi,  d&delta; = -&beta;<sub>a</sub> ds 
+</p>
+
+<p>
+L'équation \ref{bilan} devient alors :
+</p>
+\begin{equation}
+    \dfrac{dI}{d\delta} = I - B
+\end{equation}
+
+<p>
+En multipliant des deux cotés par e<sup> -&delta; </sup> on obtient :
+</p>
+\begin{equation}
+   e^{ -\delta }  \dfrac{dI}{d\delta} = ( I - B )e^{ -\delta } 
+\end{equation}
+
+<p>
+Soit 
+</p>
+\begin{equation}
+    \dfrac{d}{d\delta}\left( I  e^{ -\delta }\right) =  B  e^{ -\delta }
+\end{equation}
+
+<p>
+En intégrant sur &delta; entre le capteur (&delta; = 0) et un point S :
+</p>
+\begin{equation}
+    I(\delta)  e^{ -\delta } - I(0) = - \int_0^{\delta} B  e^{ -\delta } d\delta
+\end{equation}
+
+<p>
+Maintenant en introduisant la transmittance t =  e<sup> -&delta; </sup> soit dt
+= - e<sup> -&delta; </sup> d&delta;, on obtient :
+</p>
+
+
+\begin{equation}
+  I(0) = I(\delta)t(\delta) + \int_{t(\delta)}^{1} B  dt
+\end{equation}
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: CEMS</p>
+<p class="date">Created: 2022-10-14 ven. 10:16</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
