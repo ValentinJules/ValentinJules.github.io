@@ -337,6 +337,19 @@ Le 0 ligne 5, fixe le facteur d'échelle à 0 ( montant des colonnes des couches
 | 17 |   |  %%%%% |   |
 
 
+**** Lecture des *TAPE10*
+
+#+CAPTION: Profondeur Optique pour la cellule 2 à Pmax
+#+NAME:   
+#+attr_html: :width 500px
+[[./figures/od_max.png]]
+
+#+CAPTION: Profondeur Optique pour la cellule 2 à Pmin
+#+NAME:   
+#+attr_html: :width 500px
+[[./figures/od_min.png]]
+
+
 *** Profils atmosphériques
 - Résolution à 0.0001cm^-1
 - Concentration en CO2 diminuée pour correspondre aux valeurs des années 1970
