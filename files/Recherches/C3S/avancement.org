@@ -109,11 +109,12 @@ On peut les convertir en ASCII en ajoutant quelques lignes au *TAPE5* ( Section 
 ** Profondeur optique
 *** code idl
 
+
+
 ****  compiler le code:
 #+BEGIN_EXAMPLE
 IDL> .r read_lbl_data.pro
 #+END_EXAMPLE
-
 
 
 **** executer le code sur le TAPE10
@@ -129,6 +130,9 @@ IDL> read_lbl_file,'/CEMS_data/sondage/julesv/runs_lblrtm/run10/ODdeflt_100',dat
 #+BEGIN_EXAMPLE
 IDL> write_matrix,'test.dat',data2
 #+END_EXAMPLE
+
+
+
 
 
 
@@ -285,7 +289,52 @@ La pression dans les cellules oscille sinusoïdalement.
 - Pression fixée soit minimale soit maximale
 - Résolution à 0.0001 cm^-1
 
-Ou est la *TAPE5* de P. Rayer ?
+Voilà la *TAPE5* de P. Rayer :
+
+#+CAPTION: TAPE5 cell1 at Pmin
+#+BEGIN_EXAMPLE
+
+$ TAPE5 - PMR cell at minP from CreateInputs-Cell-PP.f
+ HI=1 F4=1 CN=6 AE=0 EM=1 SC=0 FI=0 PL=0 TS=0 AM=1 MG=0 LA=0 OD=1 XS=0   00   00
+     1.000     1.000     1.000     1.000     1.000     1.000     1.000
+  599.9995  750.0005       0.0                 0.0       0.0    0.0000    0.0000    0         0.0001
+     0.000
+    0    1    0    1    1    2
+     1.000                       0.00001
+    2  minP - Pmean=0.62  hPa
+     0.000     0.419   292.100     AA   EE
+     0.000     0.419
+     2.000     0.419   292.100     AA   EE
+     0.000     0.419
+$ Interpolate LBL results onto user-defined output grid
+ HI=0 F4=0 CN=0 AE=0 EM=0 SC=2 FI=0 PL=0 TS=0 AM=0 MG 0 LA=0 OD=0 XS=0   00   00
+    0.0010  600.0000  750.0000    0    0                  12             11
+-1.
+%%%%%
+#+END_EXAMPLE
+
+On controle la longueur de la cellule sur la ligne 7, et la pression de la cellule sur les colonnes 15-20 aux lignes 9 à 12.
+Le 0 ligne 5, fixe le facteur d'échelle à 0 ( montant des colonnes des couches à 0 pour tous les niveaux  0).
+
+| ligne | Record  |  TAPE RAYER  | Paramètres controllés |
+|---+--------------+------------+-----------------------------|
+| 1 | 1.1 | $ TAPE5 - PMR cell at minP from CreateInputs-Cell-PP.f  | Identification |
+| 2 | 1.2.1 | HI=1 F4=1 CN=6 AE=0 EM=1 SC=0 FI=0 PL=0 TS=0 AM=1 MG=0 LA=0 OD=1 XS=0   00   00  |   |
+| 3 | 1.2.3 | 1.000 1.000 1.000 1.000 1.000 1.000 0.000 |    |
+| 4 | 1.3   |  599.9995  750.0005       0.0                 0.0       0.0    0.0000    0.0000    0         0.0001 | v1, v2, ... |
+| 5 | 1.5 |      0.000 | Profile de température atmosphérique |
+| 6 | 3.1 |     0    1    0    1    1    2   | profil atm fourni par l'utilisateur, pression et température constante(profil horizontal), ..., ..., nb molécules |
+| 7 | 3.2H |      1.000                       0.00001  | altitude de l'observateur,    , longueur du chemin en km |
+| 8 | 3.4 |     2  minP - Pmean=0.62  hPa  | nb de frontières, identification du profil |
+| 9 | 3.5 |    0.000     0.530   292.100     AA   EE  | altitude frontière, pression, température, choix des unités |
+| 10 | 3.6.1 |      0.000     0.530  | densité des différentes molécules, 0 pour H2O, 0.53 pour le CO2 |
+| 11 | 3.5 |      2.000     0.530   292.100     AA   EE  | 2 étapes précédentes pour la deuxième frontière |
+| 12 | 3.6.1 |      0.000     0.530  | 2 étapes précédentes pour la deuxième frontière   |
+| 13 |   | $ Interpolate LBL results onto user-defined output grid  |   |
+| 14 |   | HI=0 F4=0 CN=0 AE=0 EM=0 SC=2 FI=0 PL=0 TS=0 AM=0 MG 0 LA=0 OD=0 XS=0   00   00  |   |
+| 15 | 9.1 |     0.0010  600.0000  750.0000    0    0                  12             11 |   |
+| 16 |   | 1.  |   |
+| 17 |   |  %%%%% |   |
 
 
 *** Profils atmosphériques
