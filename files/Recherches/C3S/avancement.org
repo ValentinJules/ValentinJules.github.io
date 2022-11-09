@@ -350,6 +350,15 @@ Le 0 ligne 5, fixe le facteur d'échelle à 0 ( montant des colonnes des couches
 [[./figures/od_min.png]]
 
 
+
+**** Lecture des TAPE11
+
+#+CAPTION: SRF de la cellule 2 de PMR
+#+NAME:   
+#+attr_html: :width 500px
+[[./figures/SRF_PMR.png]]
+
+
 *** Profils atmosphériques
 - Résolution à 0.0001cm^-1
 - Concentration en CO2 diminuée pour correspondre aux valeurs des années 1970
