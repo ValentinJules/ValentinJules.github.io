@@ -5,6 +5,229 @@
 #+SETUPFILE: http://fniessen.github.io/org-html-themes/org/theme-bigblow.setup
 
 
+*  PMR
+
+** Description de l'instrument
+
+
+   #+CAPTION: Schéma de PMR
+#+NAME:   
+#+attr_html: :width 500px
+[[./figures/schema_pmr.png]]
+
+
+***  Caractéristiques technique
+
+Le PMR comprends 2 cellules :
+- Une cellule de 1 cm de long de pression variant entre 0.5 et 3 mb (60 à 90 km).
+- Une cellule de 6 cm de long de pression 1 à 4 mb (40 à 60 km).
+
+La pression dans les cellules oscille sinusoïdalement.
+
+*** Approximation de P. Rayer
+
+- P_mean dans les cellules
+- Secante dans les celllules
+-
+
+
+** Dans LBLRTM
+
+*** Profil à 1 couche
+- Pression fixée soit minimale soit maximale
+- Résolution à 0.0001 cm^-1
+
+Voilà la *TAPE5* de P. Rayer :
+
+#+CAPTION: TAPE5 cell1 at Pmin
+#+BEGIN_EXAMPLE
+
+$ TAPE5 - PMR cell at minP from CreateInputs-Cell-PP.f
+ HI=1 F4=1 CN=6 AE=0 EM=1 SC=0 FI=0 PL=0 TS=0 AM=1 MG=0 LA=0 OD=1 XS=0   00   00
+     1.000     1.000     1.000     1.000     1.000     1.000     1.000
+  599.9995  750.0005       0.0                 0.0       0.0    0.0000    0.0000    0         0.0001
+     0.000
+    0    1    0    1    1    2
+     1.000                       0.00001
+    2  minP - Pmean=0.62  hPa
+     0.000     0.419   292.100     AA   EE
+     0.000     0.419
+     2.000     0.419   292.100     AA   EE
+     0.000     0.419
+$ Interpolate LBL results onto user-defined output grid
+ HI=0 F4=0 CN=0 AE=0 EM=0 SC=2 FI=0 PL=0 TS=0 AM=0 MG 0 LA=0 OD=0 XS=0   00   00
+    0.0010  600.0000  750.0000    0    0                  12             11
+-1.
+%%%%%
+#+END_EXAMPLE
+
+On controle la longueur de la cellule sur la ligne 7, et la pression de la cellule sur les colonnes 15-20 aux lignes 9 à 12.
+Le 0 ligne 5, fixe le facteur d'échelle à 0 ( montant des colonnes des couches à 0 pour tous les niveaux  0).
+
+| ligne | Record  |  TAPE RAYER  | Paramètres controllés |
+|---+--------------+------------+-----------------------------|
+| 1 | 1.1 | $ TAPE5 - PMR cell at minP from CreateInputs-Cell-PP.f  | Identification |
+| 2 | 1.2.1 | HI=1 F4=1 CN=6 AE=0 EM=1 SC=0 FI=0 PL=0 TS=0 AM=1 MG=0 LA=0 OD=1 XS=0   00   00  |   |
+| 3 | 1.2.3 | 1.000 1.000 1.000 1.000 1.000 1.000 0.000 |    |
+| 4 | 1.3   |  599.9995  750.0005       0.0                 0.0       0.0    0.0000    0.0000    0         0.0001 | v1, v2, ... |
+| 5 | 1.5 |      0.000 | Profile de température atmosphérique |
+| 6 | 3.1 |     0    1    0    1    1    2   | profil atm fourni par l'utilisateur, pression et température constante(profil horizontal), ..., ..., nb molécules |
+| 7 | 3.2H |      1.000                       0.00001  | altitude de l'observateur,    , longueur du chemin en km |
+| 8 | 3.4 |     2  minP - Pmean=0.62  hPa  | nb de frontières, identification du profil |
+| 9 | 3.5 |    0.000     0.530   292.100     AA   EE  | altitude frontière, pression, température, choix des unités |
+| 10 | 3.6.1 |      0.000     0.530  | densité des différentes molécules, 0 pour H2O, 0.53 pour le CO2 |
+| 11 | 3.5 |      2.000     0.530   292.100     AA   EE  | 2 étapes précédentes pour la deuxième frontière |
+| 12 | 3.6.1 |      0.000     0.530  | 2 étapes précédentes pour la deuxième frontière   |
+| 13 |   | $ Interpolate LBL results onto user-defined output grid  |   |
+| 14 |   | HI=0 F4=0 CN=0 AE=0 EM=0 SC=2 FI=0 PL=0 TS=0 AM=0 MG 0 LA=0 OD=0 XS=0   00   00  |   |
+| 15 | 9.1 |     0.0010  600.0000  750.0000    0    0                  12             11 |   |
+| 16 |   | 1.  |   |
+| 17 |   |  %%%%% |   |
+
+
+**** Lecture des *TAPE10*
+
+#+CAPTION: Profondeur Optique pour la cellule 2 à Pmax
+#+NAME:   
+#+attr_html: :width 500px
+[[./figures/od_max.png]]
+
+#+CAPTION: Profondeur Optique pour la cellule 2 à Pmin
+#+NAME:   
+#+attr_html: :width 500px
+[[./figures/od_min.png]]
+
+
+
+**** Lecture des TAPE11
+
+#+CAPTION: SRF de la cellule 2 de PMR
+#+NAME:   
+#+attr_html: :width 500px
+[[./figures/SRF_PMR.png]]
+
+
+*** Profils atmosphériques
+- Résolution à 0.0001cm^-1
+- Concentration en CO2 diminuée pour correspondre aux valeurs des années 1970
+
+*** Convolution
+
+
+* Effet Doppler
+
+** Principe
+
+*** Doppler simple
+#+CAPTION:
+#+NAME:   fig4
+#+attr_html: :width 500px
+[[./figures/doppler_align.png]]
+
+\begin{equation}
+ \nu = \nu_e \left( 1 \pm \dfrac{v}{c} \right)
+\end{equation}
+
+*** Doppler avec un angle
+#+CAPTION:
+#+NAME:   fig5
+#+attr_html: :width 500px
+[[./figures/doppler_angle.png]]
+
+\begin{equation}
+ \nu = \nu_e \left( 1 \pm \dfrac{v \cos(\theta)}{c} \right)
+\end{equation}
+
+
+*** Le satellite se rapproche
+#+CAPTION: $\alpha$: angle de visée, $\theta$: angle entre $\vec{v}$ et rayonnement
+#+NAME:   fig6
+#+attr_html: :width 500px
+[[./figures/doppler_rapproche.png]]
+
+\begin{equation}
+ \nu = \nu_e \left( 1 + \dfrac{v \cos(\theta)}{c} \right)
+\end{equation}
+
+\begin{equation}
+ \nu = \nu_e \left( 1 + \dfrac{v \cos(\pi/2 - \alpha}{c} \right)
+\end{equation}
+
+\begin{equation}
+ \nu = \nu_e \left( 1 + \dfrac{v \sin(\alpha}{c} \right)
+\end{equation}
+
+
+
+*** Le satellite s'éloigne
+
+#+CAPTION: $\alpha$: angle de visée, $\theta$: angle entre $\vec{v}$ et rayonnement
+#+NAME:   fig7
+#+attr_html: :width 500px
+[[./figures/doppler.png]]
+
+
+\begin{equation}
+ \nu = \nu_e \left( 1 - \dfrac{v \cos(\theta)}{c} \right)
+\end{equation}
+
+\begin{equation}
+ \nu = \nu_e \left( 1 - \dfrac{v \cos(\pi/2 + \alpha}{c} \right)
+\end{equation}
+
+\begin{equation}
+ \nu = \nu_e \left( 1 + \dfrac{v \sin(\alpha}{c} \right)
+\end{equation}
+
+
+
+*** Dans les deux cas
+
+
+\begin{equation}
+ \nu = \nu_e \left( 1 + \dfrac{v \sin(\alpha)}{c} \right)
+\end{equation}
+
+
+** Dans LBLRTM
+
+*** Modification de *oprop.90*
+
+**** Changement ligne 700
+#+BEGIN_EXAMPLE
+!   DOPPLER SHIFTS WILL BE CALCULATED FOR SATELLITE HEIGHT OF 1100 KM
+! VELOCITY 26282.9 KM/H FOR A CIRCULAR ORBIT
+      DATA velPMR/26282.9/
+! SCAN ANGLE FOR THIS RUN -ITS SINE, DEFINING A PARTICULAR PMR CHANNEL
+      DATA scansine/0.05/
+! PI IMPLICTLY R*8
+      DATA VPI/3.14159265359/
+! C IMPLICITY R*8 (M/S)
+      DATA vc/299792458.0/
+! VC IN KM/H
+      vvc=vc*3600./1000.
+!
+!
+#+END_EXAMPLE
+
+**** Changement ligne 750
+
+#+BEGIN_EXAMPLE
+      VNU(I) = vlin(I)
+! DOPPLER BLUE SHIFT - VIEW AGNLE BETWEEN NADIR AND FORWARD ORBITAL MOTION
+      VNU(I) = VNU(I) * (1. + velPMR*scansine/vvc)
+!
+#+END_EXAMPLE
+
+*** Décalage des raies de transmitance
+
+#+CAPTION: Décalage des raies d'absorption par effet Doppler
+#+NAME:   fig8
+#+attr_html: :width 500px
+[[./figures/comparaison_transmittance_doppler.png]]
+
+
+
 * LBLRTM
 
 ** Présentation des TAPES
@@ -150,217 +373,3 @@ Le code idl , permet de lire la *TAPE10* :
 - ODexact
 Comment lire ces fichiers binaires ?
 
-
-* Effet Doppler
-
-** Principe
-
-*** Doppler simple
-#+CAPTION:
-#+NAME:   fig4
-#+attr_html: :width 500px
-[[./figures/doppler_align.png]]
-
-\begin{equation}
- \nu = \nu_e \left( 1 \pm \dfrac{v}{c} \right)
-\end{equation}
-
-*** Doppler avec un angle
-#+CAPTION:
-#+NAME:   fig5
-#+attr_html: :width 500px
-[[./figures/doppler_angle.png]]
-
-\begin{equation}
- \nu = \nu_e \left( 1 \pm \dfrac{v \cos(\theta)}{c} \right)
-\end{equation}
-
-
-*** Le satellite se rapproche
-#+CAPTION: $\alpha$: angle de visée, $\theta$: angle entre $\vec{v}$ et rayonnement
-#+NAME:   fig6
-#+attr_html: :width 500px
-[[./figures/doppler_rapproche.png]]
-
-\begin{equation}
- \nu = \nu_e \left( 1 + \dfrac{v \cos(\theta)}{c} \right)
-\end{equation}
-
-\begin{equation}
- \nu = \nu_e \left( 1 + \dfrac{v \cos(\pi/2 - \alpha}{c} \right)
-\end{equation}
-
-\begin{equation}
- \nu = \nu_e \left( 1 + \dfrac{v \sin(\alpha}{c} \right)
-\end{equation}
-
-
-
-*** Le satellite s'éloigne
-
-#+CAPTION: $\alpha$: angle de visée, $\theta$: angle entre $\vec{v}$ et rayonnement
-#+NAME:   fig7
-#+attr_html: :width 500px
-[[./figures/doppler.png]]
-
-
-\begin{equation}
- \nu = \nu_e \left( 1 - \dfrac{v \cos(\theta)}{c} \right)
-\end{equation}
-
-\begin{equation}
- \nu = \nu_e \left( 1 - \dfrac{v \cos(\pi/2 + \alpha}{c} \right)
-\end{equation}
-
-\begin{equation}
- \nu = \nu_e \left( 1 + \dfrac{v \sin(\alpha}{c} \right)
-\end{equation}
-
-
-
-*** Dans les deux cas
-
-
-\begin{equation}
- \nu = \nu_e \left( 1 + \dfrac{v \sin(\alpha)}{c} \right)
-\end{equation}
-
-
-** Dans LBLRTM
-
-*** Modification de *oprop.90*
-
-**** Changement ligne 700
-#+BEGIN_EXAMPLE
-!   DOPPLER SHIFTS WILL BE CALCULATED FOR SATELLITE HEIGHT OF 1100 KM
-! VELOCITY 26282.9 KM/H FOR A CIRCULAR ORBIT
-      DATA velPMR/26282.9/
-! SCAN ANGLE FOR THIS RUN -ITS SINE, DEFINING A PARTICULAR PMR CHANNEL
-      DATA scansine/0.05/
-! PI IMPLICTLY R*8
-      DATA VPI/3.14159265359/
-! C IMPLICITY R*8 (M/S)
-      DATA vc/299792458.0/
-! VC IN KM/H
-      vvc=vc*3600./1000.
-!
-!
-#+END_EXAMPLE
-
-**** Changement ligne 750
-
-#+BEGIN_EXAMPLE
-      VNU(I) = vlin(I)
-! DOPPLER BLUE SHIFT - VIEW AGNLE BETWEEN NADIR AND FORWARD ORBITAL MOTION
-      VNU(I) = VNU(I) * (1. + velPMR*scansine/vvc)
-!
-#+END_EXAMPLE
-
-*** Décalage des raies de transmitance
-
-#+CAPTION: Décalage des raies d'absorption par effet Doppler
-#+NAME:   fig8
-#+attr_html: :width 500px
-[[./figures/comparaison_transmittance_doppler.png]]
-
-
-*  PMR
-
-** Description de l'instrument
-
-***  Caractéristiques technique
-
-Le PMR comprends 2 cellules :
-- Une cellule de 1 cm de long de pression variant entre 0.5 et 3 mb (60 à 90 km).
-- Une cellule de 6 cm de long de pression 1 à 4 mb (40 à 60 km).
-
-La pression dans les cellules oscille sinusoïdalement.
-
-*** Approximation de P. Rayer
-
-- P_mean dans les cellules
-- Secante dans les celllules
--
-
-
-** Dans LBLRTM
-
-*** Profil à 1 couche
-- Pression fixée soit minimale soit maximale
-- Résolution à 0.0001 cm^-1
-
-Voilà la *TAPE5* de P. Rayer :
-
-#+CAPTION: TAPE5 cell1 at Pmin
-#+BEGIN_EXAMPLE
-
-$ TAPE5 - PMR cell at minP from CreateInputs-Cell-PP.f
- HI=1 F4=1 CN=6 AE=0 EM=1 SC=0 FI=0 PL=0 TS=0 AM=1 MG=0 LA=0 OD=1 XS=0   00   00
-     1.000     1.000     1.000     1.000     1.000     1.000     1.000
-  599.9995  750.0005       0.0                 0.0       0.0    0.0000    0.0000    0         0.0001
-     0.000
-    0    1    0    1    1    2
-     1.000                       0.00001
-    2  minP - Pmean=0.62  hPa
-     0.000     0.419   292.100     AA   EE
-     0.000     0.419
-     2.000     0.419   292.100     AA   EE
-     0.000     0.419
-$ Interpolate LBL results onto user-defined output grid
- HI=0 F4=0 CN=0 AE=0 EM=0 SC=2 FI=0 PL=0 TS=0 AM=0 MG 0 LA=0 OD=0 XS=0   00   00
-    0.0010  600.0000  750.0000    0    0                  12             11
--1.
-%%%%%
-#+END_EXAMPLE
-
-On controle la longueur de la cellule sur la ligne 7, et la pression de la cellule sur les colonnes 15-20 aux lignes 9 à 12.
-Le 0 ligne 5, fixe le facteur d'échelle à 0 ( montant des colonnes des couches à 0 pour tous les niveaux  0).
-
-| ligne | Record  |  TAPE RAYER  | Paramètres controllés |
-|---+--------------+------------+-----------------------------|
-| 1 | 1.1 | $ TAPE5 - PMR cell at minP from CreateInputs-Cell-PP.f  | Identification |
-| 2 | 1.2.1 | HI=1 F4=1 CN=6 AE=0 EM=1 SC=0 FI=0 PL=0 TS=0 AM=1 MG=0 LA=0 OD=1 XS=0   00   00  |   |
-| 3 | 1.2.3 | 1.000 1.000 1.000 1.000 1.000 1.000 0.000 |    |
-| 4 | 1.3   |  599.9995  750.0005       0.0                 0.0       0.0    0.0000    0.0000    0         0.0001 | v1, v2, ... |
-| 5 | 1.5 |      0.000 | Profile de température atmosphérique |
-| 6 | 3.1 |     0    1    0    1    1    2   | profil atm fourni par l'utilisateur, pression et température constante(profil horizontal), ..., ..., nb molécules |
-| 7 | 3.2H |      1.000                       0.00001  | altitude de l'observateur,    , longueur du chemin en km |
-| 8 | 3.4 |     2  minP - Pmean=0.62  hPa  | nb de frontières, identification du profil |
-| 9 | 3.5 |    0.000     0.530   292.100     AA   EE  | altitude frontière, pression, température, choix des unités |
-| 10 | 3.6.1 |      0.000     0.530  | densité des différentes molécules, 0 pour H2O, 0.53 pour le CO2 |
-| 11 | 3.5 |      2.000     0.530   292.100     AA   EE  | 2 étapes précédentes pour la deuxième frontière |
-| 12 | 3.6.1 |      0.000     0.530  | 2 étapes précédentes pour la deuxième frontière   |
-| 13 |   | $ Interpolate LBL results onto user-defined output grid  |   |
-| 14 |   | HI=0 F4=0 CN=0 AE=0 EM=0 SC=2 FI=0 PL=0 TS=0 AM=0 MG 0 LA=0 OD=0 XS=0   00   00  |   |
-| 15 | 9.1 |     0.0010  600.0000  750.0000    0    0                  12             11 |   |
-| 16 |   | 1.  |   |
-| 17 |   |  %%%%% |   |
-
-
-**** Lecture des *TAPE10*
-
-#+CAPTION: Profondeur Optique pour la cellule 2 à Pmax
-#+NAME:   
-#+attr_html: :width 500px
-[[./figures/od_max.png]]
-
-#+CAPTION: Profondeur Optique pour la cellule 2 à Pmin
-#+NAME:   
-#+attr_html: :width 500px
-[[./figures/od_min.png]]
-
-
-
-**** Lecture des TAPE11
-
-#+CAPTION: SRF de la cellule 2 de PMR
-#+NAME:   
-#+attr_html: :width 500px
-[[./figures/SRF_PMR.png]]
-
-
-*** Profils atmosphériques
-- Résolution à 0.0001cm^-1
-- Concentration en CO2 diminuée pour correspondre aux valeurs des années 1970
-
-*** Convolution
