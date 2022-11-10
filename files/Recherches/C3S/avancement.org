@@ -16,6 +16,15 @@
 [[./figures/schema_pmr.png]]
 
 
+
+   #+CAPTION: Transmittance du filtre
+#+NAME:   
+#+attr_html: :width 500px
+[[./figures/transmittance_filter.png]]
+
+
+
+
 ***  Caractéristiques technique
 
 Le PMR comprends 2 cellules :
@@ -112,6 +121,16 @@ Le 0 ligne 5, fixe le facteur d'échelle à 0 ( montant des colonnes des couches
 - Concentration en CO2 diminuée pour correspondre aux valeurs des années 1970
 
 *** Convolution
+
+   
+
+
+   #+CAPTION: Transmittance des différents composants
+#+NAME:   
+#+attr_html: :width 800px
+[[./figures/transmittance_PMR_83.png]]
+
+
 
 
 * Effet Doppler
