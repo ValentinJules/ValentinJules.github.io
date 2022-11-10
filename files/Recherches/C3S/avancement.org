@@ -2,9 +2,7 @@
 #+date: <2022-10-12 mer.>
 
 
-#####+SETUPFILE: http://fniessen.github.io/org-html-themes/org/theme-bigblow.setup
-
-#+SETUPFILE: setup/org/theme-bigblow-local.setup
+#+SETUPFILE: http://fniessen.github.io/org-html-themes/org/theme-bigblow.setup
 
 
 *  PMR
