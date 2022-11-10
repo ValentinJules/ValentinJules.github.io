@@ -17,6 +17,10 @@
 #+attr_html: :width 500px
 [[./figures/schema_pmr.png]]
 
+Pression dans la cellule : 
+\begin{equation}
+P = P_{mean} sin(\omega t) 
+\end{equation}
 
 
    #+CAPTION: Transmittance du filtre
@@ -115,10 +119,6 @@ Le 0 ligne 5, fixe le facteur d'échelle à 0 ( montant des colonnes des couches
 
 ***** Lecture des TAPE11
 
-#+CAPTION: SRF de la cellule 2 de PMR
-#+NAME:   
-#+attr_html: :width 500px
-[[./figures/SRF_PMR.png]]
 
 
 
@@ -132,6 +132,16 @@ Le 0 ligne 5, fixe le facteur d'échelle à 0 ( montant des colonnes des couches
 #+attr_html: :width 500px
 [[./figures/transmittance_Pmin.png]]
 
+Approximation 2 cellules : Transmittance de la cellule :
+\begin{equation}
+ H_{\nu} = t^{Pmin}_{\nu} - t^{Pmax}_{\nu}
+\end{equation}
+
+
+#+CAPTION: SRF de la cellule 2 de PMR
+#+NAME:   
+#+attr_html: :width 500px
+[[./figures/SRF_PMR.png]]
 
 
 *** Profils atmosphériques
