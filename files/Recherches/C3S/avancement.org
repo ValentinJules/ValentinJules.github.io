@@ -2,7 +2,9 @@
 #+date: <2022-10-12 mer.>
 
 
-#+SETUPFILE: http://fniessen.github.io/org-html-themes/org/theme-bigblow.setup
+#####+SETUPFILE: http://fniessen.github.io/org-html-themes/org/theme-bigblow.setup
+
+#+SETUPFILE: setup/org/theme-bigblow-local.setup
 
 
 *  PMR
@@ -45,6 +47,9 @@ La pression dans les cellules oscille sinusoïdalement.
 *** Profil à 1 couche
 - Pression fixée soit minimale soit maximale
 - Résolution à 0.0001 cm^-1
+
+
+**** In
 
 Voilà la *TAPE5* de P. Rayer :
 
@@ -93,8 +98,8 @@ Le 0 ligne 5, fixe le facteur d'échelle à 0 ( montant des colonnes des couches
 | 16 |   | 1.  |   |
 | 17 |   |  %%%%% |   |
 
-
-**** Lecture des *TAPE10*
+**** Out
+***** Lecture des *TAPE10*
 
 #+CAPTION: Profondeur Optique pour la cellule 2 à Pmax
 #+NAME:   
@@ -108,12 +113,25 @@ Le 0 ligne 5, fixe le facteur d'échelle à 0 ( montant des colonnes des couches
 
 
 
-**** Lecture des TAPE11
+***** Lecture des TAPE11
 
 #+CAPTION: SRF de la cellule 2 de PMR
 #+NAME:   
 #+attr_html: :width 500px
 [[./figures/SRF_PMR.png]]
+
+
+
+#+CAPTION: Transmittance pour la cellule 2 à Pmax
+#+NAME:   
+#+attr_html: :width 500px
+[[./figures/transmittance_Pmax.png]]
+
+#+CAPTION: Transmittance pour la cellule 2 à Pmin
+#+NAME:   
+#+attr_html: :width 500px
+[[./figures/transmittance_Pmin.png]]
+
 
 
 *** Profils atmosphériques

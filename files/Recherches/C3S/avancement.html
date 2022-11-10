@@ -3,22 +3,22 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2022-11-10 jeu. 11:37 -->
+<!-- 2022-11-10 jeu. 12:24 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>C3S2</title>
 <meta name="generator" content="Org mode" />
-<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/src/bigblow_theme/css/htmlize.css"/>
-<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/src/bigblow_theme/css/bigblow.css"/>
-<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/src/bigblow_theme/css/hideshow.css"/>
-<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/bigblow_theme/js/jquery-1.11.0.min.js"></script>
-<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/bigblow_theme/js/jquery-ui-1.10.2.min.js"></script>
-<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/bigblow_theme/js/jquery.localscroll-min.js"></script>
-<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/bigblow_theme/js/jquery.scrollTo-1.4.3.1-min.js"></script>
-<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/bigblow_theme/js/jquery.zclip.min.js"></script>
-<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/bigblow_theme/js/bigblow.js"></script>
-<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/bigblow_theme/js/hideshow.js"></script>
-<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/lib/js/jquery.stickytableheaders.min.js"></script>
+<link rel="stylesheet" type="text/css" href="src/bigblow_theme/css/htmlize.css"/>
+<link rel="stylesheet" type="text/css" href="src/bigblow_theme/css/bigblow.css"/>
+<link rel="stylesheet" type="text/css" href="src/bigblow_theme/css/hideshow.css"/>
+<script type="text/javascript" src="src/bigblow_theme/js/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="src/bigblow_theme/js/jquery-ui-1.10.2.min.js"></script>
+<script type="text/javascript" src="src/bigblow_theme/js/jquery.localscroll-min.js"></script>
+<script type="text/javascript" src="src/bigblow_theme/js/jquery.scrollTo-1.4.3.1-min.js"></script>
+<script type="text/javascript" src="src/bigblow_theme/js/jquery.zclip.min.js"></script>
+<script type="text/javascript" src="src/bigblow_theme/js/bigblow.js"></script>
+<script type="text/javascript" src="src/bigblow_theme/js/hideshow.js"></script>
+<script type="text/javascript" src="src/lib/js/jquery.stickytableheaders.min.js"></script>
 <script type="text/javascript">
 /*
 @licstart  The following is the entire license notice for the
@@ -95,79 +95,82 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org909a624">1. PMR</a>
+<li><a href="#org5d0e089">1. PMR</a>
 <ul>
-<li><a href="#org8f74f9a">1.1. Description de l'instrument</a>
+<li><a href="#org33d5344">1.1. Description de l'instrument</a>
 <ul>
-<li><a href="#orgd8eda98">1.1.1. Caractéristiques technique</a></li>
-<li><a href="#org6331a38">1.1.2. Approximation de P. Rayer</a></li>
+<li><a href="#org53bb182">1.1.1. Caractéristiques technique</a></li>
+<li><a href="#orgd5fd345">1.1.2. Approximation de P. Rayer</a></li>
 </ul>
 </li>
-<li><a href="#orgda36b1b">1.2. Dans LBLRTM</a>
+<li><a href="#org4b31172">1.2. Dans LBLRTM</a>
 <ul>
-<li><a href="#org91e0227">1.2.1. Profil à 1 couche</a></li>
-<li><a href="#org3881787">1.2.2. Profils atmosphériques</a></li>
-<li><a href="#org767d302">1.2.3. Convolution</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#org71c89bf">2. Effet Doppler</a>
-<ul>
-<li><a href="#org8acd2d7">2.1. Principe</a>
-<ul>
-<li><a href="#org9c93210">2.1.1. Doppler simple</a></li>
-<li><a href="#org724c609">2.1.2. Doppler avec un angle</a></li>
-<li><a href="#org6e309cc">2.1.3. Le satellite se rapproche</a></li>
-<li><a href="#org5e6f9c1">2.1.4. Le satellite s'éloigne</a></li>
-<li><a href="#org4d2fc9c">2.1.5. Dans les deux cas</a></li>
-</ul>
-</li>
-<li><a href="#org81d3c60">2.2. Dans LBLRTM</a>
-<ul>
-<li><a href="#org2879397">2.2.1. Modification de <b>oprop.90</b></a></li>
-<li><a href="#orgd8446d6">2.2.2. Décalage des raies de transmitance</a></li>
+<li><a href="#org7bcd09c">1.2.1. Profil à 1 couche</a></li>
+<li><a href="#org26d26e4">1.2.2. Profils atmosphériques</a></li>
+<li><a href="#orga460e6c">1.2.3. Convolution</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#org5f857e5">3. LBLRTM</a>
+<li><a href="#org515be1e">2. Effet Doppler</a>
 <ul>
-<li><a href="#orgc1e0196">3.1. Présentation des TAPES</a>
+<li><a href="#org89bc800">2.1. Principe</a>
 <ul>
-<li><a href="#org72c9242">3.1.1. TAPE3</a></li>
-<li><a href="#org29cc247">3.1.2. TAPE 5</a></li>
-<li><a href="#orgc5053b2">3.1.3. TAPE6</a></li>
-<li><a href="#org441f682">3.1.4. TAPE7</a></li>
-<li><a href="#org4e95b3a">3.1.5. TAPE10</a></li>
-<li><a href="#orgcb7fe63">3.1.6. TAPE11, TAPE12, et TAPE13</a></li>
+<li><a href="#org7160a82">2.1.1. Doppler simple</a></li>
+<li><a href="#org5ac1253">2.1.2. Doppler avec un angle</a></li>
+<li><a href="#org2ae9558">2.1.3. Le satellite se rapproche</a></li>
+<li><a href="#org98d3b0d">2.1.4. Le satellite s'éloigne</a></li>
+<li><a href="#org02037ec">2.1.5. Dans les deux cas</a></li>
 </ul>
 </li>
-<li><a href="#org3519b0e">3.2. V12.13</a></li>
-<li><a href="#org0b32296">3.3. V12.2</a></li>
-<li><a href="#org4b9b480">3.4. Profondeur optique</a>
+<li><a href="#org74011bb">2.2. Dans LBLRTM</a>
 <ul>
-<li><a href="#org0bad57a">3.4.1. code idl</a></li>
-<li><a href="#org64d4b74">3.4.2. TAPE10</a></li>
+<li><a href="#org9af0608">2.2.1. Modification de <b>oprop.90</b></a></li>
+<li><a href="#org8941b8b">2.2.2. Décalage des raies de transmitance</a></li>
 </ul>
 </li>
-<li><a href="#orgb6ce8b4">3.5. Couche par couche</a></li>
+</ul>
+</li>
+<li><a href="#orge2d846b">3. LBLRTM</a>
+<ul>
+<li><a href="#orgde458f8">3.1. Présentation des TAPES</a>
+<ul>
+<li><a href="#orga18ecf3">3.1.1. TAPE3</a></li>
+<li><a href="#orgc8301ca">3.1.2. TAPE 5</a></li>
+<li><a href="#org2d1063c">3.1.3. TAPE6</a></li>
+<li><a href="#org6a9e404">3.1.4. TAPE7</a></li>
+<li><a href="#org0dd373d">3.1.5. TAPE10</a></li>
+<li><a href="#orgc6710d4">3.1.6. TAPE11, TAPE12, et TAPE13</a></li>
+</ul>
+</li>
+<li><a href="#org8d66435">3.2. V12.13</a></li>
+<li><a href="#org5ea9f15">3.3. V12.2</a></li>
+<li><a href="#org46edd94">3.4. Profondeur optique</a>
+<ul>
+<li><a href="#org8672110">3.4.1. code idl</a></li>
+<li><a href="#orgde07bdd">3.4.2. TAPE10</a></li>
+</ul>
+</li>
+<li><a href="#org72b82ac">3.5. Couche par couche</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
+<p>
+#####+SETUPFILE: <a href="http://fniessen.github.io/org-html-themes/org/theme-bigblow.setup">http://fniessen.github.io/org-html-themes/org/theme-bigblow.setup</a>
+</p>
 
 
-<div id="outline-container-org909a624" class="outline-2">
-<h2 id="org909a624"><span class="section-number-2">1</span> PMR</h2>
+<div id="outline-container-org5d0e089" class="outline-2">
+<h2 id="org5d0e089"><span class="section-number-2">1</span> PMR</h2>
 <div class="outline-text-2" id="text-1">
 </div>
-<div id="outline-container-org8f74f9a" class="outline-3">
-<h3 id="org8f74f9a"><span class="section-number-3">1.1</span> Description de l'instrument</h3>
+<div id="outline-container-org33d5344" class="outline-3">
+<h3 id="org33d5344"><span class="section-number-3">1.1</span> Description de l'instrument</h3>
 <div class="outline-text-3" id="text-1-1">
 
-<div id="org2c92c9a" class="figure">
+<div id="orge02cda4" class="figure">
 <p><img src="./figures/schema_pmr.png" alt="schema_pmr.png" width="500px" />
 </p>
 <p><span class="figure-number">Figure 1: </span>Schéma de PMR</p>
@@ -176,7 +179,7 @@ for the JavaScript code in this tag.
 
 
 
-<div id="org65bd32d" class="figure">
+<div id="org548abc7" class="figure">
 <p><img src="./figures/transmittance_filter.png" alt="transmittance_filter.png" width="500px" />
 </p>
 <p><span class="figure-number">Figure 2: </span>Transmittance du filtre</p>
@@ -186,8 +189,8 @@ for the JavaScript code in this tag.
 
 
 
-<div id="outline-container-orgd8eda98" class="outline-4">
-<h4 id="orgd8eda98"><span class="section-number-4">1.1.1</span> Caractéristiques technique</h4>
+<div id="outline-container-org53bb182" class="outline-4">
+<h4 id="org53bb182"><span class="section-number-4">1.1.1</span> Caractéristiques technique</h4>
 <div class="outline-text-4" id="text-1-1-1">
 <p>
 Le PMR comprends 2 cellules :
@@ -203,8 +206,8 @@ La pression dans les cellules oscille sinusoïdalement.
 </div>
 </div>
 
-<div id="outline-container-org6331a38" class="outline-4">
-<h4 id="org6331a38"><span class="section-number-4">1.1.2</span> Approximation de P. Rayer</h4>
+<div id="outline-container-orgd5fd345" class="outline-4">
+<h4 id="orgd5fd345"><span class="section-number-4">1.1.2</span> Approximation de P. Rayer</h4>
 <div class="outline-text-4" id="text-1-1-2">
 <ul class="org-ul">
 <li>P<sub>mean</sub> dans les cellules</li>
@@ -216,18 +219,23 @@ La pression dans les cellules oscille sinusoïdalement.
 </div>
 
 
-<div id="outline-container-orgda36b1b" class="outline-3">
-<h3 id="orgda36b1b"><span class="section-number-3">1.2</span> Dans LBLRTM</h3>
+<div id="outline-container-org4b31172" class="outline-3">
+<h3 id="org4b31172"><span class="section-number-3">1.2</span> Dans LBLRTM</h3>
 <div class="outline-text-3" id="text-1-2">
 </div>
-<div id="outline-container-org91e0227" class="outline-4">
-<h4 id="org91e0227"><span class="section-number-4">1.2.1</span> Profil à 1 couche</h4>
+<div id="outline-container-org7bcd09c" class="outline-4">
+<h4 id="org7bcd09c"><span class="section-number-4">1.2.1</span> Profil à 1 couche</h4>
 <div class="outline-text-4" id="text-1-2-1">
 <ul class="org-ul">
 <li>Pression fixée soit minimale soit maximale</li>
 <li>Résolution à 0.0001 cm<sup>-1</sup></li>
 </ul>
+</div>
 
+
+<ol class="org-ol">
+<li><a id="orga1567c0"></a>In<br />
+<div class="outline-text-5" id="text-1-2-1-1">
 <p>
 Voilà la <b>TAPE5</b> de P. Rayer :
 </p>
@@ -400,20 +408,21 @@ Le 0 ligne 5, fixe le facteur d'échelle à 0 ( montant des colonnes des couches
 </tbody>
 </table>
 </div>
+</li>
 
-
+<li><a id="orgb03c0e7"></a>Out<br />
 <ol class="org-ol">
-<li><a id="org8a16e84"></a>Lecture des <b>TAPE10</b><br />
-<div class="outline-text-5" id="text-1-2-1-1">
+<li><a id="org836716e"></a>Lecture des <b>TAPE10</b><br />
+<div class="outline-text-6" id="text-1-2-1-2-1">
 
-<div id="orgbb34098" class="figure">
+<div id="org2950438" class="figure">
 <p><img src="./figures/od_max.png" alt="od_max.png" width="500px" />
 </p>
 <p><span class="figure-number">Figure 3: </span>Profondeur Optique pour la cellule 2 à Pmax</p>
 </div>
 
 
-<div id="org51217d1" class="figure">
+<div id="org28dc98d" class="figure">
 <p><img src="./figures/od_min.png" alt="od_min.png" width="500px" />
 </p>
 <p><span class="figure-number">Figure 4: </span>Profondeur Optique pour la cellule 2 à Pmin</p>
@@ -423,22 +432,41 @@ Le 0 ligne 5, fixe le facteur d'échelle à 0 ( montant des colonnes des couches
 
 
 
-<li><a id="org1a05153"></a>Lecture des TAPE11<br />
-<div class="outline-text-5" id="text-1-2-1-2">
+<li><a id="org8d11e3f"></a>Lecture des TAPE11<br />
+<div class="outline-text-6" id="text-1-2-1-2-2">
 
-<div id="orgcd0caa4" class="figure">
+<div id="orgdc3801e" class="figure">
 <p><img src="./figures/SRF_PMR.png" alt="SRF_PMR.png" width="500px" />
 </p>
 <p><span class="figure-number">Figure 5: </span>SRF de la cellule 2 de PMR</p>
 </div>
+
+
+
+
+<div id="orgeb850e1" class="figure">
+<p><img src="./figures/transmittance_Pmax.png" alt="transmittance_Pmax.png" width="500px" />
+</p>
+<p><span class="figure-number">Figure 6: </span>Transmittance pour la cellule 2 à Pmax</p>
 </div>
+
+
+<div id="orgf88e97a" class="figure">
+<p><img src="./figures/transmittance_Pmin.png" alt="transmittance_Pmin.png" width="500px" />
+</p>
+<p><span class="figure-number">Figure 7: </span>Transmittance pour la cellule 2 à Pmin</p>
+</div>
+</div>
+</li>
+</ol>
 </li>
 </ol>
 </div>
 
 
-<div id="outline-container-org3881787" class="outline-4">
-<h4 id="org3881787"><span class="section-number-4">1.2.2</span> Profils atmosphériques</h4>
+
+<div id="outline-container-org26d26e4" class="outline-4">
+<h4 id="org26d26e4"><span class="section-number-4">1.2.2</span> Profils atmosphériques</h4>
 <div class="outline-text-4" id="text-1-2-2">
 <ul class="org-ul">
 <li>Résolution à 0.0001cm<sup>-1</sup></li>
@@ -447,14 +475,14 @@ Le 0 ligne 5, fixe le facteur d'échelle à 0 ( montant des colonnes des couches
 </div>
 </div>
 
-<div id="outline-container-org767d302" class="outline-4">
-<h4 id="org767d302"><span class="section-number-4">1.2.3</span> Convolution</h4>
+<div id="outline-container-orga460e6c" class="outline-4">
+<h4 id="orga460e6c"><span class="section-number-4">1.2.3</span> Convolution</h4>
 <div class="outline-text-4" id="text-1-2-3">
 
-<div id="org7226f05" class="figure">
+<div id="org6400f62" class="figure">
 <p><img src="./figures/transmittance_PMR_83.png" alt="transmittance_PMR_83.png" width="800px" />
 </p>
-<p><span class="figure-number">Figure 6: </span>Transmittance des différents composants</p>
+<p><span class="figure-number">Figure 8: </span>Transmittance des différents composants</p>
 </div>
 </div>
 </div>
@@ -464,19 +492,19 @@ Le 0 ligne 5, fixe le facteur d'échelle à 0 ( montant des colonnes des couches
 
 
 
-<div id="outline-container-org71c89bf" class="outline-2">
-<h2 id="org71c89bf"><span class="section-number-2">2</span> Effet Doppler</h2>
+<div id="outline-container-org515be1e" class="outline-2">
+<h2 id="org515be1e"><span class="section-number-2">2</span> Effet Doppler</h2>
 <div class="outline-text-2" id="text-2">
 </div>
-<div id="outline-container-org8acd2d7" class="outline-3">
-<h3 id="org8acd2d7"><span class="section-number-3">2.1</span> Principe</h3>
+<div id="outline-container-org89bc800" class="outline-3">
+<h3 id="org89bc800"><span class="section-number-3">2.1</span> Principe</h3>
 <div class="outline-text-3" id="text-2-1">
 </div>
-<div id="outline-container-org9c93210" class="outline-4">
-<h4 id="org9c93210"><span class="section-number-4">2.1.1</span> Doppler simple</h4>
+<div id="outline-container-org7160a82" class="outline-4">
+<h4 id="org7160a82"><span class="section-number-4">2.1.1</span> Doppler simple</h4>
 <div class="outline-text-4" id="text-2-1-1">
 
-<div id="org392d542" class="figure">
+<div id="org0a85b7a" class="figure">
 <p><img src="./figures/doppler_align.png" alt="doppler_align.png" width="500px" />
 </p>
 </div>
@@ -487,11 +515,11 @@ Le 0 ligne 5, fixe le facteur d'échelle à 0 ( montant des colonnes des couches
 </div>
 </div>
 
-<div id="outline-container-org724c609" class="outline-4">
-<h4 id="org724c609"><span class="section-number-4">2.1.2</span> Doppler avec un angle</h4>
+<div id="outline-container-org5ac1253" class="outline-4">
+<h4 id="org5ac1253"><span class="section-number-4">2.1.2</span> Doppler avec un angle</h4>
 <div class="outline-text-4" id="text-2-1-2">
 
-<div id="orga9b6b36" class="figure">
+<div id="org8a5bc58" class="figure">
 <p><img src="./figures/doppler_angle.png" alt="doppler_angle.png" width="500px" />
 </p>
 </div>
@@ -503,14 +531,14 @@ Le 0 ligne 5, fixe le facteur d'échelle à 0 ( montant des colonnes des couches
 </div>
 
 
-<div id="outline-container-org6e309cc" class="outline-4">
-<h4 id="org6e309cc"><span class="section-number-4">2.1.3</span> Le satellite se rapproche</h4>
+<div id="outline-container-org2ae9558" class="outline-4">
+<h4 id="org2ae9558"><span class="section-number-4">2.1.3</span> Le satellite se rapproche</h4>
 <div class="outline-text-4" id="text-2-1-3">
 
-<div id="org0a0c10e" class="figure">
+<div id="orga2c838a" class="figure">
 <p><img src="./figures/doppler_rapproche.png" alt="doppler_rapproche.png" width="500px" />
 </p>
-<p><span class="figure-number">Figure 9: </span>\(\alpha\): angle de visée, \(\theta\): angle entre \(\vec{v}\) et rayonnement</p>
+<p><span class="figure-number">Figure 11: </span>\(\alpha\): angle de visée, \(\theta\): angle entre \(\vec{v}\) et rayonnement</p>
 </div>
 
 \begin{equation}
@@ -529,14 +557,14 @@ Le 0 ligne 5, fixe le facteur d'échelle à 0 ( montant des colonnes des couches
 
 
 
-<div id="outline-container-org5e6f9c1" class="outline-4">
-<h4 id="org5e6f9c1"><span class="section-number-4">2.1.4</span> Le satellite s'éloigne</h4>
+<div id="outline-container-org98d3b0d" class="outline-4">
+<h4 id="org98d3b0d"><span class="section-number-4">2.1.4</span> Le satellite s'éloigne</h4>
 <div class="outline-text-4" id="text-2-1-4">
 
-<div id="org7af2adb" class="figure">
+<div id="org98f9799" class="figure">
 <p><img src="./figures/doppler.png" alt="doppler.png" width="500px" />
 </p>
-<p><span class="figure-number">Figure 10: </span>\(\alpha\): angle de visée, \(\theta\): angle entre \(\vec{v}\) et rayonnement</p>
+<p><span class="figure-number">Figure 12: </span>\(\alpha\): angle de visée, \(\theta\): angle entre \(\vec{v}\) et rayonnement</p>
 </div>
 
 
@@ -556,8 +584,8 @@ Le 0 ligne 5, fixe le facteur d'échelle à 0 ( montant des colonnes des couches
 
 
 
-<div id="outline-container-org4d2fc9c" class="outline-4">
-<h4 id="org4d2fc9c"><span class="section-number-4">2.1.5</span> Dans les deux cas</h4>
+<div id="outline-container-org02037ec" class="outline-4">
+<h4 id="org02037ec"><span class="section-number-4">2.1.5</span> Dans les deux cas</h4>
 <div class="outline-text-4" id="text-2-1-5">
 \begin{equation}
  \nu = \nu_e \left( 1 + \dfrac{v \sin(\alpha)}{c} \right)
@@ -567,16 +595,16 @@ Le 0 ligne 5, fixe le facteur d'échelle à 0 ( montant des colonnes des couches
 </div>
 
 
-<div id="outline-container-org81d3c60" class="outline-3">
-<h3 id="org81d3c60"><span class="section-number-3">2.2</span> Dans LBLRTM</h3>
+<div id="outline-container-org74011bb" class="outline-3">
+<h3 id="org74011bb"><span class="section-number-3">2.2</span> Dans LBLRTM</h3>
 <div class="outline-text-3" id="text-2-2">
 </div>
-<div id="outline-container-org2879397" class="outline-4">
-<h4 id="org2879397"><span class="section-number-4">2.2.1</span> Modification de <b>oprop.90</b></h4>
+<div id="outline-container-org9af0608" class="outline-4">
+<h4 id="org9af0608"><span class="section-number-4">2.2.1</span> Modification de <b>oprop.90</b></h4>
 <div class="outline-text-4" id="text-2-2-1">
 </div>
 <ol class="org-ol">
-<li><a id="orgf430f5a"></a>Changement ligne 700<br />
+<li><a id="org81de820"></a>Changement ligne 700<br />
 <div class="outline-text-5" id="text-2-2-1-1">
 <pre class="example">
 !   DOPPLER SHIFTS WILL BE CALCULATED FOR SATELLITE HEIGHT OF 1100 KM
@@ -596,7 +624,7 @@ Le 0 ligne 5, fixe le facteur d'échelle à 0 ( montant des colonnes des couches
 </div>
 </li>
 
-<li><a id="org3c204f0"></a>Changement ligne 750<br />
+<li><a id="org95e580f"></a>Changement ligne 750<br />
 <div class="outline-text-5" id="text-2-2-1-2">
 <pre class="example">
       VNU(I) = vlin(I)
@@ -609,14 +637,14 @@ Le 0 ligne 5, fixe le facteur d'échelle à 0 ( montant des colonnes des couches
 </ol>
 </div>
 
-<div id="outline-container-orgd8446d6" class="outline-4">
-<h4 id="orgd8446d6"><span class="section-number-4">2.2.2</span> Décalage des raies de transmitance</h4>
+<div id="outline-container-org8941b8b" class="outline-4">
+<h4 id="org8941b8b"><span class="section-number-4">2.2.2</span> Décalage des raies de transmitance</h4>
 <div class="outline-text-4" id="text-2-2-2">
 
-<div id="org1db16df" class="figure">
+<div id="org2a1ee24" class="figure">
 <p><img src="./figures/comparaison_transmittance_doppler.png" alt="comparaison_transmittance_doppler.png" width="500px" />
 </p>
-<p><span class="figure-number">Figure 11: </span>Décalage des raies d'absorption par effet Doppler</p>
+<p><span class="figure-number">Figure 13: </span>Décalage des raies d'absorption par effet Doppler</p>
 </div>
 </div>
 </div>
@@ -625,16 +653,16 @@ Le 0 ligne 5, fixe le facteur d'échelle à 0 ( montant des colonnes des couches
 
 
 
-<div id="outline-container-org5f857e5" class="outline-2">
-<h2 id="org5f857e5"><span class="section-number-2">3</span> LBLRTM</h2>
+<div id="outline-container-orge2d846b" class="outline-2">
+<h2 id="orge2d846b"><span class="section-number-2">3</span> LBLRTM</h2>
 <div class="outline-text-2" id="text-3">
 </div>
-<div id="outline-container-orgc1e0196" class="outline-3">
-<h3 id="orgc1e0196"><span class="section-number-3">3.1</span> Présentation des TAPES</h3>
+<div id="outline-container-orgde458f8" class="outline-3">
+<h3 id="orgde458f8"><span class="section-number-3">3.1</span> Présentation des TAPES</h3>
 <div class="outline-text-3" id="text-3-1">
 </div>
-<div id="outline-container-org72c9242" class="outline-4">
-<h4 id="org72c9242"><span class="section-number-4">3.1.1</span> TAPE3</h4>
+<div id="outline-container-orga18ecf3" class="outline-4">
+<h4 id="orga18ecf3"><span class="section-number-4">3.1.1</span> TAPE3</h4>
 <div class="outline-text-4" id="text-3-1-1">
 <p>
 La <b>TAPE3</b> est un fichier binaire qui est généré par <b>lnfl</b>.
@@ -642,8 +670,8 @@ La <b>TAPE3</b> est un fichier binaire qui est généré par <b>lnfl</b>.
 </div>
 </div>
 
-<div id="outline-container-org29cc247" class="outline-4">
-<h4 id="org29cc247"><span class="section-number-4">3.1.2</span> TAPE 5</h4>
+<div id="outline-container-orgc8301ca" class="outline-4">
+<h4 id="orgc8301ca"><span class="section-number-4">3.1.2</span> TAPE 5</h4>
 <div class="outline-text-4" id="text-3-1-2">
 <p>
 La <b>TAPE5</b> controle les paramètres de LBLRTM et le profil de l'atmosphère.
@@ -653,12 +681,12 @@ Elle est composée de différents Record, on s'intéresse ici seulement à certa
 
 
 <ol class="org-ol">
-<li><a id="org1650b96"></a>Sortie en ascii<br />
+<li><a id="orge27b73c"></a>Sortie en ascii<br />
 <div class="outline-text-5" id="text-3-1-2-1">
 <p>
 Pour génerer des fichiers de sorties en ascii, selon le tableau suivant:
 </p>
-<table id="orga83ee18" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<table id="orgd20f563" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
 <colgroup>
@@ -719,8 +747,8 @@ $ Transfer to ASCII plotting data
 
 
 
-<div id="outline-container-orgc5053b2" class="outline-4">
-<h4 id="orgc5053b2"><span class="section-number-4">3.1.3</span> TAPE6</h4>
+<div id="outline-container-org2d1063c" class="outline-4">
+<h4 id="org2d1063c"><span class="section-number-4">3.1.3</span> TAPE6</h4>
 <div class="outline-text-4" id="text-3-1-3">
 <p>
 Fichier de sortie de LBLRTM contenant plein d'informations
@@ -728,8 +756,8 @@ Fichier de sortie de LBLRTM contenant plein d'informations
 </div>
 </div>
 
-<div id="outline-container-org441f682" class="outline-4">
-<h4 id="org441f682"><span class="section-number-4">3.1.4</span> TAPE7</h4>
+<div id="outline-container-org6a9e404" class="outline-4">
+<h4 id="org6a9e404"><span class="section-number-4">3.1.4</span> TAPE7</h4>
 <div class="outline-text-4" id="text-3-1-4">
 <p>
 Fichier de composition moléculaire le long de la colonne atmosphérique.
@@ -737,8 +765,8 @@ Fichier de composition moléculaire le long de la colonne atmosphérique.
 </div>
 </div>
 
-<div id="outline-container-org4e95b3a" class="outline-4">
-<h4 id="org4e95b3a"><span class="section-number-4">3.1.5</span> TAPE10</h4>
+<div id="outline-container-org0dd373d" class="outline-4">
+<h4 id="org0dd373d"><span class="section-number-4">3.1.5</span> TAPE10</h4>
 <div class="outline-text-4" id="text-3-1-5">
 <p>
 La <b>TAPE10</b> est un fichier binaire qui contient les informations de profondeur optique.
@@ -751,79 +779,79 @@ read_lbl_data.pro
 </div>
 
 
-<div id="outline-container-orgcb7fe63" class="outline-4">
-<h4 id="orgcb7fe63"><span class="section-number-4">3.1.6</span> TAPE11, TAPE12, et TAPE13</h4>
+<div id="outline-container-orgc6710d4" class="outline-4">
+<h4 id="orgc6710d4"><span class="section-number-4">3.1.6</span> TAPE11, TAPE12, et TAPE13</h4>
 <div class="outline-text-4" id="text-3-1-6">
 <p>
 Les <b>TAPE</b> <b>11</b>, <b>12</b>, et <b>13</b> sont les fichiers de sorties binaires de <b>LBLRTM.</b>
-On peut les convertir en ASCII en ajoutant quelques lignes au <b>TAPE5</b> ( Section <a href="#org1650b96">3.1.2.1</a>)
+On peut les convertir en ASCII en ajoutant quelques lignes au <b>TAPE5</b> ( Section <a href="#orge27b73c">3.1.2.1</a>)
 </p>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org3519b0e" class="outline-3">
-<h3 id="org3519b0e"><span class="section-number-3">3.2</span> V12.13</h3>
+<div id="outline-container-org8d66435" class="outline-3">
+<h3 id="org8d66435"><span class="section-number-3">3.2</span> V12.13</h3>
 <div class="outline-text-3" id="text-3-2">
 
-<div id="orgd3a6c12" class="figure">
+<div id="org39bac43" class="figure">
 <p><img src="./figures/transmitance_400_1800_all_2_v12.13.png" alt="transmitance_400_1800_all_2_v12.13.png" />
 </p>
-<p><span class="figure-number">Figure 12: </span>Transmittance of the profil 83 for all gaz</p>
+<p><span class="figure-number">Figure 14: </span>Transmittance of the profil 83 for all gaz</p>
 </div>
 
 
 
 
 
-<div id="org9c56255" class="figure">
+<div id="org344a9f4" class="figure">
 <p><img src="./figures/transmitance_400_1800_co2_2_v12.13.png" alt="transmitance_400_1800_co2_2_v12.13.png" />
 </p>
-<p><span class="figure-number">Figure 13: </span>Transmittance of the profil 83 for Co<sub>2</sub> only</p>
+<p><span class="figure-number">Figure 15: </span>Transmittance of the profil 83 for Co<sub>2</sub> only</p>
 </div>
 
 
 
-<div id="orgb11de77" class="figure">
+<div id="org8e59248" class="figure">
 <p><img src="./figures/transmitance_575_775_all_4_v12.13.png" alt="transmitance_575_775_all_4_v12.13.png" />
-</p>
-<p><span class="figure-number">Figure 14: </span>Transmittance of the profil 83 for all gaz, zoom on the PMR window</p>
-</div>
-
-
-
-<div id="org9b7fc5e" class="figure">
-<p><img src="./figures/transmitance_575_775_co2_4_v12.13.png" alt="transmitance_575_775_co2_4_v12.13.png" />
-</p>
-<p><span class="figure-number">Figure 15: </span>Transmittance of the profil 83 for Co<sub>2</sub> only, zoom on the PMR window</p>
-</div>
-</div>
-</div>
-
-
-<div id="outline-container-org0b32296" class="outline-3">
-<h3 id="org0b32296"><span class="section-number-3">3.3</span> V12.2</h3>
-<div class="outline-text-3" id="text-3-3">
-
-<div id="org0873242" class="figure">
-<p><img src="./figures/transmitance_400_1800_all_2_v12.2.png" alt="transmitance_400_1800_all_2_v12.2.png" />
 </p>
 <p><span class="figure-number">Figure 16: </span>Transmittance of the profil 83 for all gaz, zoom on the PMR window</p>
 </div>
+
+
+
+<div id="orgbfdcf44" class="figure">
+<p><img src="./figures/transmitance_575_775_co2_4_v12.13.png" alt="transmitance_575_775_co2_4_v12.13.png" />
+</p>
+<p><span class="figure-number">Figure 17: </span>Transmittance of the profil 83 for Co<sub>2</sub> only, zoom on the PMR window</p>
+</div>
 </div>
 </div>
 
 
-<div id="outline-container-org4b9b480" class="outline-3">
-<h3 id="org4b9b480"><span class="section-number-3">3.4</span> Profondeur optique</h3>
+<div id="outline-container-org5ea9f15" class="outline-3">
+<h3 id="org5ea9f15"><span class="section-number-3">3.3</span> V12.2</h3>
+<div class="outline-text-3" id="text-3-3">
+
+<div id="org865ae75" class="figure">
+<p><img src="./figures/transmitance_400_1800_all_2_v12.2.png" alt="transmitance_400_1800_all_2_v12.2.png" />
+</p>
+<p><span class="figure-number">Figure 18: </span>Transmittance of the profil 83 for all gaz, zoom on the PMR window</p>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-org46edd94" class="outline-3">
+<h3 id="org46edd94"><span class="section-number-3">3.4</span> Profondeur optique</h3>
 <div class="outline-text-3" id="text-3-4">
 </div>
-<div id="outline-container-org0bad57a" class="outline-4">
-<h4 id="org0bad57a"><span class="section-number-4">3.4.1</span> code idl</h4>
+<div id="outline-container-org8672110" class="outline-4">
+<h4 id="org8672110"><span class="section-number-4">3.4.1</span> code idl</h4>
 <div class="outline-text-4" id="text-3-4-1">
 </div>
 <ol class="org-ol">
-<li><a id="orga72a3b6"></a>compiler le code:<br />
+<li><a id="orgb044460"></a>compiler le code:<br />
 <div class="outline-text-5" id="text-3-4-1-1">
 <pre class="example">
 IDL&gt; .r read_lbl_data.pro
@@ -832,7 +860,7 @@ IDL&gt; .r read_lbl_data.pro
 </li>
 
 
-<li><a id="orgb812cf2"></a>executer le code sur le TAPE10<br />
+<li><a id="org0eba8e5"></a>executer le code sur le TAPE10<br />
 <div class="outline-text-5" id="text-3-4-1-2">
 <pre class="example">
 IDL&gt; read_lbl_file,'/CEMS_data/sondage/julesv/runs_lblrtm/run10/ODdeflt_100',data1,data2,data3,/double
@@ -846,7 +874,7 @@ IDL&gt; read_lbl_file,'/CEMS_data/sondage/julesv/runs_lblrtm/run10/ODdeflt_100',
 </div>
 </li>
 
-<li><a id="org30965d0"></a>Écrire les valeurs des nombres d'ondes dans un fichier texte test.dat:<br />
+<li><a id="org00ef148"></a>Écrire les valeurs des nombres d'ondes dans un fichier texte test.dat:<br />
 <div class="outline-text-5" id="text-3-4-1-3">
 <pre class="example">
 IDL&gt; write_matrix,'test.dat',data2
@@ -861,25 +889,25 @@ IDL&gt; write_matrix,'test.dat',data2
 
 
 
-<div id="outline-container-org64d4b74" class="outline-4">
-<h4 id="org64d4b74"><span class="section-number-4">3.4.2</span> TAPE10</h4>
+<div id="outline-container-orgde07bdd" class="outline-4">
+<h4 id="orgde07bdd"><span class="section-number-4">3.4.2</span> TAPE10</h4>
 <div class="outline-text-4" id="text-3-4-2">
 <p>
 Le code idl , permet de lire la <b>TAPE10</b> :
 </p>
 
-<div id="org912d196" class="figure">
+<div id="org52ae42a" class="figure">
 <p><img src="./figures/od_575_775_all.png" alt="od_575_775_all.png" />
 </p>
-<p><span class="figure-number">Figure 17: </span>Optical depth of profil 83 for all gaz, zoom on PMR window</p>
+<p><span class="figure-number">Figure 19: </span>Optical depth of profil 83 for all gaz, zoom on PMR window</p>
 </div>
 </div>
 </div>
 </div>
 
 
-<div id="outline-container-orgb6ce8b4" class="outline-3">
-<h3 id="orgb6ce8b4"><span class="section-number-3">3.5</span> Couche par couche</h3>
+<div id="outline-container-org72b82ac" class="outline-3">
+<h3 id="org72b82ac"><span class="section-number-3">3.5</span> Couche par couche</h3>
 <div class="outline-text-3" id="text-3-5">
 <ul class="org-ul">
 <li>ODdeflt</li>
@@ -895,7 +923,7 @@ Comment lire ces fichiers binaires ?
 </div>
 <div id="postamble" class="status">
 <p class="date">Date: 2022-10-12 mer. 00:00</p>
-<p class="date">Created: 2022-11-10 jeu. 11:37</p>
+<p class="date">Created: 2022-11-10 jeu. 12:24</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
