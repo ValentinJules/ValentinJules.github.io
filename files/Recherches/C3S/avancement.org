@@ -2,27 +2,29 @@
 #+date: <2022-10-12 mer.>
 
 
-#+SETUPFILE: http://fniessen.github.io/org-html-themes/org/theme-bigblow.setup
+##+SETUPFILE: http://fniessen.github.io/org-html-themes/org/theme-bigblow.setup
+
+#+SETUPFILE: setup/org/theme-bigblow-local.setup
 
 
 *  PMR
 
-** Description de l'instrument
+**  Description de l'instrument
 
 
    #+CAPTION: Schéma de PMR
-#+NAME:   
+#+NAME:
 #+attr_html: :width 500px
 [[./figures/schema_pmr.png]]
 
-Pression dans la cellule : 
+Pression dans la cellule :
 \begin{equation}
-P = P_{mean} sin(\omega t) 
+P = P_{mean} sin(\omega t)
 \end{equation}
 
 
    #+CAPTION: Transmittance du filtre
-#+NAME:   
+#+NAME:
 #+attr_html: :width 500px
 [[./figures/transmittance_filter.png]]
 
@@ -104,12 +106,12 @@ Le 0 ligne 5, fixe le facteur d'échelle à 0 ( montant des colonnes des couches
 ***** Lecture des *TAPE10*
 
 #+CAPTION: Profondeur Optique pour la cellule 2 à Pmax
-#+NAME:   
+#+NAME:
 #+attr_html: :width 500px
 [[./figures/od_max.png]]
 
 #+CAPTION: Profondeur Optique pour la cellule 2 à Pmin
-#+NAME:   
+#+NAME:
 #+attr_html: :width 500px
 [[./figures/od_min.png]]
 
@@ -121,12 +123,12 @@ Le 0 ligne 5, fixe le facteur d'échelle à 0 ( montant des colonnes des couches
 
 
 #+CAPTION: Transmittance pour la cellule 2 à Pmax
-#+NAME:   
+#+NAME:
 #+attr_html: :width 500px
 [[./figures/transmittance_Pmax.png]]
 
 #+CAPTION: Transmittance pour la cellule 2 à Pmin
-#+NAME:   
+#+NAME:
 #+attr_html: :width 500px
 [[./figures/transmittance_Pmin.png]]
 
@@ -137,9 +139,22 @@ Approximation 2 cellules : Transmittance de la cellule :
 
 
 #+CAPTION: SRF de la cellule 2 de PMR
-#+NAME:   
+#+NAME:
 #+attr_html: :width 500px
 [[./figures/SRF_PMR.png]]
+
+
+On peut ainsi calculer les SRF pour les 2 cellules et les différents angles :
+
+|   | Cell 1 | Cell 2 |
+|---+---+---|
+| 00 | [[file:data/SRF/SRF_cell1_angle_00.csv][1-00]]  | [[file:data/SRF/SRF_cell2_angle_00.csv][2-00]]  |
+| 05 | [[file:data/SRF/SRF_cell1_angle_05.csv][1-05]]  | [[file:data/SRF/SRF_cell2_angle_05.csv][2-05]]  |
+| 10 | [[file:data/SRF/SRF_cell1_angle_10.csv][1-10]]  | [[file:data/SRF/SRF_cell2_angle_10.csv][2-10]]  |
+| 15 | [[file:data/SRF/SRF_cell1_angle_15.csv][1-15]]  | [[file:data/SRF/SRF_cell2_angle_15.csv][2-15]]  |
+| 20 | [[file:data/SRF/SRF_cell1_angle_20.csv][1-20]]  | [[file:data/SRF/SRF_cell2_angle_20.csv][2-20]]  |
+| 25 | [[file:data/SRF/SRF_cell1_angle_25.csv][1-25]]  | [[file:data/SRF/SRF_cell2_angle_25.csv][2-25]]  |
+
 
 
 *** Profils atmosphériques
@@ -148,11 +163,11 @@ Approximation 2 cellules : Transmittance de la cellule :
 
 *** Convolution
 
-   
+
 
 
    #+CAPTION: Transmittance des différents composants
-#+NAME:   
+#+NAME:
 #+attr_html: :width 800px
 [[./figures/transmittance_PMR_83.png]]
 
@@ -275,6 +290,30 @@ Approximation 2 cellules : Transmittance de la cellule :
 
 * LBLRTM
 
+** Compilation
+
+Pour compiler LBLRTM, il faut lancer la commande dans le dossier *build* :
+
+#+BEGIN_EXAMPLE
+make -f make_lblrtm linuxGNUdbl
+#+END_EXAMPLE
+
+*** Modification *makefile.common*
+
+Il faut ajouter l'option std=legacy pour l'option de compilation choisi, pour nous linuxGNUdbl :
+#+BEGIN_EXAMPLE
+FCFLAG="-std=legacy -g -O3 -fdefault-integer-8 -fdefault-real-8 -frecord-marker=4 -fno-align-commons" \
+#+END_EXAMPLE
+
+
+*** Modification lblatm.f90
+
+Selon les versions, la ligne 7500 ou après contient une erreur, il faut ajouter un espace :
+#+BEGIN_EXAMPLE
+ IF (RANGEI .LT. DR) STOP 'STOPPED IN FNDPTH' <---- Valentin modif
+ IF (RANGEI .LT. DR) STOP'STOPPED IN FNDPTH'
+#+END_EXAMPLE
+
 ** Présentation des TAPES
 
 
@@ -341,6 +380,8 @@ read_lbl_data.pro
 
 Les *TAPE* *11*, *12*, et *13* sont les fichiers de sorties binaires de *LBLRTM.*
 On peut les convertir en ASCII en ajoutant quelques lignes au *TAPE5* ( Section [[* Sortie en ascii  ]])
+
+
 
 ** V12.13
 
@@ -416,5 +457,13 @@ Le code idl , permet de lire la *TAPE10* :
 - ODdeflt
 - ODint
 - ODexact
-Comment lire ces fichiers binaires ?
+
+On peut lire un fichier avec *read_lbl.pro*
+
+Ce qui permet de tracer les fonctions de poids.
+
+#+CAPTION: Fonction de poids pour le profil 83 à 650 cm$^{-1}$
+#+NAME:
+#+attr_html: :width 500px
+[[./figures/WeightingFunction.png]]
 
