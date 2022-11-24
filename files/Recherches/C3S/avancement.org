@@ -60,6 +60,7 @@ La pression dans les cellules oscille sinusoïdalement.
 Voilà la *TAPE5* de P. Rayer :
 
 #+CAPTION: TAPE5 cell1 at Pmin
+#+begin_details "Click to see the TAPE"
 #+BEGIN_EXAMPLE
 
 $ TAPE5 - PMR cell at minP from CreateInputs-Cell-PP.f
@@ -81,8 +82,15 @@ $ Interpolate LBL results onto user-defined output grid
 %%%%%
 #+END_EXAMPLE
 
+#+end_details
+
+
 On controle la longueur de la cellule sur la ligne 7, et la pression de la cellule sur les colonnes 15-20 aux lignes 9 à 12.
 Le 0 ligne 5, fixe le facteur d'échelle à 0 ( montant des colonnes des couches à 0 pour tous les niveaux  0).
+
+
+
+#+begin_details "Click to see line by line explanation"
 
 | ligne | Record  |  TAPE RAYER  | Paramètres controllés |
 |---+--------------+------------+-----------------------------|
@@ -104,8 +112,14 @@ Le 0 ligne 5, fixe le facteur d'échelle à 0 ( montant des colonnes des couches
 | 16 |   | 1.  |   |
 | 17 |   |  %%%%% |   |
 
+
+#+end_details
+
+
 **** Out
 ***** Lecture des *TAPE10*
+
+      Lecture des TAPE10 avec IDL
 
 #+CAPTION: Profondeur Optique pour la cellule 2 à Pmax
 #+NAME:
