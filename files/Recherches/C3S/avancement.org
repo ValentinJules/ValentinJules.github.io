@@ -28,6 +28,7 @@ P = P_{mean} sin(\omega t)
 #+attr_html: :width 500px
 [[./figures/transmittance_filter.png]]
 
+Le filtre est fourni avec un pas de 1e-3, il faut l'interpoler pour avoir un pas de 1e-4 qui correspond à la précision qu'on utilise dans LBLRTM.
 
 Est ce qu'on peut pas extrapoler le filtre large bande, en ajustant une exponentielle pour aller de 575 à 775 ?
 
@@ -202,12 +203,12 @@ avec $\tau$ transmittance du profil, H la SRF de la cellule et G celle du filtre
 *** Fonction de Poids
 
 \begin{equation}
- \tau_{ch} = \displaystyle \dfrac{ \int \tau G H d\nu }{ \int G H }
+ \tau_{ch} = \displaystyle \dfrac{ \int \tau(\nu) G(\nu) H(\nu) d\nu }{ \int G(\nu) H(\nu) d\nu }
 \end{equation}
 
 
 \begin{equation}
- W = \displaystyle \dfrac{d \tau_{ch}}{d ln(P)}
+ W(P) = \displaystyle \dfrac{d \tau_{ch}}{d ln(P)}
 \end{equation}
 
 #+CAPTION: Fonction de poids pour la cellule 2 de PMR et le profil 83.
@@ -527,4 +528,5 @@ Ce qui permet de tracer les fonctions de poids.
 #+NAME:
 #+attr_html: :width 500px
 [[./figures/WeightingFunction83_wn-650.png]]
+
 
