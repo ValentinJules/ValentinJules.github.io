@@ -2,9 +2,9 @@
 #+date: <2022-10-12 mer.>
 
 
-##+SETUPFILE: http://fniessen.github.io/org-html-themes/org/theme-bigblow.setup
+#+SETUPFILE: http://fniessen.github.io/org-html-themes/org/theme-bigblow.setup
 
-#+SETUPFILE: setup/org/theme-bigblow-local.setup
+##+SETUPFILE: setup/org/theme-bigblow-local.setup
 
 
 *  PMR
@@ -119,7 +119,8 @@ Le 0 ligne 5, fixe le facteur d'échelle à 0 ( montant des colonnes des couches
 **** Out
 ***** Lecture des *TAPE10*
 
-      Lecture des TAPE10 avec IDL
+ 
+#+begin_details " Lecture des TAPE10 avec IDL"
 
 #+CAPTION: Profondeur Optique pour la cellule 2 à Pmax
 #+NAME:
@@ -132,10 +133,11 @@ Le 0 ligne 5, fixe le facteur d'échelle à 0 ( montant des colonnes des couches
 [[./figures/od_min.png]]
 
 
+#+end_details
 
 ***** Lecture des TAPE11
 
-
+Transmittance de la cellule :
 
 
 #+CAPTION: Transmittance pour la cellule 2 à Pmax
