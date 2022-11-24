@@ -29,7 +29,7 @@ P = P_{mean} sin(\omega t)
 [[./figures/transmittance_filter.png]]
 
 
-
+Est ce qu'on peut pas extrapoler le filtre large bande, en ajustant une exponentielle pour aller de 575 à 775 ?
 
 ***  Caractéristiques technique
 
@@ -43,7 +43,8 @@ La pression dans les cellules oscille sinusoïdalement.
 
 - P_mean dans les cellules
 - Secante dans les celllules
--
+- Le filtre large bande s'arrete à 600 et 750.
+- Normalisation par méthode des trapèzes ?
 
 
 ** Dans LBLRTM
@@ -51,6 +52,7 @@ La pression dans les cellules oscille sinusoïdalement.
 *** Profil à 1 couche
 - Pression fixée soit minimale soit maximale
 - Résolution à 0.0001 cm^-1
+
 
 
 **** In
@@ -156,20 +158,60 @@ On peut ainsi calculer les SRF pour les 2 cellules et les différents angles :
 | 25 | [[file:data/SRF/SRF_cell1_angle_25.csv][1-25]]  | [[file:data/SRF/SRF_cell2_angle_25.csv][2-25]]  |
 
 
+On notera la SRF de la cellule $H(\nu)$ et celle du filtre large bande $G(\nu) $
+
 
 *** Profils atmosphériques
 - Résolution à 0.0001cm^-1
 - Concentration en CO2 diminuée pour correspondre aux valeurs des années 1970
 
+
+On notera la SRF du profil $\tau(\nu)$.
+
 *** Convolution
+    
+La transmittance totale correspond à :
+\begin{equation}
+ \tau_{tot} = \tau H G
+\end{equation}
 
+avec $\tau$ transmittance du profil, H la SRF de la cellule et G celle du filtre large bande. 
 
-
-
-   #+CAPTION: Transmittance des différents composants
+#+CAPTION: Transmittance des différents composants
 #+NAME:
 #+attr_html: :width 800px
 [[./figures/transmittance_PMR_83.png]]
+
+
+*** Fonction de Poids
+
+\begin{equation}
+ \tau_{ch} = \displaystyle \dfrac{ \int \tau G H d\nu }{ \int G H }
+\end{equation}
+
+
+\begin{equation}
+ W = \displaystyle \dfrac{d \tau_{ch}}{d ln(P)}
+\end{equation}
+
+#+CAPTION: Fonction de poids pour la cellule 2 de PMR et le profil 83.
+#+NAME:
+#+attr_html: :width 500px
+[[./figures/WeightingFunctionPMR_cell-2_angle-00.png]]
+
+
+#+CAPTION: Fonction de poids pour les cellules 1 et 2 de PMR et le profil 83.
+#+NAME:
+#+attr_html: :width 500px
+[[./figures/WeightingFunction_dif_PMR_83.png]]
+
+
+
+#+CAPTION: Fonction de poids pour la cellule 2 de PMR et le profil 83 avec les différents angles.
+#+NAME:
+#+attr_html: :width 500px
+[[./figures/WeightingFunctionsPMR_cell-2.png]]
+
 
 
 
@@ -319,7 +361,7 @@ Selon les versions, la ligne 7500 ou après contient une erreur, il faut ajouter
 
 *** TAPE3
 
-La *TAPE3* est un fichier binaire qui est généré par *lnfl*.
+La *TAPE3_b* est un fichier binaire qui est généré par *lnfl*.
 
 *** TAPE 5
 
@@ -366,6 +408,9 @@ $ Transfer to ASCII plotting data
 Fichier de sortie de LBLRTM contenant plein d'informations
 
 *** TAPE7
+
+- *TAPE7_b* =  *TAPE3_b* en ASCII
+
 Fichier de composition moléculaire le long de la colonne atmosphérique.
 
 *** TAPE10
@@ -465,5 +510,5 @@ Ce qui permet de tracer les fonctions de poids.
 #+CAPTION: Fonction de poids pour le profil 83 à 650 cm$^{-1}$
 #+NAME:
 #+attr_html: :width 500px
-[[./figures/WeightingFunction.png]]
+[[./figures/WeightingFunction83_wn-650.png]]
 
