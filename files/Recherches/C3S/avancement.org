@@ -2,9 +2,9 @@
 #+date: <2022-10-12 mer.>
 
 
-#+SETUPFILE: http://fniessen.github.io/org-html-themes/org/theme-bigblow.setup
+#+SETUPFILE: http://fniessen.github.io/org-html-themes/org/theme-readtheorg.setup
 
-##+SETUPFILE: setup/org/theme-bigblow-local.setup
+##+SETUPFILE: setup/org/theme-perso.setup
 
 
 *  PMR
@@ -19,7 +19,7 @@
 
 Pression dans la cellule :
 \begin{equation}
-P = P_{mean} sin(\omega t)
+P = P_{mean} + \Delta P_c ~ sin(\omega t)
 \end{equation}
 
 
@@ -46,8 +46,8 @@ La pression dans les cellules oscille sinusoïdalement.
 - Secante dans les celllules
 - Le filtre large bande s'arrete à 600 et 750.
 - Normalisation par méthode des trapèzes ?
-
-
+- Extansion des profils en altitude
+  
 ** Dans LBLRTM
 
 *** Profil à 1 couche
@@ -351,6 +351,8 @@ avec $\tau$ transmittance du profil, H la SRF de la cellule et G celle du filtre
 
 ** Compilation
 
+Le *makeclean* étant daubé, la première étape consiste à supprimer les dosier .obj présent dans le dossier.
+
 Pour compiler LBLRTM, il faut lancer la commande dans le dossier *build* :
 
 #+BEGIN_EXAMPLE
@@ -443,7 +445,11 @@ read_lbl_data.pro
 Les *TAPE* *11*, *12*, et *13* sont les fichiers de sorties binaires de *LBLRTM.*
 On peut les convertir en ASCII en ajoutant quelques lignes au *TAPE5* ( Section [[* Sortie en ascii  ]])
 
+** LNFL 
 
+Avant d'éxécuter *lnfl* il faut linker la TAPE1 sur le fichier aer.
+
+Une fois qu'on a fait tourner *lnfl*, on obtient la TAPE3 dont a besoin *lblrtm*
 
 ** V12.13
 
@@ -528,5 +534,99 @@ Ce qui permet de tracer les fonctions de poids.
 #+NAME:
 #+attr_html: :width 500px
 [[./figures/WeightingFunction83_wn-650.png]]
+
+
+
+* Coefficient RTTOV
+
+** Pré-traitement
+
+
+Sur *LISA*, dans /home/rttov/filtres/pmr
+Construction d'un fichier texte au bon format pour RTTOV
+- *csv_to_flt.py* qui créer un fichier pour chaque canal
+- *to_instrument.sh* pour concaténer les différents canaux sur un seul fichier
+
+** Génération des coefs
+   
+#+BEGIN_SRC 
+ [[redmine.meteo.fr/issues/34399][Redmine C3S2]]
+#+END_SRC
+
+
+
+Sur *LISA*, dans /home/rttov/filtres/pmr_test/
+Dossier dans lequel il y a une doc (avec un *org*), et une arbo propre.
+
+** RTTOV-GUI
+
+
+*** Profils 
+
+
+#+CAPTION: profil US76_1
+#+NAME:
+#+attr_html: :width 500px
+[[./figures/profil_1.png]]
+
+
+
+#+CAPTION: profil US76_2
+#+NAME:
+#+attr_html: :width 500px
+[[./figures/profil_2.png]]
+
+
+#+CAPTION: profil US76_3
+#+NAME:
+#+attr_html: :width 500px
+[[./figures/profil_3.png]]
+
+
+#+CAPTION: profil US76_4
+#+NAME:
+#+attr_html: :width 500px
+[[./figures/profil_4.png]]
+
+
+
+
+#+CAPTION: profil US76_5
+#+NAME:
+#+attr_html: :width 500px
+[[./figures/profil_5.png]]
+
+
+
+#+CAPTION: profil US76_6
+#+NAME:
+#+attr_html: :width 500px
+[[./figures/profil_6.png]]
+
+
+
+
+*** Brightness Temperature
+    
+
+#+CAPTION: Brightness temperature from coefficients on the profil US76_1
+#+NAME:
+#+attr_html: :width 500px
+[[./figures/bt_profil_1.png]]
+
+
+
+#+CAPTION: Brightness temperature from coefficients on profils US76
+#+NAME:
+#+attr_html: :width 500px
+[[./figures/bt_profils.png]]
+
+
+
+
+* Arbo
+
+Mettre ici l'arbo des dossier
+
 
 
