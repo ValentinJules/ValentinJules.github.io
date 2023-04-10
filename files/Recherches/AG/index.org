@@ -1,7 +1,7 @@
 # Contient tous les paramètres généraux !
 
  :REVEAL_PROPERTIES:
-#+reveal_root:  ./reveal
+#+reveal_root: ./reveal
 
 #+options: reveal_control:nil
 #+options: reveal_global_footer:nil reveal_global_header:nil
@@ -348,7 +348,7 @@ width="840" height="600"></iframe>
 
 
 #+REVEAL_HTML: <div class="column" style="float:center; width:100%">
-#+ATTR_HTML: :border none :width 40% :margin-left 10px :margin-right auto
+#+ATTR_HTML: :border none :width 50% :margin-left 10px :margin-right auto
 [[./figures/profils.png]]
 #+REVEAL_HTML: </div>
 

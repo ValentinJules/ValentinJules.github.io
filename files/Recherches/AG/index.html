@@ -9,10 +9,21 @@
 <style type="text/css">
 .underline { text-decoration: underline; }
 </style>
-<link rel="stylesheet" href="/home/julesv/scimax/reveal.js/dist/reveal.css"/>
+<link rel="stylesheet" href="./reveal/dist/reveal.css"/>
 
-<link rel="stylesheet" href="/home/julesv/scimax/reveal.js/dist/theme/serif.css" id="theme"/>
+<link rel="stylesheet" href="./reveal/dist/theme/serif.css" id="theme"/>
 
+
+<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+<script>
+    if( window.location.search.match( /print-pdf/gi ) ) {
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = './reveal/css/print/pdf.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+    }
+</script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 </head>
 <body>
@@ -26,16 +37,16 @@
 
 
 <section>
-<section id="slide-org9a99aa6" data-background="" data-background-size="" data-background-position="" data-background-repeat="" data-background-transition="" data-background-opacity="">
+<section id="slide-org8cecf59" data-background="" data-background-size="" data-background-position="" data-background-repeat="" data-background-transition="" data-background-opacity="">
 <div class="slide-header"></div>
-<h2 id="org9a99aa6">Copernicus Climate Change Service</h2>
-<div class="outline-text-2" id="text-org9a99aa6">
+<h2 id="org8cecf59">Copernicus Climate Change Service</h2>
+<div class="outline-text-2" id="text-org8cecf59">
 </div>
 <div class="slide-footer"></div>
 </section>
-<section id="slide-org33f5295" data-background="" data-background-size="" data-background-position="" data-background-repeat="" data-background-transition="" data-background-opacity="">
+<section id="slide-org6a7dbc2" data-background="" data-background-size="" data-background-position="" data-background-repeat="" data-background-transition="" data-background-opacity="">
 <div class="slide-header"></div>
-<h3 id="org33f5295">Instrument of the 70s</h3>
+<h3 id="org6a7dbc2">Instrument of the 70s</h3>
 <div class="fragment" data-fragment-index="0" style="float:left; width:33.333%">
 <iframe style="border: none; align: center"
 scrolling="no"
@@ -60,9 +71,9 @@ width="420" height="500"></iframe>
 
 <div class="slide-footer"></div>
 </section>
-<section id="slide-org468b5b4" data-background="" data-background-size="" data-background-position="" data-background-repeat="" data-background-transition="" data-background-opacity="">
+<section id="slide-org3a731b5" data-background="" data-background-size="" data-background-position="" data-background-repeat="" data-background-transition="" data-background-opacity="">
 <div class="slide-header"></div>
-<h3 id="org468b5b4">Objectives</h3>
+<h3 id="org3a731b5">Objectives</h3>
 <p>
  <div class="fragment"  style "float:left" data-fragment-index="0">  Simulate the radiometer using LBLRTM  </div>
  <div class="fragment"  style "float:center" data-fragment-index="1">  Modelize the instrument measurement with RTTOV  </div>
@@ -76,16 +87,16 @@ width="420" height="500"></iframe>
 </section>
 </section>
 <section>
-<section id="slide-orgf2b91a8" data-background="" data-background-size="" data-background-position="" data-background-repeat="" data-background-transition="" data-background-opacity="">
+<section id="slide-orgb81c602" data-background="" data-background-size="" data-background-position="" data-background-repeat="" data-background-transition="" data-background-opacity="">
 <div class="slide-header"></div>
-<h2 id="orgf2b91a8">PMR</h2>
-<div class="outline-text-2" id="text-orgf2b91a8">
+<h2 id="orgb81c602">PMR</h2>
+<div class="outline-text-2" id="text-orgb81c602">
 </div>
 <div class="slide-footer"></div>
 </section>
-<section id="slide-org70af340" data-background="" data-background-size="" data-background-position="" data-background-repeat="" data-background-transition="" data-background-opacity="">
+<section id="slide-org4e9eb14" data-background="" data-background-size="" data-background-position="" data-background-repeat="" data-background-transition="" data-background-opacity="">
 <div class="slide-header"></div>
-<h4 id="org70af340">Measurements principles</h4>
+<h4 id="org4e9eb14">Measurements principles</h4>
 <div class="column" style="float:center; width:100%">
 
 <div class="figure">
@@ -101,9 +112,9 @@ width="420" height="500"></iframe>
 
 <div class="slide-footer"></div>
 </section>
-<section id="slide-org0db61e5" data-background="" data-background-size="" data-background-position="" data-background-repeat="" data-background-transition="" data-background-opacity="">
+<section id="slide-orgc8c8e5e" data-background="" data-background-size="" data-background-position="" data-background-repeat="" data-background-transition="" data-background-opacity="">
 <div class="slide-header"></div>
-<h4 id="org0db61e5">Spectral Response Function</h4>
+<h4 id="orgc8c8e5e">Spectral Response Function</h4>
 <div class="column" style="float:center; width:100%">
 
 <div class="figure">
@@ -118,9 +129,9 @@ width="420" height="500"></iframe>
 
 <div class="slide-footer"></div>
 </section>
-<section id="slide-org0fdc7b2" data-background="" data-background-size="" data-background-position="" data-background-repeat="" data-background-transition="" data-background-opacity="">
+<section id="slide-org19970f4" data-background="" data-background-size="" data-background-position="" data-background-repeat="" data-background-transition="" data-background-opacity="">
 <div class="slide-header"></div>
-<h4 id="org0fdc7b2">Spectral Response Function</h4>
+<h4 id="org19970f4">Spectral Response Function</h4>
 <div class="column" style="float:center; width:100%">
 
 <div class="figure">
@@ -134,9 +145,9 @@ width="420" height="500"></iframe>
 
 <div class="slide-footer"></div>
 </section>
-<section id="slide-org3e2f278" data-background="" data-background-size="" data-background-position="" data-background-repeat="" data-background-transition="" data-background-opacity="">
+<section id="slide-org69e1a37" data-background="" data-background-size="" data-background-position="" data-background-repeat="" data-background-transition="" data-background-opacity="">
 <div class="slide-header"></div>
-<h4 id="org3e2f278">Weighting Functions Nadir, profil83</h4>
+<h4 id="org69e1a37">Weighting Functions Nadir, profil83</h4>
 <div class="column" style="width: 90%; margin: 100px auto 500px auto">
 <div class="fragment" data-fragment-index="0" style="float: left; width: 66%; margin-bottom: 20px;">
 <figure>
@@ -155,9 +166,9 @@ width="420" height="500"></iframe>
 
 <div class="slide-footer"></div>
 </section>
-<section id="slide-org83c3a88" data-background="" data-background-size="" data-background-position="" data-background-repeat="" data-background-transition="" data-background-opacity="">
+<section id="slide-org09e9083" data-background="" data-background-size="" data-background-position="" data-background-repeat="" data-background-transition="" data-background-opacity="">
 <div class="slide-header"></div>
-<h4 id="org83c3a88">Weighting Functions Nadir, profil83</h4>
+<h4 id="org09e9083">Weighting Functions Nadir, profil83</h4>
 <div class="column" style="width: 90%; margin: 100px auto 500px auto">
 <div class="column" style="float: left; width: 66%; margin-bottom: 20px;">
 <figure>
@@ -176,9 +187,9 @@ width="420" height="500"></iframe>
 
 <div class="slide-footer"></div>
 </section>
-<section id="slide-orgef02fdb" data-background="" data-background-size="" data-background-position="" data-background-repeat="" data-background-transition="" data-background-opacity="">
+<section id="slide-orgfd40173" data-background="" data-background-size="" data-background-position="" data-background-repeat="" data-background-transition="" data-background-opacity="">
 <div class="slide-header"></div>
-<h4 id="orgef02fdb">Weighting Functions Nadir, profil83</h4>
+<h4 id="orgfd40173">Weighting Functions Nadir, profil83</h4>
 <div class="column" style="width: 90%; margin: 100px auto 500px auto">
 <div class="column" style="float: left; width: 66%; margin-bottom: 20px;">
 <figure>
@@ -199,9 +210,9 @@ width="420" height="500"></iframe>
 
 <div class="slide-footer"></div>
 </section>
-<section id="slide-orgf4e176d" data-background="" data-background-size="" data-background-position="" data-background-repeat="" data-background-transition="" data-background-opacity="">
+<section id="slide-org24a37da" data-background="" data-background-size="" data-background-position="" data-background-repeat="" data-background-transition="" data-background-opacity="">
 <div class="slide-header"></div>
-<h4 id="orgf4e176d">Doppler Scanning</h4>
+<h4 id="org24a37da">Doppler Scanning</h4>
 <div class="fragment" data-fragment-index="0" style="float:left; width:50%">
 <iframe style="border: none; align: center"
 scrolling="no"
@@ -244,9 +255,9 @@ width="840" height="600"></iframe>
 
 <div class="slide-footer"></div>
 </section>
-<section id="slide-org3a323c4" data-background="" data-background-size="" data-background-position="" data-background-repeat="" data-background-transition="" data-background-opacity="">
+<section id="slide-org32be284" data-background="" data-background-size="" data-background-position="" data-background-repeat="" data-background-transition="" data-background-opacity="">
 <div class="slide-header"></div>
-<h4 id="org3a323c4">Doppler Scanning</h4>
+<h4 id="org32be284">Doppler Scanning</h4>
 <div class="column" style="float:center; width:100%">
 
 <div class="figure">
@@ -258,9 +269,9 @@ width="840" height="600"></iframe>
 
 <div class="slide-footer"></div>
 </section>
-<section id="slide-org1a79feb" data-background="" data-background-size="" data-background-position="" data-background-repeat="" data-background-transition="" data-background-opacity="">
+<section id="slide-org97240ef" data-background="" data-background-size="" data-background-position="" data-background-repeat="" data-background-transition="" data-background-opacity="">
 <div class="slide-header"></div>
-<h4 id="org1a79feb">Doppler Scanning</h4>
+<h4 id="org97240ef">Doppler Scanning</h4>
 <div class="column" style="float:center; width:100%">
 
 <div class="figure">
@@ -272,9 +283,9 @@ width="840" height="600"></iframe>
 
 <div class="slide-footer"></div>
 </section>
-<section id="slide-org21ae66c" data-background="" data-background-size="" data-background-position="" data-background-repeat="" data-background-transition="" data-background-opacity="">
+<section id="slide-org63a7f8f" data-background="" data-background-size="" data-background-position="" data-background-repeat="" data-background-transition="" data-background-opacity="">
 <div class="slide-header"></div>
-<h4 id="org21ae66c">Doppler Scanning</h4>
+<h4 id="org63a7f8f">Doppler Scanning</h4>
 <div class="column" style="float:center; width:100%">
 
 <div class="figure">
@@ -285,9 +296,9 @@ width="840" height="600"></iframe>
 
 <div class="slide-footer"></div>
 </section>
-<section id="slide-org96224a0" data-background="" data-background-size="" data-background-position="" data-background-repeat="" data-background-transition="" data-background-opacity="">
+<section id="slide-org98d8849" data-background="" data-background-size="" data-background-position="" data-background-repeat="" data-background-transition="" data-background-opacity="">
 <div class="slide-header"></div>
-<h4 id="org96224a0">Doppler Scanning</h4>
+<h4 id="org98d8849">Doppler Scanning</h4>
 <div class="column" style="float:center; width:100%">
 
 <div class="figure">
@@ -299,9 +310,9 @@ width="840" height="600"></iframe>
 
 <div class="slide-footer"></div>
 </section>
-<section id="slide-orgfffd9d9" data-background="" data-background-size="" data-background-position="" data-background-repeat="" data-background-transition="" data-background-opacity="">
+<section id="slide-orgdbfa13a" data-background="" data-background-size="" data-background-position="" data-background-repeat="" data-background-transition="" data-background-opacity="">
 <div class="slide-header"></div>
-<h4 id="orgfffd9d9">Doppler Scanning</h4>
+<h4 id="orgdbfa13a">Doppler Scanning</h4>
 <div class="column" style="float:center; width:100%">
 
 <div class="figure">
@@ -313,9 +324,9 @@ width="840" height="600"></iframe>
 
 <div class="slide-footer"></div>
 </section>
-<section id="slide-orgf4a7eaa" data-background="" data-background-size="" data-background-position="" data-background-repeat="" data-background-transition="" data-background-opacity="">
+<section id="slide-org58e9ca9" data-background="" data-background-size="" data-background-position="" data-background-repeat="" data-background-transition="" data-background-opacity="">
 <div class="slide-header"></div>
-<h4 id="orgf4a7eaa">Doppler Scanning</h4>
+<h4 id="org58e9ca9">Doppler Scanning</h4>
 <div class="column" style="float:center; width:100%">
 
 <div class="figure">
@@ -327,9 +338,9 @@ width="840" height="600"></iframe>
 
 <div class="slide-footer"></div>
 </section>
-<section id="slide-org81d4550" data-background="" data-background-size="" data-background-position="" data-background-repeat="" data-background-transition="" data-background-opacity="">
+<section id="slide-orgf6b1d78" data-background="" data-background-size="" data-background-position="" data-background-repeat="" data-background-transition="" data-background-opacity="">
 <div class="slide-header"></div>
-<h4 id="org81d4550">Doppler Scanning</h4>
+<h4 id="orgf6b1d78">Doppler Scanning</h4>
 <div class="column" style="float:center; width:100%">
 
 <div class="figure">
@@ -343,9 +354,9 @@ width="840" height="600"></iframe>
 
 <div class="slide-footer"></div>
 </section>
-<section id="slide-org0d63cb7" data-background="" data-background-size="" data-background-position="" data-background-repeat="" data-background-transition="" data-background-opacity="">
+<section id="slide-org51c9421" data-background="" data-background-size="" data-background-position="" data-background-repeat="" data-background-transition="" data-background-opacity="">
 <div class="slide-header"></div>
-<h4 id="org0d63cb7">RTTOV profils</h4>
+<h4 id="org51c9421">RTTOV profils</h4>
 <div class="column" style="float:center; width:100%">
 
 <div class="figure">
@@ -359,9 +370,9 @@ width="840" height="600"></iframe>
 
 <div class="slide-footer"></div>
 </section>
-<section id="slide-orgbf57c18" data-background="" data-background-size="" data-background-position="" data-background-repeat="" data-background-transition="" data-background-opacity="">
+<section id="slide-org6d3060e" data-background="" data-background-size="" data-background-position="" data-background-repeat="" data-background-transition="" data-background-opacity="">
 <div class="slide-header"></div>
-<h4 id="orgbf57c18">RTTOV Simulated Brightness Temperature</h4>
+<h4 id="org6d3060e">RTTOV Simulated Brightness Temperature</h4>
 <div class="column" style="float:center; width:100%">
 
 <div class="figure">
@@ -374,18 +385,18 @@ width="840" height="600"></iframe>
 </section>
 </div>
 </div>
-<script src="/home/julesv/scimax/reveal.js/dist/reveal.js"></script>
-<script src="/home/julesv/scimax/reveal.js/plugin/markdown/markdown.js"></script>
-<script src="/home/julesv/scimax/reveal.js/plugin/zoom/zoom.js"></script>
-<script src="/home/julesv/scimax/reveal.js/plugin/notes/notes.js"></script>
+<script src="./reveal/dist/reveal.js"></script>
+<script src="./reveal/plugin/markdown/markdown.js"></script>
+<script src="./reveal/plugin/zoom/zoom.js"></script>
+<script src="./reveal/plugin/notes/notes.js"></script>
 
 
 <script>
 // Full list of configuration options available here:
 // https://github.com/hakimel/reveal.js#configuration
 Reveal.initialize({
-    plugins: [RevealMarkdown, RevealZoom, RevealNotes],
-    slideNumber:false, transition:"none", width:"100%", height:"100%", margin:0, center:true
+plugins: [RevealMarkdown, RevealZoom, RevealNotes],
+slideNumber:false, width:"100%", height:"100%", margin:0, center:true
 });
 
 </script>
