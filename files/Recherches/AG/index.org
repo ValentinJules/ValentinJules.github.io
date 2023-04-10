@@ -1,7 +1,7 @@
 # Contient tous les paramètres généraux !
 
  :REVEAL_PROPERTIES:
-#+reveal_root:  /home/julesv/scimax/reveal.js
+#+reveal_root:  ./reveal
 
 #+options: reveal_control:nil
 #+options: reveal_global_footer:nil reveal_global_header:nil
