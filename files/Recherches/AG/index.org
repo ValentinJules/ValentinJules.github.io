@@ -154,7 +154,7 @@ width="420" height="500"></iframe>
 
 
 #+REVEAL_HTML: <div class="column" style="float:center; width:100%">
-#+ATTR_HTML: :border none :width 50% :margin-left 10px :margin-right auto
+#+ATTR_HTML: :border none :width 40% :margin-left 10px :margin-right auto
 [[./figures/schema.png]]
 #+REVEAL_HTML: </div>
 
