@@ -86,7 +86,7 @@
 
 #+TITLE: Updated radiative transfer modelling to simulate instruments from the 1970s
 #+SUBTITLE: the Pressure Modulated Radiometer (PMR)  and the Stratospheric Sounding Unit (SSU)
-#+AUTHOR: Valentin Jules
+#+AUTHOR: Valentin Jules, Jean-Marie Lalande, Jérôme Vidot
 #+DATE: <2023-04-11 mar.>
 #+Email: valentin.jules@meteo.fr
 
@@ -105,11 +105,11 @@
 
 
 #+BEGIN_EXPORT html
-<div class="fragment" data-fragment-index="0" style="float:left; width:33.333%">
-<iframe style="border: none; align: center"
+<div class="fragment" data-fragment-index="0"  style="float:left; width:33.333%">
+<iframe style="border: 10px; align: right"
 scrolling="no"
 data-src="./figures/delta-2910.jpg"
-width="520" height="500"></iframe>
+width="420" height="500"></iframe>
 </div>
 #+END_EXPORT
 
@@ -150,7 +150,7 @@ width="420" height="500"></iframe>
 
 * PMR
 
-*** Measurements principles
+** Measurements principles
 
 
 #+REVEAL_HTML: <div class="column" style="float:center; width:100%">
@@ -274,14 +274,14 @@ width="840" height="600"></iframe>
 
 #+REVEAL_HTML: <div class="fragment" data-fragment-index="2" style="float:left; width:50%">
 \begin{equation}
- \nu = \nu_e \left( 1 + \dfrac{v \cos(\pi/2 - \alpha}{c} \right)
+ \nu = \nu_e \left( 1 + \dfrac{v \cos(\pi/2 - \alpha)}{c} \right)
 \end{equation}
 #+REVEAL_HTML: </div>
 
 
 #+REVEAL_HTML: <div class="fragment" data-fragment-index="3" style="float:left; width:50%">
 \begin{equation}
- \nu = \nu_e \left( 1 + \dfrac{v \sin(\alpha}{c} \right)
+ \nu = \nu_e \left( 1 + \dfrac{v \sin(\alpha)}{c} \right)
 \end{equation}
 #+REVEAL_HTML: </div>
 
@@ -351,7 +351,7 @@ width="840" height="600"></iframe>
 #+REVEAL_HTML: </div>
 
 
-#+REVEAL_HTML: <div class="fragment" data-fragment-index="1" style="float:left; width:50%">
+#+REVEAL_HTML: <div class="fragment" align="center" data-fragment-index="1" style="float:center; width:50%">
 12 channels : 2 cells $\times$ 6 angles
 #+REVEAL_HTML: </div>
 
@@ -385,7 +385,7 @@ width="840" height="600"></iframe>
 
 
 #+REVEAL_HTML: <div class="column" style="float:center; width:100%">
-#+ATTR_HTML: :border none :width 50% :margin-left 10px :margin-right auto
+#+ATTR_HTML: :border none :width 40% :margin-left 10px :margin-right auto
 [[./figures/obs-calc.png]]
 #+REVEAL_HTML: </div>
 
