@@ -536,6 +536,16 @@ width="840" height="600"></iframe>
 * SSU
 
 
+*** Spectral Response Function
+
+
+#+REVEAL_HTML: <div class="column" style="float:center; width:100%">
+#+ATTR_HTML: :border none :width 50% :margin-left 10px :margin-right auto
+[[./figures/SRF_SSU_channel-2_pressure-set-4.png]]
+#+REVEAL_HTML: </div>
+
+
+
 * SCR
 
 ** Selective Chopper Radiometer
