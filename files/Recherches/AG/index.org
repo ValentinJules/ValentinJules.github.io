@@ -98,7 +98,7 @@
 
 #+REVEAL_HTML: <style>
 #+REVEAL_HTML: ul.custom-list li {
-#+REVEAL_HTML:   margin-bottom: 20px;
+#+REVEAL_HTML:   margin-bottom: 50px;
 #+REVEAL_HTML: }
 #+REVEAL_HTML:   .reveal .slides section {
 #+REVEAL_HTML:     transition: none !important;
@@ -108,54 +108,58 @@
 #+REVEAL_HTML:     position: fixed;
 #+REVEAL_HTML:     top: 30px;
 #+REVEAL_HTML:     left: 100px;
+#+REVEAL_HTML:     font-size: 1px;
 #+REVEAL_HTML:   }
 #+REVEAL_HTML: </style>
 
 
 
 
-* Copernicus Climate Change Service
-
-
-*** Instrument of the 70s
-
-
-#+BEGIN_EXPORT html
-<div class="fragment" data-fragment-index="0"  style="float:left; width:33.333%">
-<iframe style="border: 10px; align: right"
-scrolling="no"
-data-src="./figures/delta-2910.jpg"
-width="420" height="500"></iframe>
-</div>
-#+END_EXPORT
-
-#+BEGIN_EXPORT html
-<div class="fragment" data-fragment-index="1" style="float:left; width:33.333%">
-<iframe style="border: none; align: center"
-scrolling="no"
-data-src="./figures/Nimbus.jpg"
-width="420" height="500"></iframe>
-</div>
-#+END_EXPORT
-
-#+BEGIN_EXPORT html
-<div class="fragment" RBdata-fragment-index="2" style="float:left; width:33.333%">
-<iframe style="border: none; align: center"
-scrolling="no"
-data-src="./figures/tapes.png"
-width="420" height="500"></iframe>
-</div>
-#+END_EXPORT
+# * Copernicus Climate Change Service
 
 
 
-*** Objectives
 
+** Objectives
 #+REVEAL_HTML: <ul class="custom-list">
 #+REVEAL_HTML:   <li class="fragment" data-fragment-index="1">Simulate the radiometer using LBLRTM</li>
 #+REVEAL_HTML:   <li class="fragment" data-fragment-index="2">Modelize the instrument measurement with RTTOV</li>
 #+REVEAL_HTML:   <li class="fragment" data-fragment-index="3">ERA-6 re analysis</li>
 #+REVEAL_HTML: </ul>
+
+
+# *** Instrument of the 70s
+
+
+# #+BEGIN_EXPORT html
+# <div class="fragment" data-fragment-index="0"  style="float:left; width:33.333%">
+# <iframe style="border: 10px; align: right"
+# scrolling="no"
+# data-src="./figures/delta-2910.jpg"
+# width="420" height="500"></iframe>
+# </div>
+# #+END_EXPORT
+
+# #+BEGIN_EXPORT html
+# <div class="fragment" data-fragment-index="1" style="float:left; width:33.333%">
+# <iframe style="border: none; align: center"
+# scrolling="no"
+# data-src="./figures/Nimbus.jpg"
+# width="420" height="500"></iframe>
+# </div>
+# #+END_EXPORT
+
+# #+BEGIN_EXPORT html
+# <div class="fragment" data-fragment-index="2" style="float:left; width:33.333%">
+# <iframe style="border: none; align: center"
+# scrolling="no"
+# data-src="./figures/tapes.png"
+# width="420" height="500"></iframe>
+# </div>
+# #+END_EXPORT
+
+
+
 
 * Pressure Modulator Radiometer
 Nimbus 6 (1975-1978)
@@ -371,7 +375,7 @@ width="840" height="600"></iframe>
 
 #+REVEAL_HTML: <div class="fragment" align="center" data-fragment-index="1" style="position: fixed; top: 85%; width:100%">
 #+ATTR_HTML: :border none :width 50% :margin-left 10px :margin-right auto  
-176 channels : 2 cells $\times$ 88 angles
+176 channels : 88 angles $\times$ 2 cells
 #+REVEAL_HTML: </div>
 
 
@@ -391,18 +395,6 @@ width="840" height="600"></iframe>
 
 
 
-*** Weighting Functions for different resolution
-
-
-#+REVEAL_HTML: <div class="column" style="float:center; width:100%">
-#+ATTR_HTML: :border none :width 50% :margin-left 10px :margin-right auto
-[[./figures/WeightingFunctions_resolution.png]]
-#+REVEAL_HTML: </div>
-
-
-
-
-
 *** RTTOV profils
 
 
@@ -411,6 +403,7 @@ width="840" height="600"></iframe>
 #+ATTR_HTML: :border none :width 50% :margin-left 10px :margin-right auto
 [[./figures/profils.png]]
 #+REVEAL_HTML: </div>
+
 
 
 
@@ -551,6 +544,23 @@ width="840" height="600"></iframe>
 
 
 
+
+
+*** Weighting Functions for different resolution
+
+
+#+REVEAL_HTML: <div class="column" style="float:center; width:100%">
+#+ATTR_HTML: :border none :width 50% :margin-left 10px :margin-right auto
+[[./figures/WeightingFunctions_resolution.png]]
+#+REVEAL_HTML: </div>
+
+
+
+
+
+
+
+
 * Stratospheric Sounding Unit
 TIROS-N (1979) ... NOAA-6 ... NOAA-14 (2006)
 
@@ -633,6 +643,9 @@ Nimbus 4 & 5 (1970-1974)
 #+ATTR_HTML: :border none :width 60% :margin-left 10px :margin-right auto
 [[./figures/srf_scr_guide.png]]
 #+REVEAL_HTML: </div>
+
+
+
 
 
 *** Measurements principles
