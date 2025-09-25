@@ -1,123 +1,385 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 <head>
-<title>Valentin Jules</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
-<style>
-body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
-.w3-row-padding img {margin-bottom: 12px}
-.w3-top {background: #adadad;}
-/* Set the width of the sidebar to 120px */
-.w3-sidebar {width: 375px;background: #adadad;}
-/* Add a left margin to the "page content" that matches the width of the sidebar (120px) */
-#main {margin-left: 375px}
-/* Remove margins from "page content" on small screens */
-@media only screen and (max-width: 600px) {#main {margin-left: 0}}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Valentin Jules</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        .timeline {
+            position: relative;
+            margin: 40px 0;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 20px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background-color: var(--secondary-color);
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin-bottom: 30px;
+            padding-left: 60px;
+        }
+        
+        .timeline-date {
+            position: absolute;
+            left: 0;
+            top: 0;
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-weight: bold;
+            min-width: 80px;
+            text-align: center;
+        }
+        
+        .timeline-content {
+            background: white;
+            padding: 15px;
+            border-radius: 4px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 15px;
+        }
+        
+        .skill-category {
+            flex: 1;
+            min-width: 250px;
+        }
+        
+        .skill-item {
+            margin-bottom: 10px;
+        }
+        
+        .skill-name {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        
+        .skill-level {
+            height: 8px;
+            background-color: #e0e0e0;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        
+        .skill-progress {
+            height: 100%;
+            background-color: var(--secondary-color);
+            border-radius: 4px;
+        }
+        
+        .download-section {
+            text-align: center;
+            margin: 40px 0;
+        }
+        
+        .download-btn {
+            background-color: var(--secondary-color);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 4px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .download-btn:hover {
+            background-color: var(--primary-color);
+            transform: translateY(-2px);
+        }
+    </style>
 </head>
 <body>
+    <div class="main-container">
+        <!-- Sidebar -->
+        <div class="sidebar w3-center">
+            <div class="fade-in">
+                <img src="../images/valentin_2.png" alt="Valentin Jules" class="profile-img">
+                <h2 class="w3-margin-top">Valentin Jules</h2>
+                <h4>Postdoctoral Researcher</h4>
+                <p>Institut P' - Université de Poitiers</p>
+                
+                <div class="w3-margin-top">
+                    <p><i class="fa fa-envelope"></i> <a href="mailto:valentin.jules@univ-poitiers.fr" style="color: white;">valentin.jules@univ-poitiers.fr</a></p>
+                </div>
+                
+                <div class="social-icons w3-margin-top">
+                    <a href="#" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" title="Google Scholar"><i class="fab fa-google"></i></a>
+                    <a href="#" title="ResearchGate"><i class="fab fa-researchgate"></i></a>
+                    <a href="#" title="GitHub"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+        </div>
 
-<!-- Icon Bar (Sidebar - hidden on small screens) -->
-<div class="w3-sidebar w3-bar-block w3-small w3-hide-small w3-center">
-  <a href="../index.html" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
-    <i class="fa fa-home w3-xxlarge"></i>
-    <p>HOME</p>
-  </a>
-  <br>
-  <br>
-  <br>
-  <img src="../images/valentin_2.png" alt="This is me" style="width:50%">
-  <h4> Postdoctoral reasearcher </h4>
-  <h5> Contact : <a href="mailto:valentin.jules@meteo.fr">valentin.jules@meteo.fr</a></h5>
-</div>
+        <!-- Content Area -->
+        <div class="content">
+            <!-- Navbar -->
+            <div class="top-nav">
+                <div class="w3-bar">
+                    <div class="w3-bar-item w3-hide-large">
+                        <a href="javascript:void(0)" class="w3-bar-item w3-button" onclick="toggleSidebar()">
+                            <i class="fa fa-bars"></i>
+                        </a>
+                    </div>
+                    <div class="w3-bar-item w3-hide-large">
+                        <span style="font-weight: bold; color: white;">Valentin Jules</span>
+                    </div>
+                    <div class="w3-right w3-hide-small">
+                        <a href="../index.html" class="w3-bar-item w3-button nav-button w3-padding-large">
+                            <i class="fa fa-home"></i> HOME
+                        </a>
+                        <a href="research.html" class="w3-bar-item w3-button nav-button w3-padding-large">
+                            <i class="fa fa-search"></i> RESEARCH
+                        </a>
+                        <a href="teaching.html" class="w3-bar-item w3-button nav-button w3-padding-large">
+                            <i class="fa fa-book"></i> TEACHING
+                        </a>
+                        <a href="cv.html" class="w3-bar-item w3-button nav-button w3-padding-large w3-white" style="color: var(--primary-color) !important;">
+                            <i class="fa fa-user"></i> CV
+                        </a>
+                        <a href="publications.html" class="w3-bar-item w3-button nav-button w3-padding-large">
+                            <i class="fa fa-scroll"></i> PUBLICATIONS
+                        </a>
+                        <a href="contact.html" class="w3-bar-item w3-button nav-button w3-padding-large">
+                            <i class="fa fa-envelope"></i> CONTACT
+                        </a>
+                    </div>
+                </div>
+            </div>
 
+            <!-- Mobile Sidebar (hidden by default) -->
+            <div id="mobileSidebar" class="w3-sidebar w3-bar-block w3-hide w3-hide-large w3-center" style="width:100%; z-index:101;">
+                <a href="javascript:void(0)" onclick="toggleSidebar()" class="w3-bar-item w3-button w3-large w3-right">&times;</a>
+                <div class="w3-padding-32">
+                    <img src="../images/valentin_2.png" alt="Valentin Jules" style="width:50%; max-width:200px; border-radius:50%;">
+                    <h2>Valentin Jules</h2>
+                    <h4>Postdoctoral Researcher</h4>
+                    <p>Institut P' - Université de Poitiers</p>
+                </div>
+                <a href="../index.html" class="w3-bar-item w3-button w3-padding-large">HOME</a>
+                <a href="research.html" class="w3-bar-item w3-button w3-padding-large">RESEARCH</a>
+                <a href="teaching.html" class="w3-bar-item w3-button w3-padding-large">TEACHING</a>
+                <a href="cv.html" class="w3-bar-item w3-button w3-padding-large">CV</a>
+                <a href="publications.html" class="w3-bar-item w3-button w3-padding-large">PUBLICATIONS</a>
+                <a href="contact.html" class="w3-bar-item w3-button w3-padding-large">CONTACT</a>
+            </div>
 
-<!-- Links (sit on top) -->
-<div class="w3-top" id ="main">
-  <div class="w3-row w3-padding">
-    <!-- <div class="w3-col s3">
-      <a href="#" class="w3-button w3-block">Valentin Jules</a>
-    </div> -->
-    <div class="w3-col s2">
-      <a href="research.html" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
-        <i class="fa fa-search w3-xxlarge"></i>
-        <p>RESEARCH</p>
-      </a>
+            <!-- Page Content -->
+            <div class="page-content">
+                <!-- Header -->
+                <header class="w3-container w3-padding-32 w3-center fade-in">
+                    <h1 style="color: var(--primary-color);">Curriculum Vitae</h1>
+                    <p class="w3-large" style="color: var(--secondary-color);">Expérience professionnelle et parcours académique</p>
+                </header>
+
+                <div class="w3-content">
+                    <!-- Download Section -->
+                    <div class="download-section fade-in">
+                        <a href='files/resume.pdf' target='_blank'>
+                            <button class="download-btn">
+                                <i class="fa fa-download"></i> Télécharger le CV complet (PDF)
+                            </button>
+                        </a>
+                        <p class="w3-text-grey w3-margin-top">Version professionnelle concise</p>
+                    </div>
+
+                    <!-- Experience Section -->
+                    <div class="section-card fade-in">
+                        <h2>Expérience Professionnelle</h2>
+                        <hr style="width:200px; border-top: 2px solid var(--secondary-color);">
+                        
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <div class="timeline-date">2022 - Maintenant</div>
+                                <div class="timeline-content">
+                                    <h4>Postdoctoral Researcher</h4>
+                                    <p><strong>Institut P' - Université de Poitiers</strong></p>
+                                    <p>Description des responsabilités et projets de recherche actuels...</p>
+                                </div>
+                            </div>
+                            
+                            <div class="timeline-item">
+                                <div class="timeline-date">2019 - 2022</div>
+                                <div class="timeline-content">
+                                    <h4>Doctorant</h4>
+                                    <p><strong>[Nom de l'Université/Laboratoire]</strong></p>
+                                    <p>Sujet de thèse : [Titre de la thèse]</p>
+                                    <p>Directeur de thèse : [Nom du directeur]</p>
+                                </div>
+                            </div>
+                            
+                            <div class="timeline-item">
+                                <div class="timeline-date">2018 - 2019</div>
+                                <div class="timeline-content">
+                                    <h4>Ingénieur de Recherche</h4>
+                                    <p><strong>[Nom de l'entreprise/institution]</strong></p>
+                                    <p>Description des missions...</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Education Section -->
+                    <div class="section-card fade-in">
+                        <h2>Formation Académique</h2>
+                        <hr style="width:200px; border-top: 2px solid var(--secondary-color);">
+                        
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <div class="timeline-date">2019 - 2022</div>
+                                <div class="timeline-content">
+                                    <h4>Doctorat en [Domaine]</h4>
+                                    <p><strong>[Nom de l'Université]</strong></p>
+                                    <p>Titre de la thèse : [Titre complet]</p>
+                                </div>
+                            </div>
+                            
+                            <div class="timeline-item">
+                                <div class="timeline-date">2017 - 2019</div>
+                                <div class="timeline-content">
+                                    <h4>Master en [Domaine]</h4>
+                                    <p><strong>[Nom de l'Université]</strong></p>
+                                    <p>Mention : [Mention obtenue]</p>
+                                </div>
+                            </div>
+                            
+                            <div class="timeline-item">
+                                <div class="timeline-date">2014 - 2017</div>
+                                <div class="timeline-content">
+                                    <h4>Licence en [Domaine]</h4>
+                                    <p><strong>[Nom de l'Université]</strong></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Skills Section -->
+                    <div class="section-card fade-in">
+                        <h2>Compétences</h2>
+                        <hr style="width:200px; border-top: 2px solid var(--secondary-color);">
+                        
+                        <div class="skills-container">
+                            <div class="skill-category">
+                                <h4>Compétences Techniques</h4>
+                                <div class="skill-item">
+                                    <div class="skill-name">Modélisation Numérique</div>
+                                    <div class="skill-level">
+                                        <div class="skill-progress" style="width: 90%"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-item">
+                                    <div class="skill-name">Analyse de Données</div>
+                                    <div class="skill-level">
+                                        <div class="skill-progress" style="width: 85%"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-item">
+                                    <div class="skill-name">Programmation (Python)</div>
+                                    <div class="skill-level">
+                                        <div class="skill-progress" style="width: 80%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="skill-category">
+                                <h4>Compétences Linguistiques</h4>
+                                <div class="skill-item">
+                                    <div class="skill-name">Français</div>
+                                    <div class="skill-level">
+                                        <div class="skill-progress" style="width: 100%"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-item">
+                                    <div class="skill-name">Anglais</div>
+                                    <div class="skill-level">
+                                        <div class="skill-progress" style="width: 90%"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-item">
+                                    <div class="skill-name">Espagnol</div>
+                                    <div class="skill-level">
+                                        <div class="skill-progress" style="width: 60%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Publications Preview Section -->
+                    <div class="section-card fade-in">
+                        <h2>Publications Sélectionnées</h2>
+                        <hr style="width:200px; border-top: 2px solid var(--secondary-color);">
+                        
+                        <div class="publication-item">
+                            <h4>Titre de la publication principale</h4>
+                            <p><strong>Journal:</strong> Nom du Journal, Année</p>
+                            <p>Brève description ou abstract...</p>
+                            <p><a href="publications.html" class="w3-text-blue">Voir toutes les publications →</a></p>
+                        </div>
+                    </div>
+
+                    <!-- Certifications Section -->
+                    <div class="section-card fade-in">
+                        <h2>Certifications et Formations</h2>
+                        <hr style="width:200px; border-top: 2px solid var(--secondary-color);">
+                        
+                        <ul>
+                            <li>Certification 1 - Année</li>
+                            <li>Formation en [domaine] - Année</li>
+                            <li>Atelier [nom] - Année</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="w3-col s2">
-      <a href="teaching.html" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
-        <i class="fa fa-book w3-xxlarge"></i>
-        <p>TEACHING</p>
-      </a>
-    </div>
-    <div class="w3-col s2">
-      <a href="cv.html" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
-        <i class="fa fa-user w3-xxlarge"></i>
-        <p>CV</p>
-      </a>
-    </div>
-    <div class="w3-col s2">
-      <a href="publications.html" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
-        <i class="fa fa-scroll w3-xxlarge"></i>
-        <p>PUBLICATIONS</p>
-      </a>
-    </div>
-    <div class="w3-col s2">
-      <a href="contact.html" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
-        <i class="fa fa-envelope w3-xxlarge"></i>
-        <p>CONTACT</p>
-      </a>
-    </div>
-  </div>
-</div>
 
-<!-- Page Content -->
-<div class="w3-padding-large" id="main">
-  <!-- Header/Home -->
-  <header class="w3-container w3-padding-32 w3-center " id="home">
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <h1 class="w3-jumbo"> Resume </h1>
-
-  </header>
-
-  <!-- About Section -->
-  <div class="w3-content w3-justify w3-padding-64" id="about">
-    <h2 class="w3-text-dark-grey">About me</h2>
-    <hr style="width:200px" class="w3-opacity">
-    <p>
-      2022 - Now : Postdoctoral researcher
-    </p>
-
-
-    
-    <!-- <p class="w3-wide">Photography</p>
-    <div class="w3-white">
-      <div class="w3-dark-grey" style="height:28px;width:95%"></div>
-    </div> -->
-
-    If you want more informations you can download my resume.
-      <header class="w3-container w3-padding-32 w3-center " >
-        <a href='files/resume.pdf' target='new'><button class="w3-button w3-light-grey w3-padding-large w3-section">
-            <i class="fa fa-download"></i> Professional (Short) Resume
-          </button>
-        </a>
-      </header>
-
-  <!-- End About Section -->
-  </div>
-
-
-
-<!-- END PAGE CONTENT -->
-</div>
-
+    <script>
+        // Fonction pour afficher/masquer la sidebar sur mobile
+        function toggleSidebar() {
+            var sidebar = document.getElementById("mobileSidebar");
+            if (sidebar.classList.contains("w3-hide")) {
+                sidebar.classList.remove("w3-hide");
+            } else {
+                sidebar.classList.add("w3-hide");
+            }
+        }
+        
+        // Animation au défilement
+        window.addEventListener('scroll', function() {
+            var elements = document.querySelectorAll('.fade-in');
+            for (var i = 0; i < elements.length; i++) {
+                var element = elements[i];
+                var position = element.getBoundingClientRect().top;
+                var screenPosition = window.innerHeight / 1.3;
+                
+                if (position < screenPosition) {
+                    element.style.opacity = "1";
+                    element.style.transform = "translateY(0)";
+                }
+            }
+        });
+    </script>
 </body>
 </html>

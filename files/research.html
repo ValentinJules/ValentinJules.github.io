@@ -1,178 +1,333 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 <head>
-<title>Valentin Jules</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
-<style>
-body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
-.w3-row-padding img {margin-bottom: 12px}
-.w3-top {background: #adadad;}
-/* Set the width of the sidebar to 120px */
-.w3-sidebar {width: 375px;background: #adadad;}
-/* Add a left margin to the "page content" that matches the width of the sidebar (120px) */
-#main {margin-left: 375px}
-/* Remove margins from "page content" on small screens */
-@media only screen and (max-width: 600px) {#main {margin-left: 0}}
-.mySlides {display:none}
-.w3-tag, .fa {cursor:pointer}
-.w3-tag {height:15px;width:15px;padding:0;margin-top:6px}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research - Valentin Jules</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        .research-slideshow {
+            position: relative;
+            margin: 20px 0;
+        }
+        
+        .mySlides {
+            display: none;
+        }
+        
+        .slide-image {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+        
+        .slide-caption {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+        }
+        
+        .slide-button {
+            background-color: rgba(255, 255, 255, 0.8);
+            color: var(--primary-color);
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .slide-button:hover {
+            background-color: white;
+            transform: translateY(-2px);
+        }
+        
+        .slideshow-controls {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 0 0 8px 8px;
+        }
+        
+        .slideshow-dots {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .demodots {
+            height: 15px;
+            width: 15px;
+            border-radius: 50%;
+            border: 2px solid white;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .demodots.active {
+            background-color: white;
+        }
+        
+        .arrow-button {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+        
+        .arrow-button:hover {
+            color: var(--secondary-color);
+        }
+    </style>
 </head>
 <body>
+    <div class="main-container">
+        <!-- Sidebar -->
+        <div class="sidebar w3-center">
+            <div class="fade-in">
+                <img src="../images/valentin_2.png" alt="Valentin Jules" class="profile-img">
+                <h2 class="w3-margin-top">Valentin Jules</h2>
+                <h4>Postdoctoral Researcher</h4>
+                <p>Institut P' - Université de Poitiers</p>
+                
+                <div class="w3-margin-top">
+                    <p><i class="fa fa-envelope"></i> <a href="mailto:valentin.jules@univ-poitiers.fr" style="color: white;">valentin.jules@univ-poitiers.fr</a></p>
+                </div>
+                
+                <div class="social-icons w3-margin-top">
+                    <a href="#" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" title="Google Scholar"><i class="fab fa-google"></i></a>
+                    <a href="#" title="ResearchGate"><i class="fab fa-researchgate"></i></a>
+                    <a href="#" title="GitHub"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+        </div>
 
-<!-- Icon Bar (Sidebar - hidden on small screens) -->
-<div class="w3-sidebar w3-bar-block w3-small w3-hide-small w3-center">
-  <a href="../index.html" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
-    <i class="fa fa-home w3-xxlarge"></i>
-    <p>HOME</p>
-  </a>
-  <br>
-  <br>
-  <br>
-  <img src="../images/valentin_2.png" alt="This is me" style="width:50%">
-  <h4> Postdoctoral reasearcher </h4>
-  <h5> Contact : <a href="mailto:valentin.jules@meteo.fr">valentin.jules@meteo.fr</a></h5>
-</div>
+        <!-- Content Area -->
+        <div class="content">
+            <!-- Navbar -->
+            <div class="top-nav">
+                <div class="w3-bar">
+                    <div class="w3-bar-item w3-hide-large">
+                        <a href="javascript:void(0)" class="w3-bar-item w3-button" onclick="toggleSidebar()">
+                            <i class="fa fa-bars"></i>
+                        </a>
+                    </div>
+                    <div class="w3-bar-item w3-hide-large">
+                        <span style="font-weight: bold; color: white;">Valentin Jules</span>
+                    </div>
+                    <div class="w3-right w3-hide-small">
+                        <a href="../index.html" class="w3-bar-item w3-button nav-button w3-padding-large">
+                            <i class="fa fa-home"></i> HOME
+                        </a>
+                        <a href="research.html" class="w3-bar-item w3-button nav-button w3-padding-large w3-white" style="color: var(--primary-color) !important;">
+                            <i class="fa fa-search"></i> RESEARCH
+                        </a>
+                        <a href="teaching.html" class="w3-bar-item w3-button nav-button w3-padding-large">
+                            <i class="fa fa-book"></i> TEACHING
+                        </a>
+                        <a href="cv.html" class="w3-bar-item w3-button nav-button w3-padding-large">
+                            <i class="fa fa-user"></i> CV
+                        </a>
+                        <a href="publications.html" class="w3-bar-item w3-button nav-button w3-padding-large">
+                            <i class="fa fa-scroll"></i> PUBLICATIONS
+                        </a>
+                        <a href="contact.html" class="w3-bar-item w3-button nav-button w3-padding-large">
+                            <i class="fa fa-envelope"></i> CONTACT
+                        </a>
+                    </div>
+                </div>
+            </div>
 
+            <!-- Mobile Sidebar (hidden by default) -->
+            <div id="mobileSidebar" class="w3-sidebar w3-bar-block w3-hide w3-hide-large w3-center" style="width:100%; z-index:101;">
+                <a href="javascript:void(0)" onclick="toggleSidebar()" class="w3-bar-item w3-button w3-large w3-right">&times;</a>
+                <div class="w3-padding-32">
+                    <img src="../images/valentin_2.png" alt="Valentin Jules" style="width:50%; max-width:200px; border-radius:50%;">
+                    <h2>Valentin Jules</h2>
+                    <h4>Postdoctoral Researcher</h4>
+                    <p>Institut P' - Université de Poitiers</p>
+                </div>
+                <a href="../index.html" class="w3-bar-item w3-button w3-padding-large">HOME</a>
+                <a href="research.html" class="w3-bar-item w3-button w3-padding-large">RESEARCH</a>
+                <a href="teaching.html" class="w3-bar-item w3-button w3-padding-large">TEACHING</a>
+                <a href="cv.html" class="w3-bar-item w3-button w3-padding-large">CV</a>
+                <a href="publications.html" class="w3-bar-item w3-button w3-padding-large">PUBLICATIONS</a>
+                <a href="contact.html" class="w3-bar-item w3-button w3-padding-large">CONTACT</a>
+            </div>
 
-<!-- Links (sit on top) -->
-<div class="w3-top" id ="main">
-  <div class="w3-row w3-padding">
-    <!-- <div class="w3-col s3">
-      <a href="#" class="w3-button w3-block">Valentin Jules</a>
-    </div> -->
-    <div class="w3-col s2">
-      <a href="research.html" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
-        <i class="fa fa-search w3-xxlarge"></i>
-        <p>RESEARCH</p>
-      </a>
+            <!-- Page Content -->
+            <div class="page-content">
+                <!-- Header -->
+                <header class="w3-container w3-padding-32 w3-center fade-in">
+                    <h1 style="color: var(--primary-color);">Research Projects</h1>
+                    <p class="w3-large" style="color: var(--secondary-color);">Mes projets de recherche actuels et passés</p>
+                </header>
+
+                <div class="w3-content">
+                    <!-- Slideshow Section -->
+                    <div class="section-card fade-in">
+                        <h2>Featured Research Projects</h2>
+                        <hr style="width:200px; border-top: 2px solid var(--secondary-color);">
+                        
+                        <div class="research-slideshow">
+                            <!-- Slide 1 -->
+                            <div class="mySlides w3-display-container">
+                                <img src="./Recherches/C3S/Nimbus_rendering.jpg" alt="C3S Project" class="slide-image">
+                                <div class="slide-caption">
+                                    <a href='./Recherches/C3S/index.html' target='_blank'>
+                                        <button class="slide-button">
+                                            <i class="fa fa-satellite"></i> C3S
+                                        </button>
+                                    </a>
+                                </div>
+                            </div>
+                            
+                            <!-- Slide 2 -->
+                            <div class="mySlides w3-display-container">
+                                <img src="./Recherches/Aquifer/aquifer_experimental.png" alt="Aquifer Project" class="slide-image">
+                                <div class="slide-caption">
+                                    <a href='./Recherches/Aquifer/groundwater_flow.html' target='_blank'>
+                                        <button class="slide-button">
+                                            <i class="fa fa-droplet"></i> Aquifer
+                                        </button>
+                                    </a>
+                                </div>
+                            </div>
+                            
+                            <!-- Slideshow Controls -->
+                            <div class="slideshow-controls">
+                                <button class="arrow-button" onclick="plusDivs(-1)">
+                                    <i class="fa fa-arrow-circle-left"></i>
+                                </button>
+                                
+                                <div class="slideshow-dots">
+                                    <span class="demodots" onclick="currentDiv(1)"></span>
+                                    <span class="demodots" onclick="currentDiv(2)"></span>
+                                </div>
+                                
+                                <button class="arrow-button" onclick="plusDivs(1)">
+                                    <i class="fa fa-arrow-circle-right"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Research Description Section -->
+                    <div class="section-card fade-in">
+                        <h2>Research Focus</h2>
+                        <hr style="width:200px; border-top: 2px solid var(--secondary-color);">
+                        
+                        <h3>C3S Project</h3>
+                        <p>Description détaillée du projet C3S. Ce projet concerne [domaine de recherche]. Les objectifs principaux sont...</p>
+                        
+                        <h3>Aquifer Project</h3>
+                        <p>Description détaillée du projet Aquifer. Ce projet aborde [domaine de recherche]. Les méthodologies utilisées incluent...</p>
+                    </div>
+
+                    <!-- Methodology Section -->
+                    <div class="section-card fade-in">
+                        <h2>Methodologies</h2>
+                        <hr style="width:200px; border-top: 2px solid var(--secondary-color);">
+                        
+                        <div class="w3-row-padding">
+                            <div class="w3-half">
+                                <h4>Approches Expérimentales</h4>
+                                <ul>
+                                    <li>Méthodologie 1</li>
+                                    <li>Méthodologie 2</li>
+                                    <li>Méthodologie 3</li>
+                                </ul>
+                            </div>
+                            <div class="w3-half">
+                                <h4>Approches Numériques</h4>
+                                <ul>
+                                    <li>Modélisation 1</li>
+                                    <li>Simulation 2</li>
+                                    <li>Analyse 3</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Collaborations Section -->
+                    <div class="section-card fade-in">
+                        <h2>Collaborations</h2>
+                        <hr style="width:200px; border-top: 2px solid var(--secondary-color);">
+                        <p>Je collabore avec différents laboratoires et chercheurs :</p>
+                        <ul>
+                            <li>Laboratoire 1 - Université/Institution</li>
+                            <li>Laboratoire 2 - Université/Institution</li>
+                            <li>Collaborateur Principal - Institution</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="w3-col s2">
-      <a href="teaching.html" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
-        <i class="fa fa-book w3-xxlarge"></i>
-        <p>TEACHING</p>
-      </a>
-    </div>
-    <div class="w3-col s2">
-      <a href="cv.html" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
-        <i class="fa fa-user w3-xxlarge"></i>
-        <p>CV</p>
-      </a>
-    </div>
-    <div class="w3-col s2">
-      <a href="publications.html" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
-        <i class="fa fa-scroll w3-xxlarge"></i>
-        <p>PUBLICATIONS</p>
-      </a>
-    </div>
-    <div class="w3-col s2">
-      <a href="contact.html" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
-        <i class="fa fa-envelope w3-xxlarge"></i>
-        <p>CONTACT</p>
-      </a>
-    </div>
-  </div>
-</div>
 
-<!-- Page Content -->
-<div class="w3-padding-large" id="main">
-  <!-- Header/Home -->
-  <header class="w3-container w3-padding-32 w3-center " id="home">
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <h1 class="w3-jumbo"> Research projects</h1>
+    <script>
+        // Fonction pour afficher/masquer la sidebar sur mobile
+        function toggleSidebar() {
+            var sidebar = document.getElementById("mobileSidebar");
+            if (sidebar.classList.contains("w3-hide")) {
+                sidebar.classList.remove("w3-hide");
+            } else {
+                sidebar.classList.add("w3-hide");
+            }
+        }
+        
+        // Slideshow Script (conservé de votre version originale)
+        var slideIndex = 1;
+        showDivs(slideIndex);
 
-  </header>
+        function plusDivs(n) {
+            showDivs(slideIndex += n);
+        }
 
-  <!-- About Section -->
-  <div class="w3-content w3-justify w3-padding-64" id="about">
+        function currentDiv(n) {
+            showDivs(slideIndex = n);
+        }
 
-    <!-- Slideshow -->
-     <div class="w3-container">
-       <div class="w3-display-container mySlides w3-center ">
-         <img src="./Recherches/C3S/Nimbus_rendering.jpg" style="height:500px">
-         <div class="w3-display-topleft w3-container w3-padding-32">
-           <a href='./Recherches/AG/index.html' target='new'>
-             <button class="w3-button w3-light-grey w3-padding-large w3-section">
-                <i class="fa fa-satellite"></i> C3S
-              </button>
-            </a>
-         </div>
-       </div>
-       <div class="w3-display-container mySlides w3-center ">
-         <img src="./Recherches/Aquifer/aquifer_experimental.png" style="height:500px">
-         <div class="w3-display-topleft w3-container w3-padding-32">
-           <a href='./Recherches/Aquifer/groundwater_flow.html'>
-             <button class="w3-button w3-light-grey w3-padding-large w3-section">
-                <i class="fa fa-droplet"></i> Aquifer
-              </button>
-            </a>
-         </div>
-       </div>
-       <!-- <div class="w3-display-container mySlides">
-         <img src="../images/Fig_streamlines.png" style="width:100%">
-         <div class="w3-display-middle w3-container w3-padding-32">
-           <span class="w3-white w3-padding-large w3-animate-bottom">Klorim tipsum</span>
-         </div>
-       </div> -->
-
-
-       <!-- Slideshow next/previous buttons -->
-       <div class="w3-container w3-dark-grey w3-padding w3-xlarge">
-         <div class="w3-left" onclick="plusDivs(-1)"><i class="fa fa-arrow-circle-left w3-hover-text-teal"></i></div>
-         <div class="w3-right" onclick="plusDivs(1)"><i class="fa fa-arrow-circle-right w3-hover-text-teal"></i></div>
-
-         <div class="w3-center">
-           <span class="w3-tag demodots w3-border w3-transparent w3-hover-white" onclick="currentDiv(1)"></span>
-           <span class="w3-tag demodots w3-border w3-transparent w3-hover-white" onclick="currentDiv(2)"></span>
-           <!-- <span class="w3-tag demodots w3-border w3-transparent w3-hover-white" onclick="currentDiv(3)"></span> -->
-         </div>
-       </div>
-     </div>
-
-
-  <!-- End About Section -->
-  </div>
-
-
-
-<!-- END PAGE CONTENT -->
-</div>
-<script>
-// Slideshow
-var slideIndex = 1;
-showDivs(slideIndex);
-
-function plusDivs(n) {
-  showDivs(slideIndex += n);
-}
-
-function currentDiv(n) {
-  showDivs(slideIndex = n);
-}
-
-function showDivs(n) {
-  var i;
-  var x = document.getElementsByClassName("mySlides");
-  var dots = document.getElementsByClassName("demodots");
-  if (n > x.length) {slideIndex = 1}
-  if (n < 1) {slideIndex = x.length} ;
-  for (i = 0; i < x.length; i++) {
-    x[i].style.display = "none";
-  }
-  for (i = 0; i < dots.length; i++) {
-    dots[i].className = dots[i].className.replace(" w3-white", "");
-  }
-  x[slideIndex-1].style.display = "block";
-  dots[slideIndex-1].className += " w3-white";
-}
-</script>
+        function showDivs(n) {
+            var i;
+            var x = document.getElementsByClassName("mySlides");
+            var dots = document.getElementsByClassName("demodots");
+            if (n > x.length) {slideIndex = 1}
+            if (n < 1) {slideIndex = x.length} ;
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            x[slideIndex-1].style.display = "block";
+            dots[slideIndex-1].className += " active";
+        }
+        
+        // Animation au défilement
+        window.addEventListener('scroll', function() {
+            var elements = document.querySelectorAll('.fade-in');
+            for (var i = 0; i < elements.length; i++) {
+                var element = elements[i];
+                var position = element.getBoundingClientRect().top;
+                var screenPosition = window.innerHeight / 1.3;
+                
+                if (position < screenPosition) {
+                    element.style.opacity = "1";
+                    element.style.transform = "translateY(0)";
+                }
+            }
+        });
+    </script>
 </body>
 </html>
