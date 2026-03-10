@@ -2,108 +2,34 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Valentin Jules – Postdoctoral researcher in hydrology at Institut P', Université de Poitiers.">
-	<meta property="og:title" content="Valentin Jules – Researcher">
-	<meta property="og:description" content="Postdoctoral researcher in hydrology.">
-	<meta property="og:image" content="./images/valentin_2.png">
-	<meta property="og:type" content="website">
+    <meta property="og:title" content="Valentin Jules – Researcher">
+    <meta property="og:description" content="Postdoctoral researcher in hydrology.">
+    <meta property="og:image" content="./images/valentin_2.png">
+    <meta property="og:type" content="website">
     <title>Valentin Jules - Postdoctoral Researcher</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link rel="preconnect" href="https://cdnjs.cloudflare.com">
-
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-	<div id="navbar-placeholder"></div>
     <div class="main-container">
-        <!-- Sidebar -->
-<!--
-        <div class="sidebar w3-center">
-            <div class="fade-in">
-                <img src="./images/valentin_2.png" alt="Valentin Jules" class="profile-img">
-                <h2 class="w3-margin-top">Valentin Jules</h2>
-                <h4>Postdoctoral Researcher</h4>
-                <p>Institut P' - Université de Poitiers</p>
-                
-                <div class="w3-margin-top">
-                    <p><i class="fa fa-envelope"></i> <a href="mailto:valentin.jules@univ-poitiers.fr" style="color: white;">valentin.jules@univ-poitiers.fr</a></p>
-                </div>
-                
-                <div class="social-icons w3-margin-top">
-                    <a href="#" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                    <a href="#" title="Google Scholar"><i class="fab fa-google"></i></a>
-                    <a href="#" title="ResearchGate"><i class="fab fa-researchgate"></i></a>
-                    <a href="#" title="GitHub"><i class="fab fa-github"></i></a>
-                </div>
-            </div>
-        </div>
 
-        <!-- Content Area -->
+        <!-- Sidebar + Navbar injectées ici par navbar.js -->
+        <div id="navbar-placeholder"></div>
+
+        <!-- Zone de contenu principal -->
         <div class="content">
-            <!-- Navbar -->
-<!--
-            <div class="top-nav">
-                <div class="w3-bar">
-                    <div class="w3-bar-item w3-hide-large">
-                        <a href="javascript:void(0)" class="w3-bar-item w3-button" onclick="toggleSidebar()">
-                            <i class="fa fa-bars"></i>
-                        </a>
-                    </div>
-                    <div class="w3-bar-item w3-hide-large">
-                        <span style="font-weight: bold; color: white;">Valentin Jules</span>
-                    </div>
-                    <div class="w3-right w3-hide-small">
-                        <a href="./index.html" class="w3-bar-item w3-button nav-button w3-padding-large w3-white" style="color: var(--primary-color) !important;">
-                            <i class="fa fa-home"></i> HOME
-                        </a>
-                        <a href="files/research.html" class="w3-bar-item w3-button nav-button w3-padding-large">
-                            <i class="fa fa-search"></i> RESEARCH
-                        </a>
-                        <a href="files/teaching.html" class="w3-bar-item w3-button nav-button w3-padding-large">
-                            <i class="fa fa-book"></i> TEACHING
-                        </a>
-                        <a href="files/cv.html" class="w3-bar-item w3-button nav-button w3-padding-large">
-                            <i class="fa fa-user"></i> CV
-                        </a>
-                        <a href="files/publications.html" class="w3-bar-item w3-button nav-button w3-padding-large">
-                            <i class="fa fa-scroll"></i> PUBLICATIONS
-                        </a>
-                        <a href="files/contact.html" class="w3-bar-item w3-button nav-button w3-padding-large">
-                            <i class="fa fa-envelope"></i> CONTACT
-                        </a>
-                    </div>
-                </div>
-            </div>
--->
-
-            <!-- Mobile Sidebar (hidden by default) -->
-<!--
-            <div id="mobileSidebar" class="w3-sidebar w3-bar-block w3-hide w3-hide-large w3-center" style="width:100%; z-index:101;">
-                <a href="javascript:void(0)" onclick="toggleSidebar()" class="w3-bar-item w3-button w3-large w3-right">&times;</a>
-                <div class="w3-padding-32">
-                    <img src="./images/valentin_2.png" alt="Valentin Jules" style="width:50%; max-width:200px; border-radius:50%;">
-                    <h2>Valentin Jules</h2>
-                    <h4>Postdoctoral Researcher</h4>
-                    <p>Institut P' - Université de Poitiers</p>
-                </div>
-                <a href="./index.html" class="w3-bar-item w3-button w3-padding-large">HOME</a>
-                <a href="files/research.html" class="w3-bar-item w3-button w3-padding-large">RESEARCH</a>
-                <a href="files/teaching.html" class="w3-bar-item w3-button w3-padding-large">TEACHING</a>
-                <a href="files/cv.html" class="w3-bar-item w3-button w3-padding-large">CV</a>
-                <a href="files/publications.html" class="w3-bar-item w3-button w3-padding-large">PUBLICATIONS</a>
-                <a href="files/contact.html" class="w3-bar-item w3-button w3-padding-large">CONTACT</a>
-            </div>
--->
-			
 
             <!-- Page Content -->
             <div class="page-content">
+
                 <!-- Header -->
                 <header class="w3-container w3-padding-32 w3-center fade-in" id="home">
                     <h1 class="w3-jumbo" style="color: var(--primary-color);">Valentin Jules</h1>
@@ -116,142 +42,46 @@
                         <h2 class="w3-text-dark-grey">About Me</h2>
                         <hr style="width:200px; border-top: 2px solid var(--secondary-color);" class="w3-opacity">
                         <p>
-                            Hi, I am a post-doctoral researcher at the <span class="highlight">Institut P'</span> in Poitiers, France. 
-                            My research focuses on hydrology. 
+                            Hi, I am a post-doctoral researcher at the <span class="highlight">Institut P'</span> in Poitiers, France.
+                            My research focuses on hydrology.
                         </p>
                         <p>
-                            I completed my PhD at the IPGP under the supervision of Éric Lajeunesse and Olivier Devauchelle, 
-                            where I investigated the flow and residence time in a two-dimensional aquifer recharged by rainfall. 
+                            I completed my PhD at the IPGP under the supervision of Éric Lajeunesse and Olivier Devauchelle,
+                            where I investigated the flow and residence time in a two-dimensional aquifer recharged by rainfall.
                         </p>
-                        
                         <div class="research-interests">
-							<span class="interest-tag">Hydrogeology</span>
-							<span class="interest-tag">Hydrology</span>
-						</div>
-
-                    </div>
-
-                    <!-- News Section -->
-                    
-<!--
-                    <div class="section-card fade-in">
-                        <h2 class="w3-text-dark-grey">Latest News</h2>
-                        <hr style="width:200px; border-top: 2px solid var(--secondary-color);" class="w3-opacity">
-                        
-                        <div class="w3-container">
-                            <div class="w3-row w3-margin-bottom">
-                                <div class="w3-col" style="width:80px">
-                                    <span class="w3-badge w3-large w3-blue">Jun</span>
-                                </div>
-                                <div class="w3-rest">
-                                    <p>Presented our latest research at [Nom de la Conférence]</p>
-                                </div>
-                            </div>
-                            
-                            <div class="w3-row w3-margin-bottom">
-                                <div class="w3-col" style="width:80px">
-                                    <span class="w3-badge w3-large w3-blue">Nov</span>
-                                </div>
-                                <div class="w3-rest">
-                                    <p>New paper submitted in CRM</p>
-                                </div>
-                            </div>
-                            
-                            <div class="w3-row">
-                                <div class="w3-col" style="width:80px">
-                                    <span class="w3-badge w3-large w3-blue">Sep</span>
-                                </div>
-                                <div class="w3-rest">
-                                    <p>End of my postdoctoral position at Institut P'</p>
-                                </div>
-                            </div>
+                            <span class="interest-tag">Hydrogeology</span>
+                            <span class="interest-tag">Hydrology</span>
                         </div>
                     </div>
--->
-
-                    <!-- Quick Links -->
-                    
-<!--
-                    <div class="section-card fade-in">
-						
-                        <h2 class="w3-text-dark-grey">Quick Links</h2>
-                        <hr style="width:200px; border-top: 2px solid var(--secondary-color);" class="w3-opacity">
-                        
-                        <div class="w3-row-padding w3-center">
-                            <div class="w3-quarter w3-margin-bottom">
-                                <div class="w3-card w3-padding" style="min-height:120px; display:flex; flex-direction:column; justify-content:center;">
-                                    <i class="fa fa-file-pdf w3-xxlarge w3-text-blue"></i>
-                                    <p><a href="files/cv.html">Curriculum Vitae</a></p>
-                                </div>
-                            </div>
-                            <div class="w3-quarter w3-margin-bottom">
-                                <div class="w3-card w3-padding" style="min-height:120px; display:flex; flex-direction:column; justify-content:center;">
-                                    <i class="fa fa-scroll w3-xxlarge w3-text-blue"></i>
-                                    <p><a href="files/publications.html">Publications</a></p>
-                                </div>
-                            </div>
-                            <div class="w3-quarter w3-margin-bottom">
-                                <div class="w3-card w3-padding" style="min-height:120px; display:flex; flex-direction:column; justify-content:center;">
-                                    <i class="fa fa-graduation-cap w3-xxlarge w3-text-blue"></i>
-                                    <p><a href="files/teaching.html">Teaching</a></p>
-                                </div>
-                            </div>
-                            <div class="w3-quarter w3-margin-bottom">
-                                <div class="w3-card w3-padding" style="min-height:120px; display:flex; flex-direction:column; justify-content:center;">
-                                    <i class="fa fa-envelope w3-xxlarge w3-text-blue"></i>
-                                    <p><a href="files/contact.html">Contact</a></p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
--->
-                
                 </div>
 
                 <!-- Footer -->
                 <footer class="w3-container w3-padding-32 w3-center" style="margin-top:50px; border-top: 1px solid #eee;">
-                    <p>&copy; 2023 Valentin Jules. All rights reserved.</p>
+                    <p>&copy; 2026 Valentin Jules. All rights reserved.</p>
                     <p>Institut P' - Université de Poitiers</p>
                 </footer>
+
             </div>
         </div>
     </div>
 
     <script>
-        // Fonction pour afficher/masquer la sidebar sur mobile
-        function toggleSidebar() {
-            var sidebar = document.getElementById("mobileSidebar");
-            if (sidebar.classList.contains("w3-hide")) {
-                sidebar.classList.remove("w3-hide");
-            } else {
-                sidebar.classList.add("w3-hide");
-            }
-        }
-window.addEventListener('DOMContentLoaded', triggerVisible);
-window.addEventListener('scroll', triggerVisible);
-function triggerVisible() {
-    document.querySelectorAll('.fade-in').forEach(el => {
-        if (el.getBoundingClientRect().top < window.innerHeight / 1.3) {
-            el.style.opacity = "1";
-            el.style.transform = "translateY(0)";
-        }
-    });
-}        
-function scroll() {
-            var elements = document.querySelectorAll('.fade-in');
-            for (var i = 0; i < elements.length; i++) {
-                var element = elements[i];
-                var position = element.getBoundingClientRect().top;
-                var screenPosition = window.innerHeight / 1.3;
-                
-                if (position < screenPosition) {
-                    element.style.opacity = "1";
-                    element.style.transform = "translateY(0)";
+        // Animation fade-in au chargement et au scroll
+        window.addEventListener('DOMContentLoaded', triggerVisible);
+        window.addEventListener('scroll', triggerVisible);
+        function triggerVisible() {
+            document.querySelectorAll('.fade-in').forEach(el => {
+                if (el.getBoundingClientRect().top < window.innerHeight / 1.3) {
+                    el.style.opacity = "1";
+                    el.style.transform = "translateY(0)";
                 }
-            }
-        };
+            });
+        }
     </script>
-	<script src="../navbar.js"></script>
-	<script>loadNavbar('home', './');</script>
+
+    <!-- navbar.js est à la racine, même dossier que index.html -->
+    <script src="./navbar.js"></script>
+    <script>loadNavbar('home', './');</script>
 </body>
 </html>
