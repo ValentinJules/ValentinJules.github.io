@@ -66,6 +66,7 @@
 <body>
     <div class="main-container">
         <!-- Sidebar -->
+<!--
         <div class="sidebar w3-center">
             <div class="fade-in">
                 <img src="../images/valentin_2.png" alt="Valentin Jules" class="profile-img">
@@ -85,10 +86,12 @@
                 </div>
             </div>
         </div>
+-->
 
         <!-- Content Area -->
         <div class="content">
             <!-- Navbar -->
+<!--
             <div class="top-nav">
                 <div class="w3-bar">
                     <div class="w3-bar-item w3-hide-large">
@@ -121,8 +124,10 @@
                     </div>
                 </div>
             </div>
+-->
 
             <!-- Mobile Sidebar (hidden by default) -->
+<!--
             <div id="mobileSidebar" class="w3-sidebar w3-bar-block w3-hide w3-hide-large w3-center" style="width:100%; z-index:101;">
                 <a href="javascript:void(0)" onclick="toggleSidebar()" class="w3-bar-item w3-button w3-large w3-right">&times;</a>
                 <div class="w3-padding-32">
@@ -138,7 +143,8 @@
                 <a href="publications.html" class="w3-bar-item w3-button w3-padding-large">PUBLICATIONS</a>
                 <a href="contact.html" class="w3-bar-item w3-button w3-padding-large">CONTACT</a>
             </div>
-
+-->
+			<div id="navbar-placeholder"></div>
             <!-- Page Content -->
             <div class="page-content">
                 <!-- Header -->
@@ -325,6 +331,7 @@
     </div>
 
     <script>
+		
         // Fonction pour afficher/masquer la sidebar sur mobile
         function toggleSidebar() {
             var sidebar = document.getElementById("mobileSidebar");
@@ -368,5 +375,7 @@
             }
         });
     </script>
+	<script src="../navbar.js"></script>
+<script>loadNavbar('teaching');</script>
 </body>
 </html>
