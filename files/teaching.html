@@ -4,46 +4,49 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Teaching - Valentin Jules</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
     <link rel="stylesheet" href="../style.css">
     <style>
         .teaching-tabs {
             margin: 20px 0;
         }
-        
+
         .tablink {
             padding: 15px;
             cursor: pointer;
             transition: all 0.3s;
             border-bottom: 3px solid transparent;
         }
-        
+
         .tablink:hover {
             background-color: rgba(52, 152, 219, 0.1);
         }
-        
+
         .tablink.active {
             border-bottom: 3px solid var(--secondary-color);
             background-color: rgba(52, 152, 219, 0.1);
         }
-        
+
         .menu {
             display: none;
             animation: fadeIn 0.5s;
         }
-        
+
         .teaching-course {
             margin-bottom: 25px;
             padding-bottom: 20px;
             border-bottom: 1px solid #eee;
         }
-        
+
         .teaching-course:last-child {
             border-bottom: none;
         }
-        
+
         .course-links a {
             display: inline-block;
             margin-right: 15px;
@@ -51,102 +54,23 @@
             text-decoration: none;
             transition: color 0.3s;
         }
-        
+
         .course-links a:hover {
             color: var(--primary-color);
             text-decoration: underline;
-        }
-        
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
         }
     </style>
 </head>
 <body>
     <div class="main-container">
-        <!-- Sidebar -->
-<!--
-        <div class="sidebar w3-center">
-            <div class="fade-in">
-                <img src="../images/valentin_2.png" alt="Valentin Jules" class="profile-img">
-                <h2 class="w3-margin-top">Valentin Jules</h2>
-                <h4>Postdoctoral Researcher</h4>
-                <p>Institut P' - Université de Poitiers</p>
-                
-                <div class="w3-margin-top">
-                    <p><i class="fa fa-envelope"></i> <a href="mailto:valentin.jules@univ-poitiers.fr" style="color: white;">valentin.jules@univ-poitiers.fr</a></p>
-                </div>
-                
-                <div class="social-icons w3-margin-top">
-                    <a href="#" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                    <a href="#" title="Google Scholar"><i class="fab fa-google"></i></a>
-                    <a href="#" title="ResearchGate"><i class="fab fa-researchgate"></i></a>
-                    <a href="#" title="GitHub"><i class="fab fa-github"></i></a>
-                </div>
-            </div>
-        </div>
--->
 
-        <!-- Content Area -->
+        <!-- Sidebar + Navbar injectées par navbar.js -->
+        <div id="navbar-placeholder"></div>
+
+        <!-- Zone de contenu principal -->
         <div class="content">
-            <!-- Navbar -->
-<!--
-            <div class="top-nav">
-                <div class="w3-bar">
-                    <div class="w3-bar-item w3-hide-large">
-                        <a href="javascript:void(0)" class="w3-bar-item w3-button" onclick="toggleSidebar()">
-                            <i class="fa fa-bars"></i>
-                        </a>
-                    </div>
-                    <div class="w3-bar-item w3-hide-large">
-                        <span style="font-weight: bold; color: white;">Valentin Jules</span>
-                    </div>
-                    <div class="w3-right w3-hide-small">
-                        <a href="../index.html" class="w3-bar-item w3-button nav-button w3-padding-large">
-                            <i class="fa fa-home"></i> HOME
-                        </a>
-                        <a href="research.html" class="w3-bar-item w3-button nav-button w3-padding-large">
-                            <i class="fa fa-search"></i> RESEARCH
-                        </a>
-                        <a href="teaching.html" class="w3-bar-item w3-button nav-button w3-padding-large w3-white" style="color: var(--primary-color) !important;">
-                            <i class="fa fa-book"></i> TEACHING
-                        </a>
-                        <a href="cv.html" class="w3-bar-item w3-button nav-button w3-padding-large">
-                            <i class="fa fa-user"></i> CV
-                        </a>
-                        <a href="publications.html" class="w3-bar-item w3-button nav-button w3-padding-large">
-                            <i class="fa fa-scroll"></i> PUBLICATIONS
-                        </a>
-                        <a href="contact.html" class="w3-bar-item w3-button nav-button w3-padding-large">
-                            <i class="fa fa-envelope"></i> CONTACT
-                        </a>
-                    </div>
-                </div>
-            </div>
--->
-
-            <!-- Mobile Sidebar (hidden by default) -->
-<!--
-            <div id="mobileSidebar" class="w3-sidebar w3-bar-block w3-hide w3-hide-large w3-center" style="width:100%; z-index:101;">
-                <a href="javascript:void(0)" onclick="toggleSidebar()" class="w3-bar-item w3-button w3-large w3-right">&times;</a>
-                <div class="w3-padding-32">
-                    <img src="../images/valentin_2.png" alt="Valentin Jules" style="width:50%; max-width:200px; border-radius:50%;">
-                    <h2>Valentin Jules</h2>
-                    <h4>Postdoctoral Researcher</h4>
-                    <p>Institut P' - Université de Poitiers</p>
-                </div>
-                <a href="../index.html" class="w3-bar-item w3-button w3-padding-large">HOME</a>
-                <a href="research.html" class="w3-bar-item w3-button w3-padding-large">RESEARCH</a>
-                <a href="teaching.html" class="w3-bar-item w3-button w3-padding-large">TEACHING</a>
-                <a href="cv.html" class="w3-bar-item w3-button w3-padding-large">CV</a>
-                <a href="publications.html" class="w3-bar-item w3-button w3-padding-large">PUBLICATIONS</a>
-                <a href="contact.html" class="w3-bar-item w3-button w3-padding-large">CONTACT</a>
-            </div>
--->
-			<div id="navbar-placeholder"></div>
-            <!-- Page Content -->
             <div class="page-content">
+
                 <!-- Header -->
                 <header class="w3-container w3-padding-32 w3-center fade-in">
                     <h1 style="color: var(--primary-color);">Teaching</h1>
@@ -154,11 +78,12 @@
                 </header>
 
                 <div class="w3-content">
+
                     <!-- Teaching Tabs Section -->
                     <div class="section-card fade-in">
                         <h2>Teaching Experience</h2>
                         <hr style="width:200px; border-top: 2px solid var(--secondary-color);">
-                        
+
                         <div class="teaching-tabs">
                             <div class="w3-row w3-center w3-card w3-padding">
                                 <a href="javascript:void(0)" onclick="openMenu(event, 'College');" id="defaultOpen">
@@ -177,55 +102,53 @@
                                     <h5>6ème</h5>
                                     <p class="w3-text-grey">
                                         <strong>L'enseignement d'une question socialement vive :</strong>
-                                        <ul class="w3-text-grey">
-                                            <li>Le climat sur Terre</li>
-                                            <li class="course-links">
-                                                <a href="enseignement/6eme/activite_experimentale_changement climatique.pdf">Le changement climatique</a>
-                                            </li>
-                                            <li>Les conséquences</li>
-                                            <li>La lutte</li>
-                                        </ul>
                                     </p>
-                                    
+                                    <ul class="w3-text-grey">
+                                        <li>Le climat sur Terre</li>
+                                        <li class="course-links">
+                                            <a href="../enseignement/6eme/activite_experimentale_changement climatique.pdf">Le changement climatique</a>
+                                        </li>
+                                        <li>Les conséquences</li>
+                                        <li>La lutte</li>
+                                    </ul>
                                     <p class="w3-text-grey">
                                         <strong>L'enseignement d'une démarche scientifique expérimentale :</strong>
-                                        <ul class="w3-text-grey">
-                                            <li class="course-links">
-                                                <a href="enseignement/6eme/activite_experimentale_changement climatique.pdf">La lumière</a>
-                                            </li>
-                                            <li>Ombres et lumière</li>
-                                        </ul>
                                     </p>
+                                    <ul class="w3-text-grey">
+                                        <li class="course-links">
+                                            <a href="../enseignement/6eme/activite_experimentale_changement climatique.pdf">La lumière</a>
+                                        </li>
+                                        <li>Ombres et lumière</li>
+                                    </ul>
                                 </div>
 
                                 <div class="teaching-course">
                                     <h5>5ème</h5>
                                     <p class="w3-text-grey">
                                         <strong>La matière :</strong>
-                                        <ul class="w3-text-grey">
-                                            <li>La limonade</li>
-                                            <li class="course-links">
-                                                <a href="enseignement/5eme/acide_base.pdf">Les acides et les bases</a>
-                                            </li>
-                                        </ul>
                                     </p>
-                                    
+                                    <ul class="w3-text-grey">
+                                        <li>La limonade</li>
+                                        <li class="course-links">
+                                            <a href="../enseignement/5eme/acide_base.pdf">Les acides et les bases</a>
+                                        </li>
+                                    </ul>
                                     <p class="w3-text-grey">
                                         <strong>L'énergie, ses transferts et ses conversions :</strong>
-                                        <ul class="w3-text-grey">
-                                            <li class="course-links">
-                                                <a href="enseignement/5eme/energie.pdf">L'énergie</a>
-                                            </li>
-                                            <li>Transfert</li>
-                                        </ul>
                                     </p>
+                                    <ul class="w3-text-grey">
+                                        <li class="course-links">
+                                            <a href="../enseignement/5eme/energie.pdf">L'énergie</a>
+                                        </li>
+                                        <li>Transfert</li>
+                                    </ul>
                                 </div>
                             </div>
 
                             <div id="University" class="w3-container menu w3-padding-32 w3-card">
                                 <div class="teaching-course">
                                     <h5>Statistiques</h5>
-                                    <p class="w3-text-grey">L1 & L3, Td et Tp sur python</p>
+                                    <p class="w3-text-grey">L1 & L3, TD et TP sur Python</p>
                                     <div class="course-links">
                                         <a href="#">Ressources Python</a>
                                         <a href="#">Exercices</a>
@@ -234,7 +157,7 @@
 
                                 <div class="teaching-course">
                                     <h5>Électromagnétisme</h5>
-                                    <p class="w3-text-grey">Td en L2</p>
+                                    <p class="w3-text-grey">TD en L2</p>
                                     <div class="course-links">
                                         <a href="#">TD 1</a>
                                         <a href="#">TD 2</a>
@@ -244,7 +167,7 @@
 
                                 <div class="teaching-course">
                                     <h5>Physique expérimentale</h5>
-                                    <p class="w3-text-grey">Tp en L2</p>
+                                    <p class="w3-text-grey">TP en L2</p>
                                     <div class="course-links">
                                         <a href="#">Protocoles</a>
                                         <a href="#">Rapports types</a>
@@ -273,9 +196,7 @@
 
                                 <div class="teaching-course">
                                     <h5>Questions scientifiques</h5>
-                                    <p class="w3-text-grey">
-                                        Préparation aux questions scientifiques de l'agrégation
-                                    </p>
+                                    <p class="w3-text-grey">Préparation aux questions scientifiques de l'agrégation</p>
                                     <div class="course-links">
                                         <a href="QuestionsScientifiques/ETR.html">L'ETR</a>
                                     </div>
@@ -325,23 +246,20 @@
                             </div>
                         </div>
                     </div>
+
                 </div>
             </div>
+
+            <!-- Footer -->
+            <footer class="w3-container w3-padding-32 w3-center" style="margin-top:50px; border-top: 1px solid #eee;">
+                <p>&copy; 2026 Valentin Jules. All rights reserved.</p>
+                <p>Institut P' - Université de Poitiers</p>
+            </footer>
+
         </div>
     </div>
 
     <script>
-		
-        // Fonction pour afficher/masquer la sidebar sur mobile
-        function toggleSidebar() {
-            var sidebar = document.getElementById("mobileSidebar");
-            if (sidebar.classList.contains("w3-hide")) {
-                sidebar.classList.remove("w3-hide");
-            } else {
-                sidebar.classList.add("w3-hide");
-            }
-        }
-        
         // Script pour les onglets d'enseignement
         function openMenu(evt, menuName) {
             var i, x, tablinks;
@@ -357,25 +275,19 @@
             evt.currentTarget.firstElementChild.className += " active";
         }
 
-        // Ouvrir le premier onglet par défaut
-        document.getElementById("defaultOpen").click();
-        
-        // Animation au défilement
-        window.addEventListener('scroll', function() {
-            var elements = document.querySelectorAll('.fade-in');
-            for (var i = 0; i < elements.length; i++) {
-                var element = elements[i];
-                var position = element.getBoundingClientRect().top;
-                var screenPosition = window.innerHeight / 1.3;
-                
-                if (position < screenPosition) {
-                    element.style.opacity = "1";
-                    element.style.transform = "translateY(0)";
+        // Animation fade-in au chargement et au scroll
+        window.addEventListener('DOMContentLoaded', triggerVisible);
+        window.addEventListener('scroll', triggerVisible);
+        function triggerVisible() {
+            document.querySelectorAll('.fade-in').forEach(el => {
+                if (el.getBoundingClientRect().top < window.innerHeight / 1.3) {
+                    el.style.opacity = "1";
+                    el.style.transform = "translateY(0)";
                 }
-            }
-        });
+            });
+        }
     </script>
-	<script src="../navbar.js"></script>
-<script>loadNavbar('teaching');</script>
+    <script src="../navbar.js"></script>
+    <script>loadNavbar('teaching');</script>
 </body>
 </html>
