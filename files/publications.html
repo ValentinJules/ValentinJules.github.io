@@ -1,73 +1,356 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Publications - Valentin Jules</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        .publication-item {
+            border-left: 4px solid var(--secondary-color);
+            padding: 18px 20px;
+            margin-bottom: 16px;
+            background: white;
+            border-radius: 0 8px 8px 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
 
+        .publication-item:hover {
+            transform: translateX(4px);
+            box-shadow: 0 4px 14px rgba(0,0,0,0.1);
+        }
 
-    <!DOCTYPE html>
-    <html lang="fr">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Publications - Valentin Jules</title>
-        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
-        <link rel="stylesheet" href="../style.css">
-    </head>
-    <body>
-        <div class="main-container">
-            <!-- Sidebar identique -->
-            <div class="sidebar w3-center">
-                <!-- Même contenu que index.html -->
-            </div>
-    
-            <div class="content">
-                <!-- Navbar avec page active highlight -->
-                <div class="top-nav">
-                    <div class="w3-bar">
-                        <!-- ... -->
-                        <a href="publications.html" class="w3-bar-item w3-button nav-button w3-padding-large w3-white" style="color: var(--primary-color) !important;">
-                            <i class="fa fa-scroll"></i> PUBLICATIONS
-                        </a>
-                        <!-- ... -->
+        .publication-item.submitted {
+            border-left-color: #aab7c4;
+        }
+
+        .pub-type-badge {
+            display: inline-block;
+            font-size: 0.72rem;
+            font-weight: 700;
+            padding: 2px 10px;
+            border-radius: 12px;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .badge-article     { background: #eaf4fb; color: #1a5276; }
+        .badge-thesis      { background: #fef9e7; color: #7d6608; }
+        .badge-report      { background: #eafaf1; color: #1e8449; }
+        .badge-submitted   { background: #f2f3f4; color: #626567; }
+        .badge-proceedings { background: #f5eef8; color: #6c3483; }
+
+        .pub-title {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin: 0 0 6px 0;
+            line-height: 1.4;
+        }
+
+        .pub-title a {
+            color: inherit;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .pub-title a:hover {
+            color: var(--secondary-color);
+            text-decoration: underline;
+        }
+
+        .pub-authors {
+            font-size: 0.9rem;
+            color: #555;
+            margin-bottom: 4px;
+        }
+
+        .pub-authors .self {
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        .pub-journal {
+            font-size: 0.88rem;
+            color: #777;
+            font-style: italic;
+            margin-bottom: 10px;
+        }
+
+        .pub-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .pub-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 0.82rem;
+            font-weight: 600;
+            padding: 4px 12px;
+            border-radius: 4px;
+            text-decoration: none;
+            transition: all 0.2s;
+            border: 1.5px solid;
+        }
+
+        .pub-link-doi  { color: var(--secondary-color); border-color: var(--secondary-color); }
+        .pub-link-doi:hover  { background: var(--secondary-color); color: white; }
+        .pub-link-pdf  { color: #e74c3c; border-color: #e74c3c; }
+        .pub-link-pdf:hover  { background: #e74c3c; color: white; }
+        .pub-link-ext  { color: #27ae60; border-color: #27ae60; }
+        .pub-link-ext:hover  { background: #27ae60; color: white; }
+
+        .stats-row {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+        }
+
+        .stat-box {
+            background: white;
+            border-radius: 8px;
+            padding: 18px 28px;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            flex: 1;
+            min-width: 100px;
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--secondary-color);
+            line-height: 1;
+        }
+
+        .stat-label {
+            font-size: 0.78rem;
+            color: #888;
+            margin-top: 4px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .section-divider {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin: 30px 0 16px 0;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .section-divider::after {
+            content: '';
+            flex: 1;
+            height: 2px;
+            background: linear-gradient(to right, var(--secondary-color), transparent);
+        }
+    </style>
+</head>
+<body>
+    <div id="navbar-placeholder"></div>
+    <div class="main-container">
+
+        <div class="content">
+            <div class="page-content">
+
+                <header class="w3-container w3-padding-32 w3-center fade-in">
+                    <h1 style="color: var(--primary-color);">Publications</h1>
+                    <p class="w3-large" style="color: var(--secondary-color);">Articles scientifiques, actes de conférences et rapports</p>
+                </header>
+
+                <div class="w3-content">
+
+                    <!-- Stats -->
+                    <div class="stats-row fade-in">
+                        <div class="stat-box">
+                            <div class="stat-number">6</div>
+                            <div class="stat-label">Articles</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-number">3</div>
+                            <div class="stat-label">Soumis</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-number">2</div>
+                            <div class="stat-label">Actes</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-number">2</div>
+                            <div class="stat-label">Rapports</div>
+                        </div>
                     </div>
-                </div>
-    
-                <div class="page-content">
-                    <header class="w3-container w3-padding-32 w3-center fade-in">
-                        <h1 style="color: var(--primary-color);">Publications</h1>
-                    </header>
-    
-                    <div class="w3-content">
-                        <!-- Publications par année -->
-                        <div class="section-card fade-in">
-                            <h2>2023</h2>
-                            <div class="publication-item">
-                                <h4> href="https://doi.org/10.1017/jfm.2021.221" target="_blank"> Flow and residence time in a two-dimensional aquifer recharged by rainfall </h4>
-                                <p> <b> Jules, V. </b>, Lajeunesse, E., Devauchelle, O., Guérin, A., Jaupart, C., & Lagrée, P.</p>
-                                <p><strong><i>  Journal of Fluid Mechanics, 917, A13 (2021) </i></p>
-                                <p><a href="#" class="w3-text-blue">[PDF]</a> <a href="#" class="w3-text-blue">[DOI]</a></p>
+
+                    <!-- Articles -->
+                    <div class="section-card fade-in">
+                        <h2>Articles &amp; Actes de conférences</h2>
+                        <hr style="width:200px; border-top: 2px solid var(--secondary-color);">
+
+                        <div class="section-divider">Soumis</div>
+
+                        <div class="publication-item submitted">
+                            <span class="pub-type-badge badge-submitted"><i class="fa fa-clock"></i> Soumis</span>
+                            <p class="pub-title">Hydrodynamic Effects of Sectional Confinement in Inland Navigation: A Historical Perspective</p>
+                            <p class="pub-authors">Rousseaux G., <span class="self">Jules V.</span>, Dambrine J., Pierre M., Pompee P-J.</p>
+                            <p class="pub-journal">Comptes Rendus Mécanique</p>
+                        </div>
+
+                        <div class="publication-item submitted">
+                            <span class="pub-type-badge badge-submitted"><i class="fa fa-clock"></i> Soumis</span>
+                            <p class="pub-title">Hydrodynamic Effects of Sectional Confinement in Inland Navigation: A Theoretical Reassessment</p>
+                            <p class="pub-authors">Dambrine J., Rousseaux G., <span class="self">Jules V.</span>, Pierre M., Pompee P-J.</p>
+                            <p class="pub-journal">Comptes Rendus Mécanique</p>
+                        </div>
+
+                        <div class="publication-item submitted">
+                            <span class="pub-type-badge badge-submitted"><i class="fa fa-clock"></i> Soumis</span>
+                            <p class="pub-title">Experimental Validation of a New Theoretical Model for Critical Speed in Confined Waters</p>
+                            <p class="pub-authors"><span class="self">Jules V.</span>, Dambrine J., Pompee P-J., Pierre M., Rousseaux G.</p>
+                            <p class="pub-journal">Comptes Rendus Mécanique</p>
+                        </div>
+
+                        <div class="section-divider">2024</div>
+
+                        <div class="publication-item">
+                            <span class="pub-type-badge badge-proceedings"><i class="fa fa-file-alt"></i> Actes</span>
+                            <p class="pub-title">A one dimensional hydraulic model for confined navigation with a longitudinal variation of the hull</p>
+                            <p class="pub-authors">Dambrine J., <span class="self">Jules V.</span>, Pompee P-J., Pierre M., Rousseaux G. (2024)</p>
+                            <p class="pub-journal">Proceedings Mashcon</p>
+                        </div>
+
+                        <div class="publication-item">
+                            <span class="pub-type-badge badge-proceedings"><i class="fa fa-file-alt"></i> Actes</span>
+                            <p class="pub-title">Une revisite des théories de la navigation en milieu confiné</p>
+                            <p class="pub-authors"><span class="self">Jules V.</span>, Pompee P-J., Dambrine J., Pierre M., Rousseaux G. (2024)</p>
+                            <p class="pub-journal">Proceedings Journées de l'Hydrodynamique</p>
+                        </div>
+
+                        <div class="publication-item">
+                            <span class="pub-type-badge badge-article"><i class="fa fa-newspaper"></i> Article</span>
+                            <p class="pub-title">Active volume of water in a laboratory aquifer</p>
+                            <p class="pub-authors">Lajeunesse É., Devauchelle O., Douçot J., <span class="self">Jules V.</span> (2024)</p>
+                            <p class="pub-journal">Journal of Fluid Mechanics</p>
+                        </div>
+
+                        <div class="publication-item">
+                            <span class="pub-type-badge badge-article"><i class="fa fa-newspaper"></i> Article</span>
+                            <p class="pub-title">On the art of designing effective space-times with free surface flows in Analogue Gravity</p>
+                            <p class="pub-authors">Bossard A., James N., <span class="self">Jules V.</span>, Fourdrinoy J., Robertson S., Rousseaux G. (2024)</p>
+                            <p class="pub-journal">Compte Rendu Physique</p>
+                        </div>
+
+                        <div class="section-divider">2021</div>
+
+                        <div class="publication-item">
+                            <span class="pub-type-badge badge-article"><i class="fa fa-newspaper"></i> Article</span>
+                            <p class="pub-title">
+                                <a href="https://doi.org/10.1017/jfm.2021.221" target="_blank" rel="noopener">
+                                    Flow and residence time in a two-dimensional aquifer recharged by rainfall
+                                </a>
+                            </p>
+                            <p class="pub-authors"><span class="self">Jules V.</span>, Lajeunesse E., Devauchelle O., Guérin A., Jaupart C., Lagrée P-Y. (2021)</p>
+                            <p class="pub-journal">Journal of Fluid Mechanics, 917, A13 — doi:10.1017/jfm.2021.13</p>
+                            <div class="pub-links">
+                                <a href="https://doi.org/10.1017/jfm.2021.221" target="_blank" rel="noopener" class="pub-link pub-link-doi">
+                                    <i class="fa fa-external-link-alt"></i> DOI
+                                </a>
+                                <a href="#" class="pub-link pub-link-pdf">
+                                    <i class="fa fa-file-pdf"></i> PDF
+                                </a>
                             </div>
                         </div>
-    
-                        <div class="section-card fade-in">
-                            <h2>2020</h2>
-            
-                            <!-- Autres publications -->
 
-                            <div class="publication-item">
-                              <h4> href="files/TheseValentinJules.pdf" target="_blank"> Écoulement dans un aquifère non confiné profond alimenté par la pluie </h4>
-                              <p> <b> Jules, V. </b>, Lajeunesse, E., Devauchelle, O., Guérin, A., Jaupart, C., & Lagrée, P.</p>
-                              <p><strong><i>   Université de Paris, Institut de Physique du Globe de Paris (2020) </i></p>
-                              <p><a href="#" class="w3-text-blue">[PDF]</a> <a href="#" class="w3-text-blue">[DOI]</a></p>
-                          </div>
+                        <div class="section-divider">2020</div>
+
+                        <div class="publication-item">
+                            <span class="pub-type-badge badge-thesis"><i class="fa fa-graduation-cap"></i> Thèse</span>
+                            <p class="pub-title">
+                                <a href="https://theses.fr/2020UNIP7074" target="_blank" rel="noopener">
+                                    Écoulement dans un aquifère non confiné profond alimenté par la pluie
+                                </a>
+                            </p>
+                            <p class="pub-authors"><span class="self">Jules V.</span> (2020)</p>
+                            <p class="pub-journal">Université de Paris — Manuscrit de thèse</p>
+                            <div class="pub-links">
+                                <a href="https://theses.fr/2020UNIP7074" target="_blank" rel="noopener" class="pub-link pub-link-ext">
+                                    <i class="fa fa-external-link-alt"></i> theses.fr
+                                </a>
+                                <a href="files/TheseValentinJules.pdf" class="pub-link pub-link-pdf" target="_blank" rel="noopener">
+                                    <i class="fa fa-file-pdf"></i> PDF
+                                </a>
+                            </div>
                         </div>
+
                     </div>
+
+                    <!-- Rapports -->
+                    <div class="section-card fade-in">
+                        <h2>Rapports</h2>
+                        <hr style="width:200px; border-top: 2px solid var(--secondary-color);">
+
+                        <div class="publication-item">
+                            <span class="pub-type-badge badge-report"><i class="fa fa-file-contract"></i> Rapport</span>
+                            <p class="pub-title">
+                                <a href="https://climate.copernicus.eu/" target="_blank" rel="noopener">
+                                    Updated radiative transfer modelling to simulate the Pressure Modulated Radiometer (PMR) instrument from the 1970s
+                                </a>
+                            </p>
+                            <p class="pub-authors"><span class="self">Jules V.</span>, Lalande J-M., Vidot J. (2023)</p>
+                            <p class="pub-journal">Copernicus Climate Change Service Report</p>
+                            <div class="pub-links">
+                                <a href="https://climate.copernicus.eu/" target="_blank" rel="noopener" class="pub-link pub-link-ext">
+                                    <i class="fa fa-external-link-alt"></i> C3S
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="publication-item">
+                            <span class="pub-type-badge badge-report"><i class="fa fa-file-contract"></i> Rapport</span>
+                            <p class="pub-title">Navigation en milieu confiné : Revue de littérature et amélioration des théories existantes</p>
+                            <p class="pub-authors"><span class="self">Jules V.</span>, Pompee P-J., Dambrine J., Pierre M., Rousseaux G.</p>
+                            <p class="pub-journal">VNF Report</p>
+                        </div>
+
+                    </div>
+
                 </div>
             </div>
+
+            <footer class="w3-container w3-padding-32 w3-center" style="margin-top:50px; border-top: 1px solid #eee;">
+                <p>&copy; 2026 Valentin Jules. All rights reserved.</p>
+                <p>Institut P' - Université de Poitiers</p>
+            </footer>
+
         </div>
-    
-        <script>
-            function toggleSidebar() {
-                // Même fonction
-            }
-        </script>
-    </body>
-    </html>
+    </div>
+
+    <script>
+        window.addEventListener('DOMContentLoaded', triggerVisible);
+        window.addEventListener('scroll', triggerVisible);
+        function triggerVisible() {
+            document.querySelectorAll('.fade-in').forEach(el => {
+                if (el.getBoundingClientRect().top < window.innerHeight / 1.3) {
+                    el.style.opacity = "1";
+                    el.style.transform = "translateY(0)";
+                }
+            });
+        }
+    </script>
+    <script src="../navbar.js"></script>
+    <script>loadNavbar('publications');</script>
+</body>
+</html>
