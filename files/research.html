@@ -72,6 +72,36 @@
             font-weight: 600;
             vertical-align: middle;
         }
+
+        .project-media {
+            margin: 20px 0;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .project-media video {
+            width: 100%;
+            max-height: 400px;
+            display: block;
+            border-radius: 8px;
+            background: #000;
+        }
+
+        .project-media img {
+            width: 100%;
+            max-height: 400px;
+            object-fit: cover;
+            display: block;
+            border-radius: 8px;
+        }
+
+        .media-caption {
+            font-size: 0.85rem;
+            color: #888;
+            text-align: center;
+            margin-top: 8px;
+            font-style: italic;
+        }
     </style>
 </head>
 <body>
@@ -117,6 +147,15 @@
                             <div id="Aquifere" class="w3-container menu w3-padding-32 w3-card" style="display:block;">
                                 <div class="project-block">
                                     <h5>Aquifer Project <span class="badge">PhD</span></h5>
+
+                                    <div class="project-media">
+                                        <video controls preload="metadata">
+                                            <source src="./Aquifer/videos/video_manip.mp4" type="video/mp4">
+                                            Votre navigateur ne supporte pas la lecture vidéo.
+                                        </video>
+                                    </div>
+                                    <p class="media-caption">Dispositif expérimental – écoulement en aquifère 2D</p>
+
                                     <p class="w3-text-grey">
                                         <strong>Écoulement et temps de résidence dans un aquifère 2D rechargé par la pluie :</strong>
                                     </p>
@@ -140,6 +179,12 @@
                             <div id="Satellite" class="w3-container menu w3-padding-32 w3-card">
                                 <div class="project-block">
                                     <h5>C3S Project <span class="badge">Postdoc</span></h5>
+
+                                    <div class="project-media">
+                                        <img src="./Recherches/C3S/Nimbus_rendering.jpg" alt="Rendu du satellite Nimbus – projet C3S">
+                                    </div>
+                                    <p class="media-caption">Rendu du satellite Nimbus – projet C3S</p>
+
                                     <p class="w3-text-grey">
                                         <strong>Simulation d'instruments de sondage atmosphérique sur d'anciens satellites :</strong>
                                     </p>
@@ -165,6 +210,12 @@
                             <div id="Navigation" class="w3-container menu w3-padding-32 w3-card">
                                 <div class="project-block">
                                     <h5>VNF Project <span class="badge">Postdoc</span></h5>
+
+                                    <div class="project-media">
+                                        <img src="./Recherches/VNF/schema.png" alt="Schéma navigation en milieu confiné – projet VNF">
+                                    </div>
+                                    <p class="media-caption">Navigation en milieu confiné – projet VNF</p>
+
                                     <p class="w3-text-grey">
                                         <strong>Navigation en milieu confiné – voies navigables intérieures :</strong>
                                     </p>
@@ -188,7 +239,6 @@
 
                         </div>
                     </div>
-
 
                     <!-- Collaborations Section -->
                     <div class="section-card fade-in">
